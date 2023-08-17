@@ -1,7 +1,9 @@
+import FullPageSlider from "./components/FullPageSlider";
+
 export default function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <FullPageSlider />
     </div>
   );
 }
