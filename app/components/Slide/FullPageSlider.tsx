@@ -1,26 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import TopBar from "./TopBar";
-import SlidesContainer from "./SlidesContainer";
 
+import React, { useState } from "react";
+import TopBar from "../TopBar/TopBar";
+import SlidesContainer from "./SlidesContainer";
+import slidesData from "./slidesData";
+
+// Main component to display the full-page slider
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    {
-      title: "Garbanų Klinika",
-      content: "Say Hello to Curls",
-      image: "/bg-images/bg-image-main.png",
-    },
-    {
-      title: "Slide 2",
-      content: "Slide 2 Content",
-      image: "/bg-images/bg-image-product1.jpeg",
-    },
-  ];
-
   const handleScroll = (e: React.WheelEvent) => {
-    if (e.deltaY > 0 && currentSlide < slides.length - 1) {
+    if (e.deltaY > 0 && currentSlide < slidesData.length - 1) {
       setCurrentSlide(currentSlide + 1);
     } else if (e.deltaY < 0 && currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
@@ -29,12 +19,12 @@ const FullPageSlider: React.FC = () => {
 
   return (
     <div onWheel={handleScroll} className="h-screen overflow-hidden relative">
+      <SlidesContainer slides={slidesData} currentSlide={currentSlide} />
       <TopBar
-        slides={slides}
+        slides={slidesData}
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
       />
-      <SlidesContainer slides={slides} currentSlide={currentSlide} />
     </div>
   );
 };

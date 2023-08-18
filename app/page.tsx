@@ -1,4 +1,4 @@
-import FullPageSlider from "./components/FullPageSlider";
+import FullPageSlider from "./components/Slide/FullPageSlider";
 
 export default function Home() {
   return (

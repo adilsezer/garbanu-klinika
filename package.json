@@ -1,6 +1,7 @@
 {
   "name": "garbanu-klinika",
   "version": "0.1.0",
+  "homepage": "https://sezerad.github.io/garbanu-klinika",
   "private": true,
   "scripts": {
     "dev": "next dev && open -a Google\\ Chrome http://localhost:3000",
