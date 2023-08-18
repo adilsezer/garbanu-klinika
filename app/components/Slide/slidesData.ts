@@ -12,8 +12,8 @@ const slidesData: Slide[] = [
     image: "/bg-images/bg-image-main.png",
   },
   {
-    title: "Slide 2",
-    content: "Slide 2 Content",
+    title: "The Foundations",
+    content: "Innersense Gelis",
     image: "/bg-images/bg-image-product1.jpeg",
   },
 ];
