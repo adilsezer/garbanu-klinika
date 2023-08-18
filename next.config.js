@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  basePath: "/garbanu-klinika",
+  assetPrefix: "/garbanu-klinika/",
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
