@@ -15,11 +15,11 @@ const TopBarItem: React.FC<TopBarItemProps> = ({
   <div
     onClick={onClick}
     className={`cursor-pointer px-4 py-2 rounded-lg transition-colors duration-300 
-      ${
-        isActive
-          ? "bg-red-500 text-rose-100"
-          : "hover:bg-rose-600 hover:text-rose-100"
-      }`}
+    ${
+      isActive
+        ? "bg-primary text-secondary font-semibold"
+        : "bg-secondary text-primary hover:bg-primary hover:text-secondary"
+    }`}
   >
     {label}
   </div>

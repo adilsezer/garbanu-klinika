@@ -5,3 +5,8 @@
 .shadow-text {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+:root {
+  --primary-color: #a24e4e;
+  --secondary-color: #fff7f7;
+}
