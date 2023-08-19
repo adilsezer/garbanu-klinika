@@ -28,7 +28,7 @@ const Slide: React.FC<SlideProps> = ({
   >
     <div className={contents ? "" : "mt-96"}>
       <h1
-        className={`text-8xl font-extrabold text-center	${
+        className={`text-4xl md:text-8xl font-extrabold	${
           contents ? "text-primary" : "text-secondary shadow-text"
         }`}
       >
@@ -36,14 +36,14 @@ const Slide: React.FC<SlideProps> = ({
       </h1>
 
       {content && (
-        <p className="text-6xl text-secondary shadow-text text-center pt-5">
+        <p className="text-2xl md:text-6xl text-secondary shadow-text text-center pt-5 ">
           {content}
         </p>
       )}
       {contents && (
-        <div className="flex justify-center space-x-4 m-16 flex-wrap">
+        <div className="flex flex-wrap justify-center space-x-2 m-4">
           {contents.slice(0, 5).map((contentItem, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative m-2">
               {" "}
               {/* Removed "card" class */}
               <div className="w-60 h-80 shadow-lg relative overflow-hidden mb-4 rounded-lg">

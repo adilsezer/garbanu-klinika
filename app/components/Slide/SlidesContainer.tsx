@@ -28,14 +28,16 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
       className="transition-transform duration-500 ease-in-out"
     >
       {slides.map((slide, index) => (
-        <Slide
-          key={slide.title}
-          title={slide.title}
-          content={slide.content}
-          image={slide.image}
-          contents={slide.contents}
-          buttons={slide.buttons}
-        />
+        <div className="h-screen flex items-center justify-center">
+          <Slide
+            key={slide.title}
+            title={slide.title}
+            content={slide.content}
+            image={slide.image}
+            contents={slide.contents}
+            buttons={slide.buttons}
+          />
+        </div>
       ))}
     </div>
   );
