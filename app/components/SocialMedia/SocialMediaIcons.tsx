@@ -1,5 +1,6 @@
 // SocialMediaIcons.tsx
 import React from "react";
+import Image from "next/image";
 
 const SocialMediaIcons: React.FC = () => (
   <div className="flex flex-col absolute top-2 md:top-20 left-2 z-50">
@@ -8,10 +9,12 @@ const SocialMediaIcons: React.FC = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
+      <Image
         src="/icons/facebook-icon.png"
         alt="Facebook"
         className="social-icon"
+        width={32}
+        height={32}
       />
     </a>
     <a
@@ -19,7 +22,13 @@ const SocialMediaIcons: React.FC = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="/icons/tiktok-icon.png" alt="TikTok" className="social-icon" />
+      <Image
+        src="/icons/tiktok-icon.png"
+        alt="TikTok"
+        className="social-icon"
+        width={32}
+        height={32}
+      />
     </a>
     <a
       href="https://www.instagram.com/garbanuklinika"
@@ -27,10 +36,12 @@ const SocialMediaIcons: React.FC = () => (
       rel="noopener noreferrer"
       className="icon-container"
     >
-      <img
+      <Image
         src="/icons/instagram-icon.png"
         alt="Instagram"
         className="social-icon"
+        width={32}
+        height={32}
       />
     </a>
     {/* Add more icons as needed */}
