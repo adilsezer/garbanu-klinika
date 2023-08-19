@@ -1,3 +1,4 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,6 @@
   margin-bottom: 20px;
 }
 
-/* globals.css */
 .card {
   border: 1px solid var(--primary-color);
   padding: 16px;
@@ -34,9 +34,24 @@
   --back-color: #e6dac3;
 }
 
-/* ... existing styles ... */
-
 @media (max-width: 768px) {
+  .bg-center {
+    background-position: top center;
+  }
+
+  .bg-cover {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .w-60 {
+    width: 100%;
+  }
+
+  .h-80 {
+    height: auto;
+  }
+
   h1.text-8xl {
     font-size: 3rem;
   }
