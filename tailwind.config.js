@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         primary: "var(--primary-color)",
         secondary: "var(--secondary-color)",
+        backColor: "var(--back-color)",
       },
     },
   },

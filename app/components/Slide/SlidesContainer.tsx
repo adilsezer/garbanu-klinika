@@ -1,10 +1,9 @@
-"use client";
+// SlidesContainer.tsx
 
 import React, { useState, useEffect } from "react";
 import Slide from "./Slide";
 import { Slide as SlideType } from "./slidesData";
 
-// Props for the container that holds all slides
 interface SlidesContainerProps {
   slides: SlideType[];
   currentSlide: number;
@@ -28,12 +27,13 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
       }}
       className="transition-transform duration-500 ease-in-out"
     >
-      {slides.map((slide) => (
+      {slides.map((slide, index) => (
         <Slide
           key={slide.title}
           title={slide.title}
           content={slide.content}
           image={slide.image}
+          contents={slide.contents}
           buttons={slide.buttons}
         />
       ))}
