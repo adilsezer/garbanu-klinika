@@ -14,20 +14,6 @@
   margin-bottom: 20px;
 }
 
-.card {
-  border: 1px solid var(--primary-color);
-  padding: 16px;
-  border-radius: 8px;
-  width: 200px;
-  height: 300px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 16px;
-}
-
 :root {
   --primary-color: #a24e4e;
   --secondary-color: #fff7f7;
@@ -36,11 +22,11 @@
 
 @media (max-width: 768px) {
   .bg-center {
-    background-position: top center;
+    background-position: center;
   }
 
   .bg-cover {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
   }
 

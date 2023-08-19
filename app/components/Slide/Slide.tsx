@@ -1,7 +1,7 @@
 // Slide.tsx
 import React from "react";
 import Link from "next/link";
-import Image from "next/image"; // <-- Import the Image component
+import Image from "next/image";
 
 interface SlideProps {
   title: string;
@@ -24,7 +24,7 @@ const Slide: React.FC<SlideProps> = ({
   buttons,
 }) => (
   <div
-    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4 md:p-0"
+    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4"
     style={{ backgroundImage: image ? `url(${image})` : undefined }}
   >
     <div
@@ -46,22 +46,35 @@ const Slide: React.FC<SlideProps> = ({
         </p>
       )}
       {contents && (
-        <div className="flex flex-wrap justify-center space-x-2 m-2 md:m-4">
+        <div className="flex flex-wrap justify-center my-2 md:my-8 w-screen">
           {contents.slice(0, 5).map((contentItem, index) => (
             <div
               key={contentItem.serviceName}
-              className="relative m-1 md:m-2 w-1/3 md:w-60"
+              className="relative mx-2 my-2 w-2/5 h-24 md:w-1/6 md:h-60"
             >
-              <div className="h-40 md:h-80 shadow-lg relative overflow-hidden mb-4 rounded-lg">
+              <div className="shadow-lg relative overflow-hidden rounded-lg h-full w-full">
                 <Image
                   src={contentItem.image}
                   alt={`Product ${index + 1}`}
-                  className="object-cover w-full h-full"
-                  layout="responsive"
-                  width={3}
-                  height={4}
+                  layout="fill"
+                  objectFit="cover"
                 />
-                {/* ... rest of the code ... */}
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 font-semibold p-1 md:p-2">
+                  {" "}
+                  {/* Adjusted padding for mobile */}
+                  <p className="text-xs md:text-base text-white">
+                    {contentItem.serviceName}
+                  </p>{" "}
+                  {/* Adjusted font size for mobile */}
+                  <p className="text-xs md:text-base text-white">
+                    {contentItem.productName}
+                  </p>{" "}
+                  {/* Adjusted font size for mobile */}
+                  <p className="text-xs md:text-base text-white">
+                    {contentItem.price}
+                  </p>{" "}
+                  {/* Adjusted font size for mobile */}
+                </div>
               </div>
             </div>
           ))}

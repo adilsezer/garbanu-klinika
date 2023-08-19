@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const SocialMediaIcons: React.FC = () => (
-  <div className="flex flex-col absolute top-2 md:top-20 left-2 z-50">
+  <div className="flex flex-col absolute top-20 md:top-20 left-5 z-50">
     <a
       href="https://www.facebook.com/garbanuklinika"
       target="_blank"
