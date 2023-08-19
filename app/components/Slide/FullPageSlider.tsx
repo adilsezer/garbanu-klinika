@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
+import SocialMediaIcons from "../SocialMedia/SocialMediaIcons";
 
 // Main component to display the full-page slider
 const FullPageSlider: React.FC = () => {
@@ -20,6 +21,7 @@ const FullPageSlider: React.FC = () => {
   return (
     <div onWheel={handleScroll} className="h-screen overflow-hidden relative">
       <SlidesContainer slides={slidesData} currentSlide={currentSlide} />
+      <SocialMediaIcons />
       <TopBar
         slides={slidesData}
         currentSlide={currentSlide}
