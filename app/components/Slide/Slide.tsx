@@ -23,7 +23,7 @@ const Slide: React.FC<SlideProps> = ({
   buttons,
 }) => (
   <div
-    className="h-screen w-full flex items-center justify-center bg-cover bg-center"
+    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4 md:p-0"
     style={{ backgroundImage: image ? `url(${image})` : undefined }}
   >
     <div className={contents ? "" : "mt-96"}>

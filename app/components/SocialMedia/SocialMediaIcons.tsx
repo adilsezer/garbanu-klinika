@@ -2,7 +2,7 @@
 import React from "react";
 
 const SocialMediaIcons: React.FC = () => (
-  <div className="flex flex-col absolute top-20 left-4 z-50">
+  <div className="flex flex-col absolute top-4 md:top-20 left-4 z-50">
     <a
       href="https://www.facebook.com/garbanuklinika"
       target="_blank"

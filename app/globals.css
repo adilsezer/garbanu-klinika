@@ -33,3 +33,21 @@
   --secondary-color: #fff7f7;
   --back-color: #e6dac3;
 }
+
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
+  h1.text-8xl {
+    font-size: 3rem;
+  }
+
+  p.text-6xl {
+    font-size: 2rem;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 16px;
+  }
+}
