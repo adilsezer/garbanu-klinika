@@ -128,7 +128,7 @@ const slidesData: Slide[] = [
     title: "D.U.K",
     contents: [
       {
-        contentName: "Service 1",
+        contentName: "How Service 1",
         contentDesc: "Product A",
       },
       {
