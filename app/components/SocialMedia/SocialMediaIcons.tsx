@@ -10,7 +10,7 @@ const SocialMediaIcons: React.FC = () => (
       rel="noopener noreferrer"
     >
       <Image
-        src="/icons/facebook-icon.png"
+        src="./icons/facebook-icon.png"
         alt="Facebook"
         className="social-icon"
         width={32}
@@ -23,7 +23,7 @@ const SocialMediaIcons: React.FC = () => (
       rel="noopener noreferrer"
     >
       <Image
-        src="/icons/tiktok-icon.png"
+        src="./icons/tiktok-icon.png"
         alt="TikTok"
         className="social-icon"
         width={32}
@@ -37,7 +37,7 @@ const SocialMediaIcons: React.FC = () => (
       className="icon-container"
     >
       <Image
-        src="/icons/instagram-icon.png"
+        src="./icons/instagram-icon.png"
         alt="Instagram"
         className="social-icon"
         width={32}
