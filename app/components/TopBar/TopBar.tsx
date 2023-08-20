@@ -9,13 +9,12 @@ interface TopBarProps {
   onSlideChange: (slideIndex: number) => void;
 }
 
-// Component to display the top bar with slide titles
 const TopBar: React.FC<TopBarProps> = ({
   slides,
   currentSlide,
   onSlideChange,
 }) => (
-  <div className="absolute top-2 md:top-0 left-2 flex space-x-2 p-2 z-10">
+  <div className="absolute top-2 w-1/5 top-0 left-0 flex flex-wrap justify-center md:justify-normal gap-y-4 space-x-2 p-2 z-10 w-screen">
     {slides.map((slide, index) => (
       <TopBarItem
         key={slide.title}

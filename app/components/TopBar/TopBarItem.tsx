@@ -14,7 +14,7 @@ const TopBarItem: React.FC<TopBarItemProps> = ({
 }) => (
   <div
     onClick={onClick}
-    className={`cursor-pointer px-4 py-2 rounded-lg transition-colors duration-300 
+    className={`cursor-pointer text-xs md:text-base px-4 py-2 rounded-lg transition-colors text-center duration-300 
     ${
       isActive
         ? "bg-primary text-secondary font-semibold"

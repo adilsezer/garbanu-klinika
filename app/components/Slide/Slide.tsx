@@ -32,11 +32,7 @@ const Slide: React.FC<SlideProps> = ({
         contents ? "" : "mt-96"
       }`}
     >
-      <h1
-        className={`text-4xl md:text-8xl font-extrabold ${
-          contents ? "text-primary" : "text-secondary shadow-text"
-        }`}
-      >
+      <h1 className="text-4xl md:text-8xl font-extrabold text-secondary shadow-text">
         {title}
       </h1>
 
@@ -47,7 +43,7 @@ const Slide: React.FC<SlideProps> = ({
       )}
       {contents && (
         <div className="flex flex-wrap justify-center my-2 md:my-8 w-screen">
-          {contents.slice(0, 5).map((contentItem, index) => (
+          {contents.slice(0, 4).map((contentItem, index) => (
             <div
               key={contentItem.serviceName}
               className="relative mx-2 my-2 w-2/5 h-24 md:w-1/6 md:h-60"

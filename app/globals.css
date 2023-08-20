@@ -17,7 +17,16 @@
 :root {
   --primary-color: #a24e4e;
   --secondary-color: #fff7f7;
-  --back-color: #e6dac3;
+  --gradient-neutral-start: #fdfcfb; /* Neutral light gray */
+  --gradient-neutral-end: #e2d1c3; /* Your primary color */
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-neutral-start) 0%,
+    var(--gradient-neutral-end) 100%
+  );
 }
 
 @media (max-width: 768px) {

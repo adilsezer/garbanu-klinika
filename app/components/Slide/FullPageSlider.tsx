@@ -5,8 +5,8 @@ import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
 import SocialMediaIcons from "../SocialMedia/SocialMediaIcons";
+import SlideDots from "./SlideDots";
 
-// Main component to display the full-page slider
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -27,6 +27,7 @@ const FullPageSlider: React.FC = () => {
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
       />
+      <SlideDots slides={slidesData} currentSlide={currentSlide} />
     </div>
   );
 };
