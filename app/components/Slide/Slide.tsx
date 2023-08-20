@@ -8,10 +8,10 @@ interface SlideProps {
   content?: string;
   image?: string;
   contents?: {
-    serviceName: string;
-    productName: string;
-    price: string;
-    image: string;
+    contentName: string;
+    contentDesc: string;
+    contentPrice?: string;
+    contentImage?: string;
   }[];
   buttons?: { label: string; action: string }[];
 }
@@ -32,7 +32,11 @@ const Slide: React.FC<SlideProps> = ({
         contents ? "" : "mt-96"
       }`}
     >
-      <h1 className="text-4xl md:text-8xl font-extrabold text-secondary shadow-text">
+      <h1
+        className={`text-4xl md:text-8xl font-extrabold ${
+          contents ? "text-primary" : "text-secondary shadow-text"
+        }`}
+      >
         {title}
       </h1>
 
@@ -41,37 +45,37 @@ const Slide: React.FC<SlideProps> = ({
           {content}
         </p>
       )}
+
       {contents && (
         <div className="flex flex-wrap justify-center my-2 md:my-8 w-screen">
           {contents.slice(0, 4).map((contentItem, index) => (
             <div
-              key={contentItem.serviceName}
-              className="relative mx-2 my-2 w-2/5 h-24 md:w-1/6 md:h-60"
+              key={contentItem.contentName}
+              className="relative mx-2 my-2 w-2/5 h-24 md:w-1/6 md:h-60 cursor-pointer"
             >
-              <div className="shadow-lg relative overflow-hidden rounded-lg h-full w-full">
-                <Image
-                  src={contentItem.image}
-                  alt={`Product ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 font-semibold p-1 md:p-2">
-                  {" "}
-                  {/* Adjusted padding for mobile */}
-                  <p className="text-xs md:text-base text-white">
-                    {contentItem.serviceName}
-                  </p>{" "}
-                  {/* Adjusted font size for mobile */}
-                  <p className="text-xs md:text-base text-white">
-                    {contentItem.productName}
-                  </p>{" "}
-                  {/* Adjusted font size for mobile */}
-                  <p className="text-xs md:text-base text-white">
-                    {contentItem.price}
-                  </p>{" "}
-                  {/* Adjusted font size for mobile */}
+              <Link href={`/${contentItem.contentDesc.replace(" ", "")}`}>
+                <div className="shadow-lg relative overflow-hidden rounded-lg h-full w-full">
+                  {contentItem.contentImage && (
+                    <Image
+                      src={contentItem.contentImage}
+                      alt={`Product ${index + 1}`}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  )}
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 font-semibold p-1 md:p-2">
+                    <p className="text-xs md:text-base text-white">
+                      {contentItem.contentName}
+                    </p>
+                    <p className="text-xs md:text-base text-white">
+                      {contentItem.contentDesc}
+                    </p>
+                    <p className="text-xs md:text-base text-white">
+                      {contentItem.contentPrice}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
