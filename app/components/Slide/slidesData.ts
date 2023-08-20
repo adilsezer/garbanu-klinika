@@ -17,7 +17,7 @@ const slidesData: Slide[] = [
   {
     title: "Garbanų",
     content: "Say Hello to Curls",
-    image: "/bg-images/bg-image-main.png",
+    image: "./bg-images/bg-image-main.png",
     buttons: [
       { label: "Learn More →", action: "/learn-more" },
       { label: "Contact Us →", action: "/contact" },
