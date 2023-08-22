@@ -1,4 +1,9 @@
 // Slide.tsx
+
+//TODO: fix the scrolling issue on laptop touchpad
+//TODO: Fix the full page issue on mobile
+//TODO: Add scroll feature to mobile, so that the user can scroll down the page using the touchscreen
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -57,10 +62,10 @@ const Slide: React.FC<SlideProps> = ({
                 <div className="shadow-lg relative overflow-hidden rounded-lg h-full w-full">
                   {contentItem.contentImage && (
                     <Image
+                      fill
                       src={contentItem.contentImage}
                       alt={`Product ${index + 1}`}
-                      layout="fill"
-                      objectFit="cover"
+                      style={{ objectFit: "cover" }}
                     />
                   )}
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 font-semibold p-1 md:p-2">

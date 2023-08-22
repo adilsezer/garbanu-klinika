@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
@@ -9,8 +9,19 @@ import SlideDots from "./SlideDots";
 
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const lastScrollTime = useRef(Date.now());
 
   const handleScroll = (e: React.WheelEvent) => {
+    const now = Date.now();
+    const timeSinceLastScroll = now - lastScrollTime.current;
+
+    if (timeSinceLastScroll < 1100) {
+      // Adjust the number (500 ms) as needed
+      return;
+    }
+
+    lastScrollTime.current = now;
+
     if (e.deltaY > 0 && currentSlide < slidesData.length - 1) {
       setCurrentSlide(currentSlide + 1);
     } else if (e.deltaY < 0 && currentSlide > 0) {
