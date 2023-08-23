@@ -18,7 +18,7 @@ const TopBar: React.FC<TopBarProps> = ({
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="absolute top-0 md:m-2 left-0 flex flex-wrap md:justify-start gap-y-4 p-2 z-10 w-screen">
+    <div className="fixed top-0 md:m-2 left-0 flex flex-wrap md:justify-start gap-y-4 p-2 z-10 w-screen">
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden p-2">
         <HamburgerIcon onClick={() => setMenuOpen(!isMenuOpen)} />
