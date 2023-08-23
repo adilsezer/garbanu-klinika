@@ -1,5 +1,7 @@
 "use client";
 
+// FullPageSlider.tsx
+
 import React, { useState, useRef } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
@@ -11,25 +13,49 @@ const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const lastScrollTime = useRef(Date.now());
 
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+
   const handleScroll = (e: React.WheelEvent) => {
-    const now = Date.now();
-    const timeSinceLastScroll = now - lastScrollTime.current;
-
-    if (timeSinceLastScroll < 1100) {
-      return;
+    // ... existing scroll logic, e.g.:
+    const currentTime = Date.now();
+    if (currentTime - lastScrollTime.current < 1100) {
+      return; // Prevents sudden multiple scroll events in short duration.
     }
-
-    lastScrollTime.current = now;
 
     if (e.deltaY > 0 && currentSlide < slidesData.length - 1) {
       setCurrentSlide(currentSlide + 1);
     } else if (e.deltaY < 0 && currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
     }
+    lastScrollTime.current = currentTime;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartY !== null) {
+      const touchEndY = e.changedTouches[0].clientY;
+      if (touchEndY > touchStartY + 10 && currentSlide > 0) {
+        setCurrentSlide(currentSlide - 1);
+      } else if (
+        touchEndY < touchStartY - 10 &&
+        currentSlide < slidesData.length - 1
+      ) {
+        setCurrentSlide(currentSlide + 1);
+      }
+    }
+    setTouchStartY(null);
   };
 
   return (
-    <div onWheel={handleScroll} className="h-screen overflow-hidden relative">
+    <div
+      onWheel={handleScroll}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      className="h-screen overflow-hidden relative"
+    >
       <SlidesContainer slides={slidesData} currentSlide={currentSlide} />
       <SocialMediaIcons />
       <TopBar
