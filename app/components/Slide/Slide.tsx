@@ -1,7 +1,6 @@
 // Slide.tsx
 
-//TODO: fix the scrolling issue on laptop touchpad
-//TODO: Fix the full page issue on mobile
+//TODO: Move topbar to left side of the screen
 //TODO: Add scroll feature to mobile, so that the user can scroll down the page using the touchscreen
 
 import React from "react";

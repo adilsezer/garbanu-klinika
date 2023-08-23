@@ -6,7 +6,6 @@ interface TopBarItemProps {
   onClick: () => void;
 }
 
-// Individual item in the top bar
 const TopBarItem: React.FC<TopBarItemProps> = ({
   label,
   isActive,
@@ -14,7 +13,7 @@ const TopBarItem: React.FC<TopBarItemProps> = ({
 }) => (
   <div
     onClick={onClick}
-    className={`cursor-pointer text-sm md:text-base px-4 py-2 rounded-lg transition-colors text-center duration-300 
+    className={`cursor-pointer px-4 py-2 rounded-lg transition-colors text-center duration-300 
     ${
       isActive
         ? "bg-primary text-secondary font-semibold"
