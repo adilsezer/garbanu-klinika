@@ -8,6 +8,7 @@ import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
 import SocialMediaIcons from "../SocialMedia/SocialMediaIcons";
 import SlideDots from "./SlideDots";
+import ScrollHint from "./ScrollHint";
 
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -63,6 +64,7 @@ const FullPageSlider: React.FC = () => {
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
       />
+      <ScrollHint></ScrollHint>
       <SlideDots slides={slidesData} currentSlide={currentSlide} />
     </div>
   );
