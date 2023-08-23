@@ -14,7 +14,7 @@ const TopBar: React.FC<TopBarProps> = ({
   currentSlide,
   onSlideChange,
 }) => (
-  <div className="absolute top-2 w-1/5 top-0 left-0 flex flex-wrap justify-center md:justify-normal gap-y-4 space-x-2 p-2 z-10 w-screen">
+  <div className="absolute top-0 md:m-2 left-0 flex flex-wrap justify-center md:justify-normal gap-y-4 space-x-2 p-2 z-10 w-screen">
     {slides.map((slide, index) => (
       <TopBarItem
         key={slide.title}
