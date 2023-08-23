@@ -7,7 +7,7 @@ interface SlideDotsProps {
 }
 
 const SlideDots: React.FC<SlideDotsProps> = ({ slides, currentSlide }) => (
-  <div className="absolute bottom-1.5 right-4 flex flex-col items-center space-y-2">
+  <div className="fixed bottom-1.5 right-4 flex flex-col items-center space-y-2">
     <svg
       width="16"
       height="16"

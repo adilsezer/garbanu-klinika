@@ -33,7 +33,7 @@ const Slide: React.FC<SlideProps> = ({
   >
     <div
       className={`flex flex-col items-center justify-center h-screen ${
-        contents ? "" : "mt-96"
+        contents ? "" : "mt-72"
       }`}
     >
       <h1
@@ -67,7 +67,7 @@ const Slide: React.FC<SlideProps> = ({
                       style={{ objectFit: "cover" }}
                     />
                   )}
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 font-semibold p-1 md:p-2">
+                  <div className="absolute bottom-0 left-0 right-0 bg-primary-opacity-30 font-semibold p-1 md:p-2">
                     <p className="text-xs md:text-base text-white">
                       {contentItem.contentName}
                     </p>
@@ -89,7 +89,7 @@ const Slide: React.FC<SlideProps> = ({
         {buttons &&
           buttons.map((button, index) => (
             <Link key={index} href={button.action}>
-              <button className="border border-secondary bg-red-950 font-semibold bg-opacity-50 text-secondary shadow-text text-xl px-4 py-2 rounded mt-4 inline-block hover:bg-primary hover:text-secondary transition-colors duration-300">
+              <button className="border border-secondary bg-primary-opacity-50 font-semibold text-secondary shadow-text text-xl px-4 py-2 rounded mt-4 inline-block hover:bg-primary hover:text-secondary transition-colors duration-300">
                 {button.label}
               </button>
             </Link>
