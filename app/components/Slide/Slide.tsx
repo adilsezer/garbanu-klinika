@@ -45,7 +45,7 @@ const Slide: React.FC<SlideProps> = ({
       </h1>
 
       {content && (
-        <p className="text-2xl md:text-6xl text-secondary shadow-text text-center pt-5 ">
+        <p className="text-4xl md:text-6xl text-secondary shadow-text text-center pt-5 ">
           {content}
         </p>
       )}
