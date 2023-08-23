@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
@@ -9,7 +9,6 @@ import SlideDots from "./SlideDots";
 
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const lastScrollTime = useRef(Date.now());
 
   const handleScroll = (e: React.WheelEvent) => {
@@ -29,30 +28,8 @@ const FullPageSlider: React.FC = () => {
     }
   };
 
-  const setVH = () => {
-    if (containerRef.current) {
-      containerRef.current.style.setProperty(
-        "--vh",
-        `${window.innerHeight * 0.01}px`
-      );
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", setVH);
-    setVH();
-
-    return () => {
-      window.removeEventListener("resize", setVH);
-    };
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
-      onWheel={handleScroll}
-      className="h-screen overflow-hidden relative"
-    >
+    <div onWheel={handleScroll} className="h-screen overflow-hidden relative">
       <SlidesContainer slides={slidesData} currentSlide={currentSlide} />
       <SocialMediaIcons />
       <TopBar

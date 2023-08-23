@@ -16,13 +16,13 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
   const [translateY, setTranslateY] = useState(0);
 
   useEffect(() => {
-    setTranslateY(-currentSlide * window.innerHeight);
+    setTranslateY(-currentSlide * 100);
   }, [currentSlide]);
 
   return (
     <div
       style={{
-        transform: `translateY(${translateY}px)`,
+        transform: `translateY(${translateY}vh)`,
         height: `${slides.length * 100}vh`,
       }}
       className="transition-transform duration-500 ease-in-out"
