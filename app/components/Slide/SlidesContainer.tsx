@@ -1,5 +1,3 @@
-// SlidesContainer.tsx
-
 import React, { useState, useEffect } from "react";
 import Slide from "./Slide";
 import { Slide as SlideType } from "./slidesData";
@@ -30,10 +28,9 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
       {slides.map((slide, index) => (
         <div
           key={slide.title}
-          className="h-screen flex items-center justify-center"
+          className="h-screen flex items-center justify-center overflow-hidden"
         >
           <Slide
-            key={slide.title}
             title={slide.title}
             type={slide.type}
             subtitle={slide.subtitle}

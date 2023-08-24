@@ -1,7 +1,5 @@
 "use client";
 
-// FullPageSlider.tsx
-
 import React, { useState, useRef } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
@@ -13,7 +11,6 @@ import ScrollHint from "./ScrollHint";
 const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const lastScrollTime = useRef(Date.now());
-
   const [touchStartY, setTouchStartY] = useState<number | null>(null);
 
   const handleScroll = (e: React.WheelEvent) => {
@@ -64,7 +61,7 @@ const FullPageSlider: React.FC = () => {
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
       />
-      <ScrollHint></ScrollHint>
+      <ScrollHint />
       <SlideDots slides={slidesData} currentSlide={currentSlide} />
     </div>
   );

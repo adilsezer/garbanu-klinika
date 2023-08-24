@@ -1,5 +1,3 @@
-// Slide.tsx
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,7 +14,10 @@ interface SlideProps {
     contentPrice?: string;
     contentImage?: string;
   }[];
-  buttons?: { label: string; action: string }[];
+  buttons?: {
+    label: string;
+    action: string;
+  }[];
 }
 
 const Slide: React.FC<SlideProps> = ({
@@ -28,7 +29,7 @@ const Slide: React.FC<SlideProps> = ({
   buttons,
 }) => (
   <div
-    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4"
+    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4 overflow-hidden"
     style={{ backgroundImage: image ? `url(${image})` : undefined }}
   >
     <div
