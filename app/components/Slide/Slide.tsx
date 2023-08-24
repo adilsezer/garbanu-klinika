@@ -33,17 +33,19 @@ const Slide: React.FC<SlideProps> = ({
   >
     <div
       className={`flex flex-col items-center justify-center h-screen ${
-        type === SlideType.Main ? "mt-72" : ""
+        type === SlideType.Main ? "mt-64" : ""
       }`}
     >
       <h1
-        className={`text-4xl md:text-8xl font-extrabold text-rose-200 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-rose-900 border border-rose-500 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out`}
+        className={`text-4xl md:text-8xl font-extrabold shadow-text hover:transform hover:scale-105 transition-transform duration-300 ease-in-out ${
+          image ? "text-secondary" : "text-primary"
+        }`}
       >
         {title}
       </h1>
 
       {subtitle && (
-        <p className="text-4xl md:text-6xl text-secondary shadow-text text-center pt-5 ">
+        <p className="text-4xl md:text-6xl text-secondary shadow-text text-center pt-4 ">
           {subtitle}
         </p>
       )}

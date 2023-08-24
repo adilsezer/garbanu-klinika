@@ -1,6 +1,6 @@
 const ScrollHint: React.FC = () => {
   return (
-    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center bg-primary-opacity-20 p-2 rounded-lg shadow-lg">
+    <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center bg-primary-opacity-20 p-2 rounded-lg shadow-lg">
       <div className="animate-bounce">
         <svg
           width="20"
