@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TopBar from "../TopBar/TopBar";
 import SlidesContainer from "./SlidesContainer";
 import slidesData from "./slidesData";
@@ -12,6 +12,22 @@ const FullPageSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const lastScrollTime = useRef(Date.now());
   const [touchStartY, setTouchStartY] = useState<number | null>(null);
+  const [viewportHeight, setViewportHeight] = useState(0); // Initialize to 0
+
+  useEffect(() => {
+    // Set the initial height when the component mounts
+    setViewportHeight(window.innerHeight);
+
+    const handleResize = () => {
+      setViewportHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleScroll = (e: React.WheelEvent) => {
     // ... existing scroll logic, e.g.:
@@ -52,9 +68,14 @@ const FullPageSlider: React.FC = () => {
       onWheel={handleScroll}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="h-screen overflow-hidden relative"
+      className="overflow-hidden" // This applies the overflow: hidden style
+      style={{ height: `${viewportHeight}px` }}
     >
-      <SlidesContainer slides={slidesData} currentSlide={currentSlide} />
+      <SlidesContainer
+        slides={slidesData}
+        currentSlide={currentSlide}
+        viewportHeight={viewportHeight}
+      />
       <SocialMediaIcons />
       <TopBar
         slides={slidesData}

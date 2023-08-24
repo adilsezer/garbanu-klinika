@@ -29,7 +29,7 @@ const Slide: React.FC<SlideProps> = ({
   buttons,
 }) => (
   <div
-    className="h-screen w-full flex flex-col items-center justify-center bg-cover bg-center p-4 overflow-hidden"
+    className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center p-4 overflow-hidden"
     style={{ backgroundImage: image ? `url(${image})` : undefined }}
   >
     <div

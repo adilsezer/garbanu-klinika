@@ -31,6 +31,8 @@ body {
     var(--gradient-neutral-start) 0%,
     var(--gradient-neutral-end) 100%
   );
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @media (max-width: 768px) {

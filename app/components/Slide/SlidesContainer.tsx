@@ -5,30 +5,33 @@ import { Slide as SlideType } from "./slidesData";
 interface SlidesContainerProps {
   slides: SlideType[];
   currentSlide: number;
+  viewportHeight: number;
 }
 
 const SlidesContainer: React.FC<SlidesContainerProps> = ({
   slides,
   currentSlide,
+  viewportHeight,
 }) => {
   const [translateY, setTranslateY] = useState(0);
 
   useEffect(() => {
-    setTranslateY(-currentSlide * 100);
-  }, [currentSlide]);
+    setTranslateY(-currentSlide * viewportHeight);
+  }, [currentSlide, viewportHeight]);
 
   return (
     <div
       style={{
-        transform: `translateY(${translateY}vh)`,
-        height: `${slides.length * 100}vh`,
+        transform: `translateY(${translateY}px)`,
+        height: `${slides.length * viewportHeight}px`,
       }}
       className="transition-transform duration-500 ease-in-out"
     >
       {slides.map((slide, index) => (
         <div
           key={slide.title}
-          className="h-screen flex items-center justify-center overflow-hidden"
+          style={{ height: `${viewportHeight}px` }}
+          className="flex items-center justify-center overflow-hidden"
         >
           <Slide
             title={slide.title}
