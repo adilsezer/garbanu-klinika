@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Slide from "./Slide";
 import { Slide as SlideType } from "./slidesData";
 
@@ -13,11 +13,7 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
   currentSlide,
   viewportHeight,
 }) => {
-  const [translateY, setTranslateY] = useState(0);
-
-  useEffect(() => {
-    setTranslateY(-currentSlide * viewportHeight);
-  }, [currentSlide, viewportHeight]);
+  const translateY = -currentSlide * viewportHeight; // Directly derive the value
 
   return (
     <div

@@ -5,7 +5,7 @@ import { SlideType } from "./SlideType";
 
 interface SlideProps {
   title: string;
-  type: string;
+  type: SlideType; // Use the SlideType enum
   subtitle?: string;
   image?: string;
   contents?: {
@@ -88,7 +88,7 @@ const Slide: React.FC<SlideProps> = ({
         </div>
       )}
 
-      {type === SlideType.Card && contents && (
+      {type === SlideType.TextCard && contents && (
         <div className="flex flex-wrap justify-center my-2 md:my-10">
           {contents.slice(0, 4).map((contentItem, index) => (
             <div
@@ -99,26 +99,11 @@ const Slide: React.FC<SlideProps> = ({
                 <p className="font-bold text-white text-center mb-1">
                   {contentItem.contentName}
                 </p>
-                <p className="text-white text-xs md:text-sm leading-relaxed text-justify mt-2">
-                  {contentItem.contentDesc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {type === SlideType.Flyer && contents && (
-        <div className="flex flex-wrap justify-center my-2 md:my-10">
-          {contents.slice(0, 4).map((contentItem, index) => (
-            <div
-              key={contentItem.contentName}
-              className="relative m-2 md:m-4 w-11/12 md:w-1/6 h-auto bg-gradient-to-br from-primary to-primary-opacity-50 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
-            >
-              <div className="p-12 flex flex-col justify-center">
-                <p className="font-bold text-white text-center text-sm md:text-xl">
-                  {contentItem.contentName}
-                </p>
+                {contentItem.contentDesc && (
+                  <p className="text-white text-xs md:text-sm leading-relaxed text-justify mt-2">
+                    {contentItem.contentDesc}
+                  </p>
+                )}
               </div>
             </div>
           ))}

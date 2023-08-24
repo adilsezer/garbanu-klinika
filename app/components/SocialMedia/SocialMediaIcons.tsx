@@ -1,4 +1,3 @@
-// SocialMediaIcons.tsx
 import React from "react";
 import Image from "next/image";
 
@@ -44,7 +43,6 @@ const SocialMediaIcons: React.FC = () => (
         height={32}
       />
     </a>
-    {/* Add more icons as needed */}
   </div>
 );
 

@@ -3,9 +3,7 @@ import TopBarItem from "./TopBarItem";
 import HamburgerIcon from "./HamburgerIcon";
 
 interface TopBarProps {
-  slides: {
-    title: string;
-  }[];
+  slides: { title: string }[];
   currentSlide: number;
   onSlideChange: (slideIndex: number) => void;
 }
@@ -19,12 +17,9 @@ const TopBar: React.FC<TopBarProps> = ({
 
   return (
     <div className="fixed top-0 md:m-2 left-0 flex flex-wrap md:justify-start gap-y-4 p-2 z-10 w-screen">
-      {/* Hamburger Icon for Mobile */}
       <div className="md:hidden p-2">
         <HamburgerIcon onClick={() => setMenuOpen(!isMenuOpen)} />
       </div>
-
-      {/* Menu Items - hidden on mobile unless menu is open */}
       <div
         className={`transition-all ease-in-out duration-300 ${
           isMenuOpen ? "flex flex-col space-y-1" : "hidden"
@@ -37,7 +32,7 @@ const TopBar: React.FC<TopBarProps> = ({
             isActive={index === currentSlide}
             onClick={() => {
               onSlideChange(index);
-              setMenuOpen(false); // Close the menu after selecting an item
+              setMenuOpen(false);
             }}
           />
         ))}

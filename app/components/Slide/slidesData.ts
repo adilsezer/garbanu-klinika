@@ -2,7 +2,7 @@ import { SlideType } from "./SlideType";
 
 export interface Slide {
   title: string;
-  type: string;
+  type: SlideType;
   subtitle?: string;
   image?: string;
   contents?: Content[];
@@ -18,7 +18,7 @@ interface Content {
 
 const slidesData: Slide[] = [
   {
-    title: "Garbanų",
+    title: "Garbanų Klinika",
     type: SlideType.Main,
     subtitle: "Say Hello to Curls",
     image: "./bg-images/bg-image-main.png",
@@ -77,7 +77,7 @@ const slidesData: Slide[] = [
     buttons: [{ label: "View More →", action: "/products" }],
   },
   {
-    title: "Care",
+    title: "Hair Care",
     type: SlideType.Product,
     contents: [
       {
@@ -126,8 +126,8 @@ const slidesData: Slide[] = [
     buttons: [{ label: "View More →", action: "/products" }],
   },
   {
-    title: "Garbanos",
-    type: SlideType.Flyer,
+    title: "Why Us?",
+    type: SlideType.TextCard,
     subtitle: "Garbanos Prasideda nuo..",
     image: "./bg-images/bg-image-face3.png",
     contents: [
@@ -145,25 +145,25 @@ const slidesData: Slide[] = [
   {
     /* Write FAQ data */
     title: "D.U.K",
-    type: SlideType.Card,
+    type: SlideType.TextCard,
     contents: [
       {
-        contentName: "Kas yra garbanos?",
+        contentName: "Kas yra garbanos 1?",
         contentDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Kas yra garbanos?",
+        contentName: "Kas yra garbanos 2?",
         contentDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Kas yra garbanos?",
+        contentName: "Kas yra garbanos 3?",
         contentDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Kas yra garbanos?",
+        contentName: "Kas yra garbanos 4?",
         contentDesc:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },

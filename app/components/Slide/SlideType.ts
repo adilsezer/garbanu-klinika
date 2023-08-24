@@ -3,7 +3,7 @@
 export enum SlideType {
   Main = "main",
   Product = "product",
-  Card = "card",
-  Flyer = "flyer",
+  Service = "service",
+  TextCard = "textCard",
   Contact = "contact",
 }
