@@ -1,6 +1,9 @@
+import { SlideType } from "./SlideType";
+
 export interface Slide {
   title: string;
-  content?: string;
+  type: string;
+  subtitle?: string;
   image?: string;
   contents?: Content[];
   buttons?: { label: string; action: string }[];
@@ -8,7 +11,7 @@ export interface Slide {
 
 interface Content {
   contentName: string;
-  contentDesc: string;
+  contentDesc?: string;
   contentPrice?: string;
   contentImage?: string;
 }
@@ -16,7 +19,8 @@ interface Content {
 const slidesData: Slide[] = [
   {
     title: "Garbanų",
-    content: "Say Hello to Curls",
+    type: SlideType.Main,
+    subtitle: "Say Hello to Curls",
     image: "./bg-images/bg-image-main.png",
     buttons: [
       { label: "Learn More →", action: "/learn-more" },
@@ -25,6 +29,7 @@ const slidesData: Slide[] = [
   },
   {
     title: "Foundations",
+    type: SlideType.Product,
     contents: [
       {
         contentName: "Service 1",
@@ -73,6 +78,7 @@ const slidesData: Slide[] = [
   },
   {
     title: "Care",
+    type: SlideType.Product,
     contents: [
       {
         contentName: "Service 1",
@@ -121,45 +127,52 @@ const slidesData: Slide[] = [
   },
   {
     title: "Garbanos",
-    content: "Garbanos Prasideda nuo..",
+    type: SlideType.Flyer,
+    subtitle: "Garbanos Prasideda nuo..",
     image: "./bg-images/bg-image-face3.png",
-  },
-  {
-    title: "D.U.K",
     contents: [
       {
-        contentName: "How Service 1",
-        contentDesc: "Product A",
+        contentName: "Organic all natural ingredients",
       },
       {
-        contentName: "Service 2",
-        contentDesc: "Product B",
+        contentName: "Professionally trained skin care experts",
       },
       {
-        contentName: "Service 3",
-        contentDesc: "Product C",
+        contentName: "Hypoallergenic dermotologist approved products",
+      },
+    ],
+  },
+  {
+    /* Write FAQ data */
+    title: "D.U.K",
+    type: SlideType.Card,
+    contents: [
+      {
+        contentName: "Kas yra garbanos?",
+        contentDesc:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Service 4",
-        contentDesc: "Product D",
+        contentName: "Kas yra garbanos?",
+        contentDesc:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Service 5",
-        contentDesc: "Product E",
+        contentName: "Kas yra garbanos?",
+        contentDesc:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
       {
-        contentName: "Service 6",
-        contentDesc: "Product F",
-      },
-      {
-        contentName: "Service 7",
-        contentDesc: "Product G",
+        contentName: "Kas yra garbanos?",
+        contentDesc:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
       },
     ],
   },
   {
     title: "Chat",
-    content: "Say Hello to Curls",
+    type: SlideType.Main,
+    subtitle: "Say Hello to Curls",
     image: "./bg-images/bg-image-main.png",
     buttons: [
       { label: "Learn More →", action: "/learn-more" },

@@ -35,7 +35,8 @@ const SlidesContainer: React.FC<SlidesContainerProps> = ({
           <Slide
             key={slide.title}
             title={slide.title}
-            content={slide.content}
+            type={slide.type}
+            subtitle={slide.subtitle}
             image={slide.image}
             contents={slide.contents}
             buttons={slide.buttons}
