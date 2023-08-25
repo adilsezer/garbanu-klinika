@@ -78,7 +78,7 @@ const slidesData: Slide[] = [
   },
   {
     title: "Hair Care",
-    type: SlideType.Product,
+    type: SlideType.Service,
     contents: [
       {
         contentName: "Service 1",
@@ -123,7 +123,6 @@ const slidesData: Slide[] = [
         contentImage: "./bg-images/bg-image-product3.jpeg",
       },
     ],
-    buttons: [{ label: "View More →", action: "/products" }],
   },
   {
     title: "Why Us?",
