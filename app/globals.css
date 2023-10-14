@@ -3,67 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.shadow-text {
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.social-icon {
-  fill: var(--primary-color);
-  width: 32px;
-  height: 32px;
-  margin-bottom: 20px;
-}
-
 :root {
   --primary-color: #a24e4e;
-  --primary-opacity-50: rgba(69, 10, 10, 0.5);
-  --primary-opacity-40: rgba(69, 10, 10, 0.4);
-  --primary-opacity-30: rgba(69, 10, 10, 0.3);
-  --primary-opacity-20: rgba(69, 10, 10, 0.2);
   --secondary-color: #fff7f7;
-  --gradient-neutral-start: #fdfcfb; /* Neutral light gray */
-  --gradient-neutral-end: #e2d1c3; /* Your primary color */
+  --tertiary-color: #fff7f7;
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-neutral-start) 0%,
-    var(--gradient-neutral-end) 100%
-  );
-  overflow-x: hidden;
-  overflow-y: hidden;
+  background: white;
 }
 
 @media (max-width: 768px) {
-  .bg-center {
-    background-position: center;
-  }
-
-  .bg-cover {
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .w-60 {
-    width: 100%;
-  }
-
-  .h-80 {
-    height: auto;
-  }
-
-  h1.text-8xl {
-    font-size: 3rem;
-  }
-
-  p.text-6xl {
-    font-size: 2rem;
-  }
-
-  .social-icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 16px;
-  }
 }
