@@ -4,13 +4,14 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #a24e4e;
-  --secondary-color: #fff7f7;
-  --tertiary-color: #fff7f7;
+  --first-color: #272727;
+  --second-color: #fbf7f3;
+  --third-color: #9eb4cd;
+  --fourth-color: #edd2c2;
 }
 
 body {
-  background: white;
+  background: var(--second-color);
 }
 
 @media (max-width: 768px) {

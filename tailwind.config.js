@@ -8,9 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary-color)",
-        secondary: "var(--secondary-color)",
-        tertiary: "var(--tertiary-color)",
+        first: "var(--first-color)",
+        second: "var(--second-color)",
+        third: "var(--third-color)",
+        fourth: "var(--fourth-color)",
       },
     },
   },
