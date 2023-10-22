@@ -1,6 +1,6 @@
 // components/PromotionalBanner.tsx
 import React from "react";
-import { useFirestoreData } from "../../../../hooks/useFirestoreData";
+import { useFirestoreData } from "@hooks/useFirestoreData";
 
 interface PromotionalBannerProps {
   docPath: string;
