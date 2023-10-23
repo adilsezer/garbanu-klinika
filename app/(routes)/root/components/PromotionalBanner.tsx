@@ -3,10 +3,14 @@ import React from "react";
 import { useFirestoreData } from "@hooks/useFirestoreData";
 
 interface PromotionalBannerProps {
-  docPath: string;
+  docPath: string | undefined;
 }
 
 const PromotionalBanner: React.FC<PromotionalBannerProps> = ({ docPath }) => {
+  if (!docPath) {
+    return null;
+  }
+
   const { data, loading, error } = useFirestoreData(docPath);
 
   if (loading) return <div>Loading...</div>;

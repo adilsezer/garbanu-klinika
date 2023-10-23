@@ -22,7 +22,7 @@
     ],
     "paths": {
       "@hooks/*": ["hooks/*"],
-      "@lib/firebase/*": ["lib/firebase/*"],
+      "@lib/*": ["lib/*"],
       "@/*": ["./*"]
     }
   },
