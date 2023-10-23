@@ -4,7 +4,7 @@ import { promoBannerDocPath } from "@lib/firebase/firebaseConfig";
 export default function Home() {
   return (
     <div>
-      <PromotionalBanner docPath={promoBannerDocPath} />
+      <PromotionalBanner docPath={promoBannerDocPath} lang= />
     </div>
   );
 }

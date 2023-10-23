@@ -1,0 +1,26 @@
+{
+  "header": {
+    "home": "Pradžia",
+    "shop": "Parduotuvė",
+    "contact": "Kontaktai",
+    "aboutUs": "Apie mus",
+    "cart": "Krepšys"
+  },
+  "footer": {
+    "privacyPolicy": "Privatumo politika",
+    "termsOfService": "Paslaugų teikimo sąlygos",
+    "copyright": "© 2023 YourShopName. Visos teisės saugomos."
+  },
+  "product": {
+    "addToCart": "Įdėti į krepšį",
+    "buyNow": "Pirkti dabar",
+    "description": "Aprašymas",
+    "reviews": "Atsiliepimai",
+    "price": "Kaina"
+  },
+  "cart": {
+    "checkout": "Atsiskaitymas",
+    "total": "Viso",
+    "continueShopping": "Tęsti apsipirkimą"
+  }
+}

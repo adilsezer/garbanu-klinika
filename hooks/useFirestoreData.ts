@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import db from "../lib/firebase/firebaseInit";
 import { doc, getDoc } from "firebase/firestore";
+import { Language } from "@projectTypes/language";
 
-export function useFirestoreData(docPath: string) {
+export function useFirestoreData(docPath: string, lang: Language) {
   const [data, setData] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -14,7 +15,8 @@ export function useFirestoreData(docPath: string) {
         const docRef = doc(db, docPath);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setData(docSnap.data().text);
+          const bannerData = docSnap.data() as { [key in Language]: string }; // Type assertion here
+          setData(bannerData[lang]);
         }
       } catch (err) {
         setError(err as Error);
@@ -24,7 +26,7 @@ export function useFirestoreData(docPath: string) {
     };
 
     fetchData();
-  }, [docPath]);
+  }, [docPath, lang]); // Include lang in the dependency array
 
   return { data, loading, error };
 }
