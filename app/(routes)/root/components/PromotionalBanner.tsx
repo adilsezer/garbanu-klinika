@@ -1,4 +1,5 @@
 // components/PromotionalBanner.tsx
+"use client";
 import React from "react";
 import { useFirestoreData } from "@hooks/useFirestoreData";
 

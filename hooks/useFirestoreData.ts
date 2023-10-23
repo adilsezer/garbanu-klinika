@@ -1,5 +1,4 @@
 // hooks/useFirestoreData.ts
-"use client";
 import { useState, useEffect } from "react";
 import db from "../lib/firebase/firebaseInit";
 import { doc, getDoc } from "firebase/firestore";
