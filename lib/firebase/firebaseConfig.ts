@@ -11,4 +11,4 @@ export const firebaseConfig: FirebaseOptions = {
 };
 
 export const promoBannerDocPath =
-  process.env.NEXT_PUBLIC_FIRESTORE_PROMO_BANNER_DOC_PATH;
+  process.env.NEXT_PUBLIC_FIRESTORE_PROMO_BANNER_DOC_PATH || "";
