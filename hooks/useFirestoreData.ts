@@ -3,31 +3,40 @@
 import { useState, useEffect } from "react";
 import db from "../lib/firebase/firebaseInit";
 import { doc, getDoc } from "firebase/firestore";
-import { Language } from "@projectTypes/language";
 
-export function useFirestoreData(docPath: string, lang: Language) {
+type FirestoreBannerData = {
+  [key: string]: string;
+  en: string;
+  lt: string;
+};
+
+export function useFirestoreData(docPath: string, lang: string) {
   const [data, setData] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!docPath || !lang) {
+        setError(new Error("Invalid path or language"));
+        return;
+      }
       try {
         const docRef = doc(db, docPath);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          const bannerData = docSnap.data() as { [key in Language]: string }; // Type assertion here
+          const bannerData = docSnap.data() as FirestoreBannerData;
           setData(bannerData[lang]);
         }
-      } catch (err) {
-        setError(err as Error);
+      } catch (err: unknown) {
+        setError(new Error("Failed to fetch data: " + (err as Error).message));
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [docPath, lang]); // Include lang in the dependency array
+  }, [docPath, lang]);
 
   return { data, loading, error };
 }
