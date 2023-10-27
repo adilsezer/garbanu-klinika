@@ -45,8 +45,8 @@ export default async function LocaleLayout({
         {/* Wrapping children with NextIntlClientProvider to provide localization features */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
-        <Analytics />
       </body>
     </html>
   );
