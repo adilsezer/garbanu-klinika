@@ -8,6 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { locales } from "@/config/i18nconfig";
+import { Analytics } from "@vercel/analytics/react";
 
 // Integrating Inter font from RootLayout
 const inter = Inter({ subsets: ["latin"] });
@@ -44,6 +45,7 @@ export default async function LocaleLayout({
         {/* Wrapping children with NextIntlClientProvider to provide localization features */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
