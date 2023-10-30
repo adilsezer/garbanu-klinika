@@ -9,6 +9,7 @@ import HeartIcon from "./HeartIcon";
 import CartIcon from "./CartIcon";
 import BannerImage from "./BannerImage";
 import Button from "../../components/Button";
+import Image from "next/image";
 
 const Header: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ const Header: React.FC = () => {
       {/* Navbar below */}
       <MenuLinks />
       <div className="flex relative w-full">
-        <img
+        <Image
           src="/headers/curly-hair-women-banner.jpg"
           alt="Curly hair women banner"
           className="flex-grow"
