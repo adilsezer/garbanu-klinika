@@ -1,22 +1,14 @@
-// page.tsx represents the main page of the application
-// Importing necessary hooks and components
-"use client";
-import { useTranslations } from "next-intl";
-import LanguageSwitcher from "./root/components/LanguageSwitcher";
+import React from "react";
 import PromotionalBanner from "./root/components/PromotionalBanner";
+import Header from "./root/components/Header";
 
-// Home component represents the main page of the application
-export default function Home() {
-  // Using the useTranslations hook to get the translated text based on the current locale
-  const t = useTranslations("Index");
-
+const MainPage: React.FC = () => {
   return (
-    <div>
-      {/* Displaying translated title */}
+    <main>
       <PromotionalBanner />
-      <h1>{t("title")}</h1>
-      {/* Language switcher component to change the current locale */}
-      <LanguageSwitcher />
-    </div>
+      <Header />
+    </main>
   );
-}
+};
+
+export default MainPage;

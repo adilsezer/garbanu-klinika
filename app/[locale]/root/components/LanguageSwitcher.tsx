@@ -1,5 +1,4 @@
-// LanguageSwitcher.tsx is a component that is used in the layout.
-
+// LanguageSwitcher.tsx
 "use client";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
@@ -12,20 +11,27 @@ const LocaleSwitcher: React.FC = () => {
   const pathName = usePathname();
 
   // Function to handle locale switch and navigate to the current path with the new locale
-  const switchLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale: Locale = e.target.value as Locale;
-    router.push(pathName, { locale: newLocale });
+  const switchLocale = (newLocale: Locale) => {
+    if (locales.includes(newLocale)) {
+      // ensure the locale is one of the predefined ones
+      router.push(pathName, { locale: newLocale });
+    }
   };
 
   return (
-    <div>
-      <select value={locale} onChange={switchLocale}>
-        {locales.map((loc) => (
-          <option key={loc} value={loc}>
-            {localeNames[loc]}
-          </option>
-        ))}
-      </select>
+    <div className="flex space-x-2">
+      {locales.map((loc) => (
+        <button
+          key={loc}
+          onClick={() => switchLocale(loc)}
+          className={`text-gray-600 hover:text-gray-900 ${
+            locale === loc ? "underline" : ""
+          }`}
+          aria-label={`Switch language to ${localeNames[loc]}`} // for screen readers
+        >
+          {localeNames[loc]}
+        </button>
+      ))}
     </div>
   );
 };
