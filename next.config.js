@@ -5,25 +5,19 @@ const nextConfig = {
   reactStrictMode: true,
 
   async redirects() {
+    // Only redirect in production environment on Vercel
     if (process.env.VERCEL_ENV === "production") {
       return [
         {
-          // Only redirect if the URL doesn't point to a static file (i.e., no file extension present)
-          source: "/:locale/:path*",
-          destination: "/:locale/coming-soon",
-          permanent: false,
-          locale: false,
-          has: [
-            {
-              type: "host",
-              value: "garbanu-klinika.vercel.app",
-            },
-          ],
-          // Exclude static files and the coming-soon page itself from redirects
-          check: true,
+          source: "/((?!coming-soon).*)", // match all routes except for '/coming-soon'
+          destination: "/coming-soon", // redirect to the 'Coming Soon' page
+          permanent: false, // this is not a permanent redirect
+          basePath: false, // if you're using a custom basePath, set this to `false`
         },
       ];
     }
+
+    // No redirects in other environments (preview or development on Vercel)
     return [];
   },
 };
