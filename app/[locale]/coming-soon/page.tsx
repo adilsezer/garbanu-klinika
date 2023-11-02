@@ -36,6 +36,8 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
 );
 
 const ComingSoon: React.FC = () => {
+  console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
+
   return (
     <div
       className={`relative flex flex-col items-center justify-center min-h-screen ${BG_COLOR}`}
