@@ -35,9 +35,19 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
   </div>
 );
 
-const ComingSoon: React.FC = () => {
+export async function getServerSideProps() {
+  // This log will appear in the server-side console (e.g., your terminal or Vercel deployment logs)
   console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
 
+  // You can pass the environment variable to the page's props if you want to display it or use it client-side
+  return {
+    props: {
+      vercelEnv: process.env.VERCEL_ENV, // Pass this to the client-side
+    },
+  };
+}
+
+const ComingSoon: React.FC = () => {
   return (
     <div
       className={`relative flex flex-col items-center justify-center min-h-screen ${BG_COLOR}`}
