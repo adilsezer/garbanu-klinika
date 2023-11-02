@@ -35,15 +35,6 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
   </div>
 );
 
-export async function getServerSideProps() {
-  // You can pass the environment variable to the page's props if you want to display it or use it client-side
-  return {
-    props: {
-      vercelEnv: process.env.VERCEL_ENV, // Pass this to the client-side
-    },
-  };
-}
-
 const ComingSoon: React.FC = () => {
   return (
     <div
