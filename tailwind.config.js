@@ -7,12 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        first: "var(--first-color)",
-        second: "var(--second-color)",
-        third: "var(--third-color)",
-        fourth: "var(--fourth-color)",
-      },
+      // colors have been removed
     },
   },
   plugins: [],
