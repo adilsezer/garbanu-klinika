@@ -10,8 +10,7 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: [
-    // Exclude API routes, Next.js internals, files, and localized 'coming-soon' pages
-    "/((?!api|_next|_vercel|en/coming-soon|lt/coming-soon|.*\\..*).*)",
-  ],
+  // Skip all paths that should not be internationalized. This example skips
+  // certain folders and all pathnames with a dot (e.g. favicon.ico)
+  matcher: ["/((?!api|_next|_vercel|coming-soon|.*\\..*).*)"],
 };
