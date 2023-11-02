@@ -36,9 +36,6 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
 );
 
 export async function getServerSideProps() {
-  // This log will appear in the server-side console (e.g., your terminal or Vercel deployment logs)
-  console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
-
   // You can pass the environment variable to the page's props if you want to display it or use it client-side
   return {
     props: {
