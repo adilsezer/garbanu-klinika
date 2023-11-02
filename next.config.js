@@ -7,8 +7,16 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
+        // Assuming the "Coming Soon" page is at the root
         destination: "/",
-        permanent: true,
+        // Only redirect if the path is not already the root
+        has: [
+          {
+            type: "pathname",
+            value: "/",
+          },
+        ],
+        permanent: false, // Use false unless you're sure it's a permanent redirect
       },
     ];
   },
