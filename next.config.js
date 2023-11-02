@@ -5,19 +5,18 @@ const nextConfig = {
   reactStrictMode: true,
 
   async redirects() {
-    // Only redirect in production environment on Vercel
     if (process.env.VERCEL_ENV === "production") {
       return [
         {
-          source: "/((?!coming-soon).*)", // match all routes except for '/coming-soon'
-          destination: "/coming-soon", // redirect to the 'Coming Soon' page
-          permanent: false, // this is not a permanent redirect
-          basePath: false, // if you're using a custom basePath, set this to `false`
+          // Match all routes except for '/en/coming-soon', '/lt/coming-soon', etc.
+          source: "/:locale/:path((?!coming-soon).*)",
+          destination: "/:locale/coming-soon", // Redirect to localized 'Coming Soon' page
+          permanent: false,
+          basePath: false,
+          locale: false, // Prevent Next.js from prefixing the locale again
         },
       ];
     }
-
-    // No redirects in other environments (preview or development on Vercel)
     return [];
   },
 };
