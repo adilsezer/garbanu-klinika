@@ -7,7 +7,6 @@ import LocaleSwitcher from "./LanguageSwitcher";
 import UserIcon from "./UserIcon";
 import HeartIcon from "./HeartIcon";
 import CartIcon from "./CartIcon";
-import BannerImage from "./BannerImage";
 import Button from "../../components/Button";
 import Image from "next/image";
 
@@ -36,6 +35,8 @@ const Header: React.FC = () => {
           src="/headers/curly-hair-women-banner.jpg"
           alt="Curly hair women banner"
           className="flex-grow"
+          width={1200}
+          height={600}
         />
         <div className="absolute top-32 left-24 flex flex-col space-y-24">
           <Button text="PARDUOTUVĖ" />

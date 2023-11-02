@@ -1,17 +1,21 @@
-// logo component to display clickable image and navigate to root page without locale
-
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 
-const Logo: React.FC = () => {
+type LogoProps = {
+  color?: "black" | "white"; // The color prop is now optional
+};
+
+const Logo: React.FC<LogoProps> = ({ color = "black" }) => {
+  // Default value is 'black'
+  const logoSrc =
+    color === "black"
+      ? "/web-ui/garbanu-klinika-black-logo.png"
+      : "/web-ui/garbanu-klinika-white-logo.png";
+
   return (
-    <Link href="/">
-      <Image
-        src="/web-ui/garbanu-klinika-logo.png"
-        alt="logo"
-        height={175}
-        width={175}
-      />
+    <Link href="/" passHref>
+      <Image src={logoSrc} alt="logo" height={175} width={175} />
     </Link>
   );
 };

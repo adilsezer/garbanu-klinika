@@ -14,6 +14,8 @@ const SearchBar: React.FC = () => {
         src="/icons/search-icon.svg"
         alt="Search"
         className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5"
+        width={24}
+        height={24}
       />
     </div>
   );
