@@ -31,7 +31,7 @@ interface ContentBlockProps {
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
   <div>
     <h1 className={`${TEXT_COLOR} text-2xl font-semibold`}>{title}</h1>
-    <p className={`${TEXT_COLOR} mt-2`}>{description}</p>
+    <p className={`${TEXT_COLOR} mt-2 text-lg`}>{description}</p>
   </div>
 );
 
@@ -43,10 +43,9 @@ const ComingSoon: React.FC = () => {
       {/* Background Image */}
       <Image
         src="/headers/curly-hair-women-banner.jpg"
-        layout="fill"
-        objectFit="cover"
         alt="Elegant curly hair women banner"
-        className="z-0"
+        fill
+        className="object-cover absolute w-full h-full top-0 left-0"
       />
 
       {/* Text Content including the logo */}
@@ -55,12 +54,14 @@ const ComingSoon: React.FC = () => {
       >
         {/* Logo centered horizontally with margin-bottom */}
         <div className="flex justify-center mb-6">
-          <Image
-            src="/web-ui/garbanu-klinika-white-logo.png"
-            alt="Garbanų Klinika logo"
-            height={175}
-            width={175}
-          />
+          <div className="relative w-full pb-[20%]">
+            <Image
+              src="/web-ui/garbanu-klinika-white-logo.png"
+              alt="Garbanų Klinika logo"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
         {/* Content Blocks */}
         {CONTENT.map((block, index) => (
