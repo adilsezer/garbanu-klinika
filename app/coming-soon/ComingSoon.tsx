@@ -45,7 +45,6 @@ const ComingSoon: React.FC = () => {
         src="/headers/curly-hair-women-banner.jpg"
         alt="Elegant curly hair women banner"
         fill
-        className="object-cover absolute w-full h-full top-0 left-0"
       />
 
       {/* Text Content including the logo */}
@@ -54,12 +53,11 @@ const ComingSoon: React.FC = () => {
       >
         {/* Logo centered horizontally with margin-bottom */}
         <div className="flex justify-center mb-6">
-          <div className="relative w-full pb-[20%]">
+          <div className="relative w-[200px] h-[79px]">
             <Image
               src="/web-ui/garbanu-klinika-white-logo.png"
               alt="Garbanų Klinika logo"
               fill
-              className="object-contain"
             />
           </div>
         </div>
