@@ -43,13 +43,27 @@ const ComingSoon: React.FC = () => {
     <div
       className={`relative flex flex-col items-center justify-center min-h-screen ${BG_COLOR}`}
     >
-      {/* Background Image */}
-      <Image
-        src="/headers/curly-hair-women-banner.jpg"
-        alt="Elegant curly hair women banner"
-        fill
-        className="object-cover z-0" // Ensure the image is in the background
-      />
+      {/* Mobile Background Image */}
+      <div className={`absolute inset-0 z-0 w-full h-full md:hidden`}>
+        <Image
+          src="/headers/background-mobile-woman-with-short-afro-hair.jpg" // Replace with your mobile background image path
+          alt="Mobile background"
+          fill
+          className="object-cover object-center" // To ensure background image covers the entire screen
+          priority // Add priority if you want to preload the image
+        />
+      </div>
+
+      {/* Desktop Background Image */}
+      <div className={`hidden md:block absolute inset-0 z-0 w-full h-full`}>
+        <Image
+          src="/headers/background-desktop-curly-hair-women-banner.jpg" // Replace with your desktop background image path
+          alt="Desktop background"
+          fill
+          className="object-cover object-center" // To ensure background image covers the entire screen
+          priority // Add priority if you want to preload the image
+        />
+      </div>
 
       {/* Text Content including the logo */}
       <div
