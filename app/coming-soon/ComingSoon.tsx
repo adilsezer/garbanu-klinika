@@ -3,22 +3,22 @@ import React from "react";
 
 // Constants for styles
 const BG_COLOR = "bg-black";
-const BG_OPACITY = "bg-opacity-60";
+const BG_OPACITY = "bg-opacity-50";
 const TEXT_COLOR = "text-white";
 
 // Constants for content
 const CONTENT = [
   {
     id: 1,
-    title: "Netrukus pasirodys",
+    title: "Jau greitai!",
     description:
-      "Mūsų svetainė šiuo metu kuriama. Netrukus pasirodysime su nauja nuostabia svetaine.",
+      "Šiuo metu svetainė yra kuriama, tačiau pasirodys jau netrukus!",
   },
   {
     id: 2,
-    title: "Coming Soon",
+    title: "Coming Soon!",
     description:
-      "Our website is under construction. We will be here soon with our new awesome site.",
+      "Our website is under construction. We will be here soon with our new wonderful e-shop for curly hair!",
   },
 ];
 
@@ -29,9 +29,12 @@ interface ContentBlockProps {
 }
 
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description }) => (
+  // Text size adjustments for smaller screens
   <div>
-    <h1 className={`${TEXT_COLOR} text-2xl font-semibold`}>{title}</h1>
-    <p className={`${TEXT_COLOR} mt-2 text-lg`}>{description}</p>
+    <h1 className={`${TEXT_COLOR} text-xl md:text-2xl font-semibold`}>
+      {title}
+    </h1>
+    <p className={`${TEXT_COLOR} mt-2 text-base md:text-lg`}>{description}</p>
   </div>
 );
 
@@ -45,19 +48,22 @@ const ComingSoon: React.FC = () => {
         src="/headers/curly-hair-women-banner.jpg"
         alt="Elegant curly hair women banner"
         fill
+        className="object-cover z-0" // Ensure the image is in the background
       />
 
       {/* Text Content including the logo */}
       <div
-        className={`p-8 ${BG_COLOR} ${BG_OPACITY} rounded-lg shadow-xl z-10`}
+        // Padding and margin adjustments for smaller screens
+        className={`m-6 p-4 md:p-8 ${BG_COLOR} ${BG_OPACITY} rounded-lg shadow-xl z-10`}
       >
-        {/* Logo centered horizontally with margin-bottom */}
-        <div className="flex justify-center mb-6">
-          <div className="relative w-[200px] h-[79px]">
+        {/* Logo centered horizontally with margin-bottom, and size adjustments for smaller screens */}
+        <div className="flex justify-center mb-2">
+          <div className="relative w-36 h-14 md:w-[200px] md:h-[79px]">
             <Image
               src="/web-ui/garbanu-klinika-white-logo.png"
               alt="Garbanų Klinika logo"
               fill
+              className="object-contain" // To ensure logo maintains aspect ratio
             />
           </div>
         </div>
@@ -66,7 +72,8 @@ const ComingSoon: React.FC = () => {
           <React.Fragment key={block.id}>
             <ContentBlock title={block.title} description={block.description} />
             {index !== CONTENT.length - 1 && (
-              <hr className="my-4 border-gray-400" />
+              // Horizontal line adjustment for smaller screens
+              <hr className="my-2 md:my-4 border-gray-400" />
             )}
           </React.Fragment>
         ))}
@@ -74,7 +81,8 @@ const ComingSoon: React.FC = () => {
 
       {/* Footer */}
       <div
-        className={`absolute bottom-0 inset-x-0 py-2 text-center ${TEXT_COLOR} ${BG_COLOR} ${BG_OPACITY}`}
+        // Padding adjustment for smaller screens
+        className={`absolute bottom-0 inset-x-0 py-2 md:py-4 text-center ${TEXT_COLOR} ${BG_COLOR} ${BG_OPACITY}`}
       >
         © 2023 Garbanų Klinika. All Rights Reserved.
       </div>
