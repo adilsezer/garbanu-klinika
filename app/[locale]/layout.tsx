@@ -19,7 +19,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Garbanų Klinika",
-  description: "The best curl service in Vilnius",
+  description: "Garbanų Klinika",
 };
 
 // Defining prop types for LocaleLayout component
