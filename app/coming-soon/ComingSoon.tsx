@@ -20,11 +20,6 @@ const CONTENT = [
     description:
       "Our website is under construction. We will be here soon with our new wonderful e-shop for curly hair!",
   },
-  {
-    id: 3,
-    title: "Wkrótce!",
-    description: "Obecnie strona jest w budowie, ale pojawi się wkrótce!",
-  },
 ];
 
 // Reusable Content Block Component
