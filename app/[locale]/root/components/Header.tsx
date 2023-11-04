@@ -33,9 +33,11 @@ const Header: React.FC = () => {
       <MenuLinks />
       <div className="flex relative w-full">
         <Image
-          src="/headers/curly-hair-women-banner.jpg"
+          src="/headers/banner-curly-hair-women.jpg"
           alt="Curly hair women banner"
-          className="flex-grow"
+          width={1000}
+          height={500}
+          quality={100}
         />
         <div className="absolute top-32 left-24 flex flex-col space-y-24">
           <Button text="PARDUOTUVĖ" />

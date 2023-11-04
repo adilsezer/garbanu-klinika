@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
   return (
     <Link href="/">
       <Image
-        src="/web-ui/garbanu-klinika-logo.png"
+        src="/web-ui/logo-black-garbanu-klinika.png"
         alt="logo"
         height={175}
         width={175}

@@ -6,7 +6,7 @@ const HeaderImage: React.FC = () => {
   return (
     <div>
       <Image
-        src="/headers/curly-hair-women-banner.jpg"
+        src="/headers/banner-curly-hair-women.jpg"
         alt="Header Image"
         width={100} // Adjust these values based on your image dimensions
         height={40}

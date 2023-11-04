@@ -1,34 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Garbanų Klinika E-Commerce Platform
 
-## Getting Started
+Welcome to the official code repository for Garbanų Klinika, the premier e-commerce destination catering to the unique needs of curly hair enthusiasts. Our platform, currently under development, is crafted with care using the latest web technologies to ensure a premium user experience.
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Garbanų Klinika aims to revolutionize the way you shop for curly hair products. With a user-friendly interface, multi-language support, and a seamless shopping cart experience, our platform will offer an array of products and services to enhance your natural curls.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is built using the following technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Framework**: [Next.js](https://nextjs.org/) with TypeScript for server-side rendering and static site generation capabilities.
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS styling.
+- **Internationalization**: [next-intl](https://github.com/amannn/next-intl) to accommodate a multi-lingual user base.
+- **Database**: Leveraging [Firebase](https://firebase.google.com/) for scalable, real-time database solutions.
+- **Deployment**: Hosted on [Vercel](https://vercel.com/) for effortless deployment and superior performance.
 
-## Learn More
+## Upcoming Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Products**: A diverse range of curly hair products.
+- **Shops**: A locator for stores and salons where our products can be found.
+- **Accounts**: User profile management for a personalized experience.
+- **Cart**: Real-time, responsive shopping cart functionality.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Local Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Follow these steps to set up the project for local development:
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```sh
+   git clone https://github.com/sezerad/garbanu-klinika.git
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Navigate to the project directory:
+
+   ```sh
+   cd garbanu-klinika
+   ```
+
+3. Install the necessary dependencies:
+
+   ```sh
+   npm install
+   ```
+
+   or
+
+   ```sh
+   yarn install
+   ```
+
+4. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+   or
+
+   ```sh
+   yarn dev
+   ```
+
+5. Visit [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+## Deployment
+
+The `main` branch is configured for automatic deployments via Vercel. Whenever changes are pushed, a new version of the "Coming Soon" page is deployed to keep our audience informed and excited about what's to come.
+
+## Contributing
+
+Interested in contributing? That's great! We encourage community contributions that help us improve and expand the Garbanų Klinika platform. Please ensure that you adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) and read the [Contributing Guidelines](CONTRIBUTING.md) before making a pull request.
+
+## Feedback
+
+Feedback is crucial for continuous improvement. If you have any suggestions or encounter any issues, please feel free to open an issue in this repository.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE.md).
+
+## Acknowledgments
+
+- Our curly-haired friends and family who inspire us every day.
+- The Next.js and Tailwind CSS communities for their vibrant ecosystems.
+- All our contributors and future patrons.
+
+Thank you for visiting our repository. Stay tuned for the official launch of Garbanų Klinika!
