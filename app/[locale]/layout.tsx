@@ -3,15 +3,21 @@
 // Importing necessary libraries and configurations
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { locales } from "@/config/i18nconfig";
 import { Analytics } from "@vercel/analytics/react";
 
-// Integrating Inter font from RootLayout
-const inter = Inter({ subsets: ["latin"] });
+// Integrating Roboto font from RootLayout
+
+const roboto = Roboto({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Garbanų Klinika",
@@ -26,11 +32,6 @@ type LocaleLayoutProps = {
   };
 };
 
-// Function to generate static params based on locales from config
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 // LocaleLayout component to provide locale and messages to all pages in the app
 // Additionally integrating Inter font styles from RootLayout
 export default async function LocaleLayout({
@@ -41,7 +42,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         {/* Wrapping children with NextIntlClientProvider to provide localization features */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
