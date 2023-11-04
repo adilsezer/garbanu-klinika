@@ -46,28 +46,29 @@ const ComingSoon: React.FC = () => {
       {/* Mobile Background Image */}
       <div className={`absolute inset-0 z-0 w-full h-full md:hidden`}>
         <Image
-          src="/headers/background-mobile-woman-with-short-afro-hair.jpg" // Replace with your mobile background image path
+          src="/headers/background-mobile-woman-with-short-afro-hair.jpg"
           alt="Mobile background"
           fill
-          className="object-cover object-center" // To ensure background image covers the entire screen
-          priority // Add priority if you want to preload the image
+          sizes="(max-width: 767px) 100vw"
+          className="object-cover object-center"
+          priority
         />
       </div>
 
       {/* Desktop Background Image */}
       <div className={`hidden md:block absolute inset-0 z-0 w-full h-full`}>
         <Image
-          src="/headers/background-desktop-curly-hair-women-banner.jpg" // Replace with your desktop background image path
+          src="/headers/background-desktop-curly-hair-women-banner.jpg"
           alt="Desktop background"
           fill
-          className="object-cover object-center" // To ensure background image covers the entire screen
-          priority // Add priority if you want to preload the image
+          sizes="(min-width: 768px) 100vw"
+          className="object-cover object-center"
+          priority
         />
       </div>
 
       {/* Text Content including the logo */}
       <div
-        // Padding and margin adjustments for smaller screens
         className={`m-6 p-4 md:p-8 ${BG_COLOR} ${BG_OPACITY} rounded-lg shadow-xl z-10`}
       >
         {/* Logo centered horizontally with margin-bottom, and size adjustments for smaller screens */}
@@ -77,6 +78,7 @@ const ComingSoon: React.FC = () => {
               src="/web-ui/garbanu-klinika-white-logo.png"
               alt="Garbanų Klinika logo"
               fill
+              sizes="(max-width: 768px) 33vw, 200px"
               className="object-contain" // To ensure logo maintains aspect ratio
             />
           </div>
@@ -86,7 +88,6 @@ const ComingSoon: React.FC = () => {
           <React.Fragment key={block.id}>
             <ContentBlock title={block.title} description={block.description} />
             {index !== CONTENT.length - 1 && (
-              // Horizontal line adjustment for smaller screens
               <hr className="my-2 md:my-4 border-gray-400" />
             )}
           </React.Fragment>
@@ -95,7 +96,6 @@ const ComingSoon: React.FC = () => {
 
       {/* Footer */}
       <div
-        // Padding adjustment for smaller screens
         className={`absolute bottom-0 inset-x-0 py-2 md:py-4 text-center ${TEXT_COLOR} ${BG_COLOR} ${BG_OPACITY}`}
       >
         © 2023 Garbanų Klinika. All Rights Reserved.
