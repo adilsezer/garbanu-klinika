@@ -5,12 +5,9 @@ import Image from "next/image";
 const UserIcon: React.FC = () => {
   return (
     <Link href="/profile">
-      <Image
-        src="/icons/user-profile.svg"
-        width={24}
-        height={24}
-        alt="Heart Icon"
-      />
+      <div className="relative w-7 h-7">
+        <Image src="/icons/user-profile.svg" alt="Heart Icon" fill />
+      </div>
     </Link>
   );
 };

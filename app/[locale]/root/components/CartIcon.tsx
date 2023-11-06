@@ -5,12 +5,9 @@ import Image from "next/image";
 const CartIcon: React.FC = () => {
   return (
     <Link href="/cart">
-      <Image
-        src="/icons/shopping-cart.svg"
-        width={30}
-        height={30}
-        alt="Heart Icon"
-      />
+      <div className="relative w-7 h-7">
+        <Image src="/icons/shopping-cart.svg" alt="Heart Icon" fill />
+      </div>
     </Link>
   );
 };

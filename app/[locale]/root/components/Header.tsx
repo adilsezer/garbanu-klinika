@@ -35,9 +35,11 @@ const Header: React.FC = () => {
         <Image
           src="/headers/banner-curly-hair-women.jpg"
           alt="Curly hair women banner"
-          width={1000}
-          height={500}
+          width={0}
+          height={0}
+          sizes="100vw"
           quality={100}
+          className="w-full h-auto"
         />
         <div className="absolute top-32 left-24 flex flex-col space-y-24">
           <Button text="PARDUOTUVĖ" />

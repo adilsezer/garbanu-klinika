@@ -6,12 +6,15 @@ import Image from "next/image";
 const Logo: React.FC = () => {
   return (
     <Link href="/">
-      <Image
-        src="/web-ui/logo-black-garbanu-klinika.png"
-        alt="logo"
-        height={175}
-        width={175}
-      />
+      <div className="relative w-52 h-24">
+        <Image
+          src="/web-ui/logo-black-garbanu-klinika.png"
+          alt="logo"
+          fill
+          className="object-contain"
+          sizes="100%"
+        />
+      </div>
     </Link>
   );
 };
