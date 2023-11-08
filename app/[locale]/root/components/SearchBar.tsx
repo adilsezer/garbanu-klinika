@@ -6,6 +6,7 @@ const SearchBar: React.FC = () => {
   return (
     <div className="relative bg-white border border-gray-300 rounded-full w-60">
       <input
+        name="search"
         type="text"
         placeholder="Search"
         className="bg-transparent pl-4 pr-10 py-2 w-full rounded-full text-sm focus:outline-none"
