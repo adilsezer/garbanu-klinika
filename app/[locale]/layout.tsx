@@ -15,11 +15,15 @@ const roboto = Roboto({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   title: "Garbanų Klinika",
   description: "Garbanų Klinika",
+  icons: {
+    icon: "/icons/favicon.ico",
+  },
 };
 
 // Defining prop types for LocaleLayout component

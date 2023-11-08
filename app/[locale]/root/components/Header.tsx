@@ -7,7 +7,6 @@ import LocaleSwitcher from "./LanguageSwitcher";
 import UserIcon from "./UserIcon";
 import HeartIcon from "./HeartIcon";
 import CartIcon from "./CartIcon";
-import BannerImage from "./BannerImage";
 import Button from "../../components/Button";
 import Image from "next/image";
 
@@ -40,6 +39,7 @@ const Header: React.FC = () => {
           sizes="100vw"
           quality={100}
           className="w-full h-auto"
+          priority
         />
         <div className="absolute top-32 left-24 flex flex-col space-y-24">
           <Button text="PARDUOTUVĖ" />
