@@ -1,5 +1,5 @@
 import React from "react";
-import PromotionalBanner from "./root/components/Header/PromotionalBanner/PromotionalBanner";
+import PromoBanner from "./root/components/Header/PromoBanner/PromoBanner";
 import Header from "./root/components/Header/Header";
 
 export default function Home() {

@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
         <button
           key={loc}
           onClick={() => switchLocale(loc)}
-          className={`text-gray-600 hover:text-gray-900 ${
+          className={`text-primary hover:text-tertiary ${
             locale === loc ? "underline" : ""
           }`}
           aria-label={`Switch language to ${localeNames[loc]}`} // for screen readers
@@ -34,4 +34,4 @@ export default function LanguageSwitcher() {
       ))}
     </div>
   );
-};
+}

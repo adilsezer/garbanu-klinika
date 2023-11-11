@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SearchBar() {
   return (
-    <div className="relative bg-white border border-gray-300 rounded-full w-60">
+    <div className="relative bg-secondary border border-gray-400 rounded-full w-60">
       <input
         name="search"
         type="text"

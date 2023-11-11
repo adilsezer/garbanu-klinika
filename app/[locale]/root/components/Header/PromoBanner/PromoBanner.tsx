@@ -4,7 +4,7 @@ import { useFirestoreData } from "@hooks/useFirestoreData"; // Adjust the import
 import { promoBannerDocPath } from "@lib/firebase/firebaseConfig";
 import { useLocale } from "next-intl";
 
-export default function PromotionalBanner() {
+export default function PromoBanner() {
   const locale = useLocale();
   const { data, loading, error } = useFirestoreData(promoBannerDocPath, locale);
 
@@ -12,5 +12,7 @@ export default function PromotionalBanner() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  return <div className="bg-black text-white text-center py-2">{data}</div>;
+  return (
+    <div className="bg-primary text-secondary text-center py-2">{data}</div>
+  );
 }

@@ -22,7 +22,7 @@ export default function MenuLinks() {
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
+              className="text-primary hover:text-tertiary transition-colors duration-200"
             >
               {link.label}
             </a>

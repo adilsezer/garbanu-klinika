@@ -1,6 +1,6 @@
 // components/Header.tsx
 import React from "react";
-import PromotionalBanner from "./PromotionalBanner/PromotionalBanner";
+import PromoBanner from "./PromoBanner/PromoBanner";
 import TopBar from "./TopBar/TopBar";
 import MenuLinks from "./MenuLinks/MenuLinks";
 import HomePageBanner from "./HomePageBanner/HomePageBanner";
@@ -8,7 +8,7 @@ import HomePageBanner from "./HomePageBanner/HomePageBanner";
 export default function Header() {
   return (
     <div>
-      <PromotionalBanner />
+      <PromoBanner />
       <TopBar />
       <MenuLinks />
       <HomePageBanner />
