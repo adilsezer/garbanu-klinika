@@ -2,7 +2,7 @@ import React from "react";
 import PromotionalBanner from "./root/components/PromotionalBanner";
 import Header from "./root/components/Header";
 
-const MainPage: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <main>
       <PromotionalBanner />
@@ -11,4 +11,4 @@ const MainPage: React.FC = () => {
   );
 };
 
-export default MainPage;
+export default Home;

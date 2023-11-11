@@ -27,19 +27,19 @@ export const metadata: Metadata = {
 };
 
 // Defining prop types for LocaleLayout component
-type LocaleLayoutProps = {
+type RootLayoutProps = {
   children: ReactNode;
   params: {
     locale: string;
   };
 };
 
-// LocaleLayout component to provide locale and messages to all pages in the app
-// Additionally integrating Inter font styles from RootLayout
-export default async function LocaleLayout({
+// Layout component to provide locale and messages to all pages in the app
+// Additionally integrating Inter font styles from Layout
+export default async function RootLayout({
   children,
   params: { locale },
-}: LocaleLayoutProps) {
+}: RootLayoutProps) {
   const messages = await loadMessages(locale);
 
   return (
