@@ -5,9 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { loadMessages } from "@/utils/localization";
 
 // Integrating Roboto font from RootLayout
 const roboto = Roboto({
@@ -53,15 +53,4 @@ export default async function LocaleLayout({
       </body>
     </html>
   );
-}
-
-// Function to load message files based on current locale
-async function loadMessages(locale: string) {
-  try {
-    const messagesModule = await import(`../../messages/${locale}.json`);
-    return messagesModule.default;
-  } catch (error) {
-    console.error(error);
-    notFound();
-  }
 }
