@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const HeartIcon: React.FC = () => {
+export default function HeartIcon () {
   return (
     <Link href="/favorites">
       <div className="relative w-7 h-7">
@@ -11,5 +11,3 @@ const HeartIcon: React.FC = () => {
     </Link>
   );
 };
-
-export default HeartIcon;

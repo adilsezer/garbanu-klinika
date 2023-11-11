@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-const SearchBar: React.FC = () => {
+export default function SearchBar() {
   return (
     <div className="relative bg-white border border-gray-300 rounded-full w-60">
       <input
@@ -20,6 +20,4 @@ const SearchBar: React.FC = () => {
       />
     </div>
   );
-};
-
-export default SearchBar;
+}

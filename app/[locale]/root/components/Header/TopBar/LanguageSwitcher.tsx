@@ -4,8 +4,8 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
 import { Locale, localeNames, locales } from "@/config/i18nconfig";
 
-// LocaleSwitcher component to switch between different locales
-const LocaleSwitcher: React.FC = () => {
+// LanguageSwitcher component to switch between different locales
+export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathName = usePathname();
@@ -35,5 +35,3 @@ const LocaleSwitcher: React.FC = () => {
     </div>
   );
 };
-
-export default LocaleSwitcher;

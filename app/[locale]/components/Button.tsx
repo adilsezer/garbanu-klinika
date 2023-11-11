@@ -1,11 +1,11 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React from "react";
 
 interface Props {
   text: string;
   onClick?: () => void;
 }
 
-const Button: React.FC<Props> = ({ text, onClick }) => {
+export default function Button({ text, onClick }: Props) {
   return (
     <button
       onClick={onClick}
@@ -14,6 +14,4 @@ const Button: React.FC<Props> = ({ text, onClick }) => {
       {text}
     </button>
   );
-};
-
-export default Button;
+}

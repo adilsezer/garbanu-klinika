@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const CartIcon: React.FC = () => {
+export default function CartIcon() {
   return (
     <Link href="/cart">
       <div className="relative w-7 h-7">
@@ -11,5 +11,3 @@ const CartIcon: React.FC = () => {
     </Link>
   );
 };
-
-export default CartIcon;

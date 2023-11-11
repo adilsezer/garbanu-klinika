@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const UserIcon: React.FC = () => {
+export default function UserIcon() {
   return (
     <Link href="/profile">
       <div className="relative w-7 h-7">
@@ -10,6 +10,4 @@ const UserIcon: React.FC = () => {
       </div>
     </Link>
   );
-};
-
-export default UserIcon;
+}

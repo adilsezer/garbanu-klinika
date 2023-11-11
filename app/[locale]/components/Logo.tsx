@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Logo: React.FC = () => {
+export default function Logo() {
   return (
     <Link href="/">
       <div className="relative w-52 h-24">
@@ -18,5 +18,3 @@ const Logo: React.FC = () => {
     </Link>
   );
 };
-
-export default Logo;

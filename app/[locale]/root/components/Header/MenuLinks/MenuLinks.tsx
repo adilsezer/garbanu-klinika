@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const MenuLinks: React.FC = () => {
+export default function MenuLinks() {
   const links = [
     { label: "PARDUOTUVĖ", href: "/parduotuve" },
     { label: "GARBANŲ TESTAS", href: "/garbanu-testas" },
@@ -31,6 +31,4 @@ const MenuLinks: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default MenuLinks;
+}
