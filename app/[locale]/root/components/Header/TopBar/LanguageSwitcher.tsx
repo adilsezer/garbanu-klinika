@@ -19,14 +19,16 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="flex gap-1 p-2 rounded-lg">
       {locales.map((loc) => (
         <button
           key={loc}
           onClick={() => switchLocale(loc)}
-          className={`text-primary hover:text-tertiary ${
-            locale === loc ? "underline" : ""
-          }`}
+          className={`
+            px-4 py-1 font-semibold transition-colors duration-300
+            ${locale === loc ? "text-primary bg-quaternary" : "text-primary"}
+            rounded-full focus:outline-none hover:text-primary hover:bg-quaternary
+          `}
           aria-label={`Switch language to ${localeNames[loc]}`} // for screen readers
         >
           {localeNames[loc]}

@@ -15,8 +15,8 @@ export default function HomePageBanner() {
         priority
       />
       <div className="absolute top-32 left-24 flex flex-col space-y-24">
-        <Button text="PARDUOTUVĖ" />
-        <Button text="UŽSIRAŠYMAI VIZITUI" />
+        <Button text="PARDUOTUVĖ" size="large" />
+        <Button text="UŽSIRAŠYMAI VIZITUI" size="large" />
       </div>
     </div>
   );
