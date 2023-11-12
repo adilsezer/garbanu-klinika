@@ -8,11 +8,28 @@ export default function PromoBanner() {
   const locale = useLocale();
   const { data, loading, error } = useFirestoreData(promoBannerDocPath, locale);
 
-  if (!data) return null;
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (!data && !loading) return null;
 
+  // Improved loading state
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-12 bg-primary text-secondary">
+        <span className="text-center">Loading...</span>
+      </div>
+    );
+
+  // Improved error state
+  if (error)
+    return (
+      <div className="flex justify-center items-center h-12 bg-red-500 text-white">
+        <span className="text-center">Error: {error.message}</span>
+      </div>
+    );
+
+  // Responsive design adjustments
   return (
-    <div className="bg-primary text-secondary text-center py-2">{data}</div>
+    <div className="flex justify-center items-center bg-primary text-secondary py-2 px-4 md:px-8">
+      <p className="text-center text-sm md:text-base">{data}</p>
+    </div>
   );
 }
