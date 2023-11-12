@@ -1,15 +1,17 @@
 // components/MenuLinks.tsx
-
+"use client";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 export default function MenuLinks() {
+  const t = useTranslations("MenuLinks");
   const links = [
-    { label: "PARDUOTUVĖ", href: "/parduotuve" },
-    { label: "GARBANŲ TESTAS", href: "/garbanu-testas" },
-    { label: "PASLAUGOS", href: "/paslaugos" },
-    { label: "REGISTRACIJA", href: "/registracija" },
-    { label: "APIE MUS", href: "/apie-mus" },
-    { label: "KONTAKTAI", href: "/kontaktai" },
+    { label: t("store"), href: "/store" },
+    { label: t("curlTest"), href: "/curl-test" },
+    { label: t("services"), href: "/services" },
+    { label: t("registration"), href: "/registration" },
+    { label: t("aboutUs"), href: "/about-us" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   return (

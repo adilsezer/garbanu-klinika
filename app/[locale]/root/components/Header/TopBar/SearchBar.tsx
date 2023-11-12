@@ -1,14 +1,18 @@
 // components/Search.tsx
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function SearchBar() {
+  const t = useTranslations("SearchBar");
+
   return (
     <div className="relative bg-secondary border border-gray-400 rounded-full w-60">
       <input
         name="search"
         type="text"
-        placeholder="Search"
+        placeholder={t("search")}
         className="bg-transparent pl-4 pr-10 py-2 w-full rounded-full text-sm focus:outline-none"
       />
       <Image
