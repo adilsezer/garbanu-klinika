@@ -1,14 +1,11 @@
 import React from "react";
-import PromotionalBanner from "./root/components/PromotionalBanner";
-import Header from "./root/components/Header";
+import PromoBanner from "./root/components/Header/PromoBanner/PromoBanner";
+import Header from "./root/components/Header/Header";
 
-const MainPage: React.FC = () => {
+export default function Home() {
   return (
     <main>
-      <PromotionalBanner />
       <Header />
     </main>
   );
-};
-
-export default MainPage;
+}

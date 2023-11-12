@@ -5,9 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { loadMessages } from "@/utils/localization";
 
 // Integrating Roboto font from RootLayout
 const roboto = Roboto({
@@ -15,27 +15,31 @@ const roboto = Roboto({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   title: "Garbanų Klinika",
-  description: "The best curl service in Vilnius",
+  description: "Garbanų Klinika",
+  icons: {
+    icon: "/icons/favicon.ico",
+  },
 };
 
 // Defining prop types for LocaleLayout component
-type LocaleLayoutProps = {
+type RootLayoutProps = {
   children: ReactNode;
   params: {
     locale: string;
   };
 };
 
-// LocaleLayout component to provide locale and messages to all pages in the app
-// Additionally integrating Inter font styles from RootLayout
-export default async function LocaleLayout({
+// Layout component to provide locale and messages to all pages in the app
+// Additionally integrating Inter font styles from Layout
+export default async function RootLayout({
   children,
   params: { locale },
-}: LocaleLayoutProps) {
+}: RootLayoutProps) {
   const messages = await loadMessages(locale);
 
   return (
@@ -49,15 +53,4 @@ export default async function LocaleLayout({
       </body>
     </html>
   );
-}
-
-// Function to load message files based on current locale
-async function loadMessages(locale: string) {
-  try {
-    const messagesModule = await import(`../../messages/${locale}.json`);
-    return messagesModule.default;
-  } catch (error) {
-    console.error(error);
-    notFound();
-  }
 }

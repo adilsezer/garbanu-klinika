@@ -1,15 +1,17 @@
 // components/MenuLinks.tsx
-
+"use client";
+import { useTranslations } from "next-intl";
 import React from "react";
 
-const MenuLinks: React.FC = () => {
+export default function MenuLinks() {
+  const t = useTranslations("MenuLinks");
   const links = [
-    { label: "PARDUOTUVĖ", href: "/parduotuve" },
-    { label: "GARBANŲ TESTAS", href: "/garbanu-testas" },
-    { label: "PASLAUGOS", href: "/paslaugos" },
-    { label: "REGISTRACIJA", href: "/registracija" },
-    { label: "APIE MUS", href: "/apie-mus" },
-    { label: "KONTAKTAI", href: "/kontaktai" },
+    { label: t("store"), href: "/store" },
+    { label: t("curlTest"), href: "/curl-test" },
+    { label: t("services"), href: "/services" },
+    { label: t("registration"), href: "/registration" },
+    { label: t("aboutUs"), href: "/about-us" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   return (
@@ -22,7 +24,7 @@ const MenuLinks: React.FC = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
+              className="text-primary hover:text-quaternary transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -31,6 +33,4 @@ const MenuLinks: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default MenuLinks;
+}

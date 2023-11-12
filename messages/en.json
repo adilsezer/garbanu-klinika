@@ -1,5 +1,17 @@
 {
-  "Index": {
-    "title": "Hello Garbanu Klinika!"
+  "MenuLinks": {
+    "store": "STORE",
+    "curlTest": "CURL TEST",
+    "services": "SERVICES",
+    "registration": "REGISTRATION",
+    "aboutUs": "ABOUT US",
+    "contact": "CONTACT"
+  },
+  "SearchBar": {
+    "search": "Search"
+  },
+  "HomePageBannerButtons": {
+    "shop": "SHOP",
+    "scheduleAnAppointment": "SCHEDULE AN APPOINTMENT"
   }
 }

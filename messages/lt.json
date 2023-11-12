@@ -1,5 +1,17 @@
 {
-  "Index": {
-    "title": "Sveiki!"
+  "MenuLinks": {
+    "store": "PARDUOTUVĖ",
+    "curlTest": "GARBANŲ TESTAS",
+    "services": "PASLAUGOS",
+    "registration": "REGISTRACIJA",
+    "aboutUs": "APIE MUS",
+    "contact": "KONTAKTAI"
+  },
+  "SearchBar": {
+    "search": "Paieška"
+  },
+  "HomePageBannerButtons": {
+    "shop": "PARDUOTUVĖ",
+    "scheduleAnAppointment": "UŽSIRAŠYMAI VIZITUI"
   }
 }
