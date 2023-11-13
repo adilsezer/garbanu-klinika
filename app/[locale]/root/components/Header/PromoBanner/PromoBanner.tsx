@@ -21,7 +21,7 @@ export default function PromoBanner() {
   // Improved error state
   if (error)
     return (
-      <div className="flex justify-center items-center h-12 bg-red-500 text-white">
+      <div className="flex justify-center items-center h-12 bg-red-500 text-secondary">
         <span className="text-center">Error: {error.message}</span>
       </div>
     );
