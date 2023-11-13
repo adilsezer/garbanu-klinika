@@ -1,46 +1,43 @@
 "use client";
-
+import { useState } from "react";
 import SearchBar from "./SearchBar";
 import Logo from "../../../../components/Logo";
 import UserIcon from "./UserIcon";
 import HeartIcon from "./HeartIcon";
 import CartIcon from "./CartIcon";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useState } from "react";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default function TopBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <div className="container mx-auto flex items-center justify-between">
-      {/* Left side */}
-      <SearchBar />
-      {/* Center */}
-      <Logo />
-      {/* Right side */}
-      <nav>
-        {/* Hamburger Icon */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <div className="w-6 h-px bg-black mb-1"></div>
-          <div className="w-6 h-px bg-black mb-1"></div>
-          <div className="w-6 h-px bg-black"></div>
-        </button>
-
-        {/* Collapsible Menu */}
-        <div
-          className={`${
-            isMenuOpen ? "flex" : "hidden"
-          } flex-col md:flex md:flex-row md:space-x-4`}
-        >
-          <LanguageSwitcher />
-          <UserIcon />
-          <HeartIcon />
-          <CartIcon />
+    <div className="container mx-auto px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        {/* Desktop SearchBar left aligned, Logo centered, Hamburger right aligned */}
+        <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
+          <SearchBar />
+          <Logo />
+          {/* Right side icons for desktop */}
+          <div className="md:flex md:items-center md:space-x-4">
+            <LanguageSwitcher />
+            <UserIcon />
+            <HeartIcon />
+            <CartIcon />
+          </div>
         </div>
-      </nav>
+
+        {/* Mobile Logo centered in the first row */}
+        <div className="flex justify-center m-2 md:hidden">
+          <Logo />
+        </div>
+
+        {/* Mobile second row with SearchBar left and Hamburger right */}
+        <div className="flex justify-between items-center md:hidden">
+          <div className="w-1/3">
+            <SearchBar />
+          </div>
+          <HamburgerMenu />
+        </div>
+      </div>
     </div>
   );
 }

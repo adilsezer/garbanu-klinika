@@ -15,7 +15,7 @@ export default function MenuLinks() {
   ];
 
   return (
-    <nav className="p-8">
+    <nav className="p-2 md:p-8">
       <div className="container mx-auto flex items-center justify-center">
         {" "}
         {/* Modified justify-between to justify-center */}

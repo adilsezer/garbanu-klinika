@@ -13,5 +13,10 @@
   "HomePageBannerButtons": {
     "shop": "PARDUOTUVĖ",
     "scheduleAnAppointment": "UŽSIRAŠYMAI VIZITUI"
+  },
+  "HamburgerMenu": {
+    "profile": "PROFILIS",
+    "favorites": "MĖGSTAMIAUSI",
+    "cart": "KREPŠELIS"
   }
 }

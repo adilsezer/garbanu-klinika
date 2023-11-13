@@ -13,5 +13,10 @@
   "HomePageBannerButtons": {
     "shop": "SHOP",
     "scheduleAnAppointment": "SCHEDULE AN APPOINTMENT"
+  },
+  "HamburgerMenu": {
+    "profile": "PROFILE",
+    "favorites": "FAVORITES",
+    "cart": "CART"
   }
 }
