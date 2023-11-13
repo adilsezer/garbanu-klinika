@@ -17,6 +17,12 @@ export default function HamburgerMenu() {
     { href: "/profile", label: t("profile") },
     { href: "/favorites", label: t("favorites") },
     { href: "/cart", label: t("cart") },
+    { href: "/store", label: t("store") },
+    { href: "/curl-test", label: t("curlTest") },
+    { href: "/services", label: t("services") },
+    { href: "/registration", label: t("registration") },
+    { href: "/about-us", label: t("aboutUs") },
+    { href: "/contact", label: t("contact") },
   ];
 
   useEffect(() => {
@@ -34,21 +40,32 @@ export default function HamburgerMenu() {
 
   return (
     <div className="relative md:hidden z-50" ref={menuRef}>
-      <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      {/* Hamburger Button */}
+      <button className="p-2 mr-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="relative w-8 h-8 cursor-pointer">
           <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
         </div>
       </button>
 
+      {/* Menu Items */}
       <div
-        className={`absolute right-0 mt-4 transform ${
+        className={`absolute right-0 top-16 h-screen w-screen transform ${
           isMenuOpen ? "scale-y-100" : "scale-y-0"
-        } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md rounded-md`}
+        } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md`}
       >
         {menuItems.map((item) => (
           <Link href={item.href} key={item.href}>
-            <div className="text-primary px-4 py-2 w-full font-semibold border-t border-gray-200">
+            <div className="text-primary px-8 py-2 w-full font-semibold border-t border-gray-200">
               {item.label}
+              {/* Add arrow on the right side */}
+              <div className="float-right">
+                <Image
+                  src="/icons/arrow-next.svg"
+                  alt="Arrow"
+                  width={25}
+                  height={25}
+                />
+              </div>
             </div>
           </Link>
         ))}

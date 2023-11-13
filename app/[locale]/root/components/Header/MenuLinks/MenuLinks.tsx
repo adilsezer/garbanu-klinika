@@ -1,7 +1,6 @@
-// components/MenuLinks.tsx
 "use client";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
-import React from "react";
 
 export default function MenuLinks() {
   const t = useTranslations("MenuLinks");
@@ -15,22 +14,22 @@ export default function MenuLinks() {
   ];
 
   return (
-    <nav className="p-2 md:p-8">
-      <div className="container mx-auto flex items-center justify-center">
-        {" "}
-        {/* Modified justify-between to justify-center */}
-        <div className="hidden md:flex space-x-20">
+    <>
+      {/* Full navigation menu for larger screens */}
+      <nav className="hidden md:block" aria-label="Main navigation">
+        <ul className="container mx-auto flex items-center justify-center space-x-20">
           {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-primary hover:text-quaternary transition-colors duration-200"
-            >
-              {link.label}
-            </a>
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                className="text-primary hover:text-quaternary transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            </li>
           ))}
-        </div>
-      </div>
-    </nav>
+        </ul>
+      </nav>
+    </>
   );
 }

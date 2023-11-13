@@ -13,6 +13,3 @@
 body {
   background: var(--secondary-color);
 }
-
-@media (max-width: 768px) {
-}

@@ -20,7 +20,7 @@ export default function SearchBar() {
       {/* Mobile SearchBar: Circular icon that expands on click */}
       <div className="md:hidden">
         <div
-          className={`relative flex items-center p-2 rounded-full border border-gray-400 ${
+          className={`relative ml-4 flex items-center p-2 rounded-full border border-gray-400 ${
             isExpanded ? "w-full justify-start" : "w-12 justify-center"
           } h-12`}
           onClick={handleToggleExpand}
@@ -49,7 +49,7 @@ export default function SearchBar() {
         <input
           name="search"
           type="text"
-          placeholder="Search"
+          placeholder={t("search")}
           className="bg-transparent pl-4 pr-10 py-3 w-full rounded-full text-base focus:outline-none"
         />
         <div className="absolute inset-y-0 right-0 mr-3 flex items-center">

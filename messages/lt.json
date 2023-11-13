@@ -17,6 +17,12 @@
   "HamburgerMenu": {
     "profile": "PROFILIS",
     "favorites": "MĖGSTAMIAUSI",
-    "cart": "KREPŠELIS"
+    "cart": "KREPŠELIS",
+    "store": "PARDUOTUVĖ",
+    "curlTest": "GARBANŲ TESTAS",
+    "services": "PASLAUGOS",
+    "registration": "REGISTRACIJA",
+    "aboutUs": "APIE MUS",
+    "contact": "KONTAKTAI"
   }
 }

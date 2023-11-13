@@ -5,11 +5,11 @@ import UserIcon from "./UserIcon";
 import HeartIcon from "./HeartIcon";
 import CartIcon from "./CartIcon";
 import LanguageSwitcher from "./LanguageSwitcher";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "../MenuLinks/HamburgerMenu";
 
 export default function TopBar() {
   return (
-    <div className="container mx-auto px-6 lg:px-8">
+    <div className="container mx-auto mt-4 px-0 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         {/* Desktop SearchBar left aligned, Logo centered, Hamburger right aligned */}
         <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
@@ -25,7 +25,7 @@ export default function TopBar() {
         </div>
 
         {/* Mobile Logo centered in the first row */}
-        <div className="flex justify-center m-2 md:hidden">
+        <div className="flex justify-center md:hidden">
           <Logo />
         </div>
 

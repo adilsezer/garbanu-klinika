@@ -17,6 +17,12 @@
   "HamburgerMenu": {
     "profile": "PROFILE",
     "favorites": "FAVORITES",
-    "cart": "CART"
+    "cart": "CART",
+    "store": "STORE",
+    "curlTest": "CURL TEST",
+    "services": "SERVICES",
+    "registration": "REGISTRATION",
+    "aboutUs": "ABOUT US",
+    "contact": "CONTACT"
   }
 }
