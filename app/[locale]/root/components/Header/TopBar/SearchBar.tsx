@@ -6,7 +6,6 @@ export default function SearchBar() {
   const [isExpanded, setIsExpanded] = useState(false);
   const t = useTranslations("SearchBar");
 
-  // Toggle the search bar between expanded and icon-only views on mobile
   const handleToggleExpand = () => {
     setIsExpanded(true);
   };
@@ -18,20 +17,15 @@ export default function SearchBar() {
   return (
     <>
       {/* Mobile SearchBar: Circular icon that expands on click */}
-      <div className="md:hidden">
-        <div
-          className={`relative ml-4 flex items-center p-2 rounded-full border border-gray-400 ${
-            isExpanded ? "w-full justify-start" : "w-12 justify-center"
-          } h-12`}
-          onClick={handleToggleExpand}
-        >
-          <Image
-            src="/icons/search-icon.svg"
-            alt="Search"
-            width={20}
-            height={20}
-          />
-          {isExpanded && (
+      {isExpanded && (
+        <div className="relative w-screen z-50 bg-secondary md:hidden">
+          <div className="flex items-center p-2 rounded-full justify-start h-12 px-6 mx-6 border border-gray-400">
+            <Image
+              src="/icons/search-icon.svg"
+              alt="Search"
+              width={20}
+              height={20}
+            />
             <input
               name="search"
               type="text"
@@ -40,9 +34,24 @@ export default function SearchBar() {
               onBlur={handleBlur}
               autoFocus
             />
-          )}
+          </div>
         </div>
-      </div>
+      )}
+      {!isExpanded && (
+        <div className="md:hidden">
+          <div
+            className="w-12 ml-4 h-12 flex items-center p-2 rounded-full border border-gray-400 justify-center"
+            onClick={handleToggleExpand}
+          >
+            <Image
+              src="/icons/search-icon.svg"
+              alt="Search"
+              width={20}
+              height={20}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Desktop SearchBar: Always visible */}
       <div className="hidden md:flex relative bg-secondary border border-gray-400 rounded-full w-full max-w-xs lg:max-w-[250px]">
