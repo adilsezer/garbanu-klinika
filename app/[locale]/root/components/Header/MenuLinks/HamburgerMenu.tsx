@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
+import useClickOutside from "@/hooks/useClickOutside";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -13,6 +14,13 @@ export default function HamburgerMenu() {
   const menuRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("HamburgerMenu");
 
+  // Memoize the callback using useCallback
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []); // Empty dependency array since no dependencies
+
+  useClickOutside<HTMLDivElement>(menuRef, closeMenu);
+
   const menuItems: MenuItem[] = [
     { href: "/profile", label: t("profile") },
     { href: "/favorites", label: t("favorites") },
@@ -24,19 +32,6 @@ export default function HamburgerMenu() {
     { href: "/about-us", label: t("aboutUs") },
     { href: "/contact", label: t("contact") },
   ];
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuRef]);
 
   return (
     <div className="relative md:hidden z-50" ref={menuRef}>

@@ -7,6 +7,19 @@ interface Props {
   size?: "small" | "medium" | "large";
 }
 
+const getSizeClasses = (size: "small" | "medium" | "large") => {
+  switch (size) {
+    case "large":
+      return "px-4 py-4 text-base md:px-12 md:py-5 md:text-xl";
+    case "medium":
+      return "px-3 py-3 text-base md:px-8 md:py-4 md:text-lg";
+    case "small":
+      return "px-2 py-2 text-sm md:px-4 md:py-3 md:text-base";
+    default:
+      return ""; // Default case if needed
+  }
+};
+
 export default function Button({
   text,
   onClick,
@@ -17,16 +30,10 @@ export default function Button({
   const baseClasses =
     "rounded-xl shadow-md focus:outline-none bg-secondary text-primary";
 
-  // Determine size classes with responsive design
-  const sizeClasses = {
-    large: "px-4 py-4 text-base md:px-12 md:py-5 md:text-xl",
-    medium: "px-3 py-3 text-base md:px-8 md:py-4 md:text-lg",
-    small: "px-2 py-2 text-sm md:px-4 md:py-3 md:text-base",
-  };
-
-  // Combine all classes using template literals and conditional logic
-  const buttonClasses =
-    `${baseClasses} ${sizeClasses[size]} ${className}`.trim();
+  // Combine all classes using template literals
+  const buttonClasses = `${baseClasses} ${getSizeClasses(
+    size
+  )} ${className}`.trim();
 
   return (
     <button onClick={onClick} className={buttonClasses}>

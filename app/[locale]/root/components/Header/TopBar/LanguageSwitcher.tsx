@@ -24,9 +24,7 @@ export default function LanguageSwitcher() {
           className={`
             px-3 py-2 font-semibold text-sm transition-colors duration-300
             ${locale === loc ? "bg-quaternary text-primary" : "text-primary"}
-            rounded-full focus:outline-none hover:bg-quaternary hover:text-primary
-            md:px-4 md:py-2 md:text-base
-          `}
+            rounded-full focus:outline-none hover:bg-quaternary hover:text-primary md:text-base`}
           aria-label={`Switch language to ${localeNames[loc]}`}
         >
           {localeNames[loc]}
