@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function SearchBar() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useTranslations("SearchBar");
 
   // Toggle the search bar between expanded and icon-only views on mobile
   const handleToggleExpand = () => {
-    setIsExpanded(!isExpanded);
+    setIsExpanded(true);
+  };
+
+  const handleBlur = () => {
+    setIsExpanded(false);
   };
 
   return (
     <>
-      {/* Mobile SearchBar: Initially an icon, expands to full width */}
+      {/* Mobile SearchBar: Circular icon that expands on click */}
       <div className="md:hidden">
         <div
-          className={`relative flex items-center justify-center p-2 w-1/3 ${
-            isExpanded ? "hidden" : "flex"
-          } rounded-full border border-gray-400`}
+          className={`relative flex items-center p-2 rounded-full border border-gray-400 ${
+            isExpanded ? "w-full justify-start" : "w-12 justify-center"
+          } h-12`}
           onClick={handleToggleExpand}
         >
           <Image
@@ -25,25 +31,17 @@ export default function SearchBar() {
             width={20}
             height={20}
           />
-        </div>
-        {isExpanded && (
-          <div className="flex items-center pl-3 pr-3 w-full border border-gray-400 rounded-full">
+          {isExpanded && (
             <input
               name="search"
               type="text"
-              placeholder="Search"
+              placeholder={t("search")}
               className="bg-transparent pl-2 pr-3 py-2 w-full rounded-full text-base focus:outline-none"
-              onBlur={() => setIsExpanded(false)}
+              onBlur={handleBlur}
               autoFocus
             />
-            <Image
-              src="/icons/search-icon.svg"
-              alt="Search"
-              width={20}
-              height={20}
-            />
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* Desktop SearchBar: Always visible */}
