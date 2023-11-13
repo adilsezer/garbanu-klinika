@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Logo() {
   return (
     <Link href="/">
-      <div className="cursor-pointer relative w-24 h-12 sm:w-52 sm:h-24 lg:w-60 lg:h-30">
+      <div className="cursor-pointer relative w-36 h-16 sm:w-52 sm:h-24 lg:w-60 lg:h-30">
         <Image
           src="/web-ui/logo-black-garbanu-klinika.png"
           alt="Company Logo"

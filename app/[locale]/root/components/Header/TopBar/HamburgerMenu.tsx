@@ -1,22 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface MenuItem {
   href: string;
   label: string;
 }
 
-const menuItems: MenuItem[] = [
-  { href: "/profile", label: "Profile" },
-  { href: "/favorites", label: "Favorites" },
-  { href: "/cart", label: "Cart" },
-];
 
 export default function HamburgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-
+  const t = useTranslations("HamburgerMenu");
+  
+  const menuItems: MenuItem[] = [
+    { href: "/profile", label: t("profile") },
+    { href: "/favorites", label: t("favorites") },
+    { href: "/cart", label: t("cart") },
+  ];
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -33,7 +36,7 @@ export default function HamburgerMenu() {
   return (
     <div className="relative md:hidden z-50" ref={menuRef}>
       <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <div className="w-6 h-6 cursor-pointer">
+        <div className="relative w-8 h-8 cursor-pointer">
           <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
         </div>
       </button>

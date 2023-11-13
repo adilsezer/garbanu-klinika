@@ -29,7 +29,7 @@ export default function PromoBanner() {
   // Responsive design adjustments
   return (
     <div className="flex justify-center items-center bg-primary text-secondary py-2 px-4 md:px-8">
-      <p className="text-center text-sm md:text-base">{data}</p>
+      <p className="text-center">{data}</p>
     </div>
   );
 }

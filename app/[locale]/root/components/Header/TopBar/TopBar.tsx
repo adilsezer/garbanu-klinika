@@ -32,9 +32,10 @@ export default function TopBar() {
 
         {/* Mobile second row with SearchBar left and Hamburger right */}
         <div className="flex justify-between items-center md:hidden">
-          <div className="w-1/3">
+          <div className="w-2/5">
             <SearchBar />
           </div>
+          <LanguageSwitcher />
           <HamburgerMenu />
         </div>
       </div>
