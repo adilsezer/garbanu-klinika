@@ -30,13 +30,21 @@ export default function TopBar() {
           <Logo />
         </div>
 
-        {/* Mobile second row with SearchBar left and Hamburger right */}
-        <div className="flex justify-between items-center md:hidden">
-          <div className="w-2/5">
+        <div className="flex items-center justify-between md:hidden w-full">
+          {/* SearchBar on the left */}
+          <div className="flex-1">
             <SearchBar />
           </div>
-          <LanguageSwitcher />
-          <HamburgerMenu />
+
+          {/* LanguageSwitcher in the center */}
+          <div className="flex-1 flex justify-center">
+            <LanguageSwitcher />
+          </div>
+
+          {/* HamburgerMenu on the right */}
+          <div className="flex-1 flex justify-end">
+            <HamburgerMenu />
+          </div>
         </div>
       </div>
     </div>
