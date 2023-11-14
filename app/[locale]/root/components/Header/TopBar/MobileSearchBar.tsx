@@ -19,7 +19,7 @@ export default function MobileSearchBar({ placeholder }: MobileSearchBarProps) {
   return (
     <>
       {isExpanded && (
-        <div className="relative w-screen z-50 bg-secondary md:hidden">
+        <div className="md:hidden relative w-screen z-50 bg-secondary">
           <div className="flex items-center p-2 rounded-full justify-start h-12 px-6 mx-6 border border-gray-400">
             <Image
               src="/icons/search-icon.svg"

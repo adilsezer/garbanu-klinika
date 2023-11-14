@@ -25,24 +25,26 @@ export default function TopBar() {
         </div>
 
         {/* Mobile Logo centered in the first row */}
-        <div className="flex justify-center md:hidden">
-          <Logo />
-        </div>
-
-        <div className="flex items-center justify-between md:hidden w-full">
-          {/* SearchBar on the left */}
-          <div className="flex-1">
-            <SearchBar />
+        <div className="md:hidden">
+          <div className="flex justify-center">
+            <Logo />
           </div>
 
-          {/* LanguageSwitcher in the center */}
-          <div className="flex-1 flex justify-center">
-            <LanguageSwitcher />
-          </div>
+          <div className="flex items-center justify-between w-full">
+            {/* SearchBar on the left */}
+            <div className="flex-1">
+              <SearchBar />
+            </div>
 
-          {/* HamburgerMenu on the right */}
-          <div className="flex-1 flex justify-end">
-            <HamburgerMenu />
+            {/* LanguageSwitcher in the center */}
+            <div className="flex-1 flex justify-center">
+              <LanguageSwitcher />
+            </div>
+
+            {/* HamburgerMenu on the right */}
+            <div className="flex-1 flex justify-end">
+              <HamburgerMenu />
+            </div>
           </div>
         </div>
       </div>

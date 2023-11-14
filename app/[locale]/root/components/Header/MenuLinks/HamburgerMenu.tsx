@@ -34,7 +34,7 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div className="relative md:hidden z-50" ref={menuRef}>
+    <div className="md:hidden relative z-50" ref={menuRef}>
       {/* Hamburger Button */}
       <button className="p-2 mr-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="relative w-8 h-8 cursor-pointer">
