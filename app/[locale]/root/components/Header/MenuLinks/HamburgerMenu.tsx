@@ -38,14 +38,14 @@ export default function HamburgerMenu() {
       <div className="relative">
         {/* Hamburger Button */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <div className="mr-6 w-8 h-8 cursor-pointer">
+          <div className="relative mr-4 w-8 h-8 cursor-pointer">
             <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
           </div>
         </button>
 
         {/* Menu Items */}
         <div
-          className={`absolute right-0 top-14 h-screen w-screen transform ${
+          className={`absolute right-0 top-14 h-auto w-screen transform ${
             isMenuOpen ? "scale-y-100 z-50" : "scale-y-0"
           } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md`}
         >
