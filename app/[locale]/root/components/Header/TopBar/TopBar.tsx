@@ -30,7 +30,7 @@ export default function TopBar() {
             <Logo />
           </div>
 
-          <div className="flex items-center justify-between w-full">
+          <div className="flex justify-between w-full">
             {/* SearchBar on the left */}
             <div className="flex-1">
               <SearchBar />

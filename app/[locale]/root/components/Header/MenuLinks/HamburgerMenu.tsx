@@ -34,36 +34,38 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div className="md:hidden relative z-50" ref={menuRef}>
-      {/* Hamburger Button */}
-      <button className="p-2 mr-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <div className="relative w-8 h-8 cursor-pointer">
-          <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
-        </div>
-      </button>
+    <div className="md:hidden flex items-center" ref={menuRef}>
+      <div className="relative">
+        {/* Hamburger Button */}
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="mr-6 w-8 h-8 cursor-pointer">
+            <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
+          </div>
+        </button>
 
-      {/* Menu Items */}
-      <div
-        className={`absolute right-0 top-16 h-screen w-screen transform ${
-          isMenuOpen ? "scale-y-100" : "scale-y-0"
-        } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md`}
-      >
-        {menuItems.map((item) => (
-          <Link href={item.href} key={item.href}>
-            <div className="text-primary px-8 py-2 w-full font-semibold border-t border-gray-200">
-              {item.label}
-              {/* Add arrow on the right side */}
-              <div className="float-right">
-                <Image
-                  src="/icons/arrow-next.svg"
-                  alt="Arrow"
-                  width={25}
-                  height={25}
-                />
+        {/* Menu Items */}
+        <div
+          className={`absolute right-0 top-14 h-screen w-screen transform ${
+            isMenuOpen ? "scale-y-100 z-50" : "scale-y-0"
+          } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md`}
+        >
+          {menuItems.map((item) => (
+            <Link href={item.href} key={item.href}>
+              <div className="text-primary px-8 py-2 w-full font-semibold border-t border-gray-200">
+                {item.label}
+                {/* Add arrow on the right side */}
+                <div className="float-right">
+                  <Image
+                    src="/icons/arrow-next.svg"
+                    alt="Arrow"
+                    width={25}
+                    height={25}
+                  />
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
