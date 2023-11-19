@@ -24,5 +24,12 @@
     "registration": "REGISTRATION",
     "aboutUs": "ABOUT US",
     "contact": "CONTACT"
+  },
+  "ProductTypes": {
+    "productTypesTitle": "Product Types",
+    "shampoo": "Shampoo",
+    "conditioner": "Conditioner",
+    "shapingTools": "Shaping Tools",
+    "otherProducts": "Other Products"
   }
 }

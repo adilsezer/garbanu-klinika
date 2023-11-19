@@ -10,11 +10,11 @@ interface Props {
 const getSizeClasses = (size: "small" | "medium" | "large") => {
   switch (size) {
     case "large":
-      return "px-4 py-4 text-base md:px-20 md:py-5 md:text-xl";
+      return "px-4 py-4 text-base md:px-20 md:py-5 md:text-xl hover:bg-tertiary";
     case "medium":
-      return "px-3 py-3 text-base md:px-14 md:py-4 md:text-lg";
+      return "px-3 py-3 text-base md:px-14 md:py-4 md:text-lg hover:bg-tertiary";
     case "small":
-      return "px-2 py-2 text-sm md:px-6 md:py-3 md:text-base";
+      return "px-2 py-2 text-sm md:px-6 md:py-3 md:text-base hover:bg-tertiary";
     default:
       return ""; // Default case if needed
   }
