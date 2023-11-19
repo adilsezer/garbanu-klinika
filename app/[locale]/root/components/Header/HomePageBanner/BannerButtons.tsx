@@ -13,7 +13,7 @@ interface BannerButtonsProps {
 
 const BannerButtons: React.FC<BannerButtonsProps> = ({ buttons }) => {
   return (
-    <div className="absolute bottom-4 md:bottom-auto md:top-24 md:left-16 flex flex-row justify-center md:justify-start md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-10 w-full md:w-auto">
+    <div className="absolute bottom-4 md:top-1/2 md:transform -translate-y-1/2 md:left-20 flex flex-row justify-center md:justify-start md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-12 w-full md:w-auto">
       {buttons.map(({ id, text, size }) => (
         <Button key={id} text={text} size={size} />
       ))}

@@ -21,7 +21,7 @@ export default function HomePageBanner() {
   ];
 
   return (
-    <div className="relative w-full h-72 mt-6 md:h-[550px]">
+    <div className="relative w-full h-72 md:h-[550px]">
       <Image
         src="/headers/banner-curly-hair-women.jpg"
         alt="Curly hair women banner"

@@ -10,7 +10,7 @@ import HamburgerMenu from "../MenuLinks/HamburgerMenu";
 export default function TopBar() {
   return (
     // Sticky position to keep the TopBar at the top when scrolling
-    <div className="sticky top-0 bg-secondary z-50 md:py-2">
+    <div className="sticky top-0 bg-secondary z-50 py-1 md:py-4">
       <div className="container mx-auto px-0">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           {/* Desktop layout */}
@@ -27,7 +27,7 @@ export default function TopBar() {
 
           {/* Mobile layout */}
           <div className="md:hidden">
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between items-center w-full">
               <div className="flex-1">
                 <SearchBar />
               </div>

@@ -3,6 +3,7 @@ import useClickOutside from "@/hooks/useClickOutside";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "../TopBar/LanguageSwitcher";
 
 interface MenuItem {
   href: string;
@@ -45,10 +46,15 @@ export default function HamburgerMenu() {
 
         {/* Menu Items */}
         <div
-          className={`absolute right-0 top-14 h-auto w-screen transform ${
+          className={`absolute right-0 top-10 h-auto w-screen transform ${
             isMenuOpen ? "scale-y-100 z-50" : "scale-y-0"
           } origin-top transition-transform duration-500 ease-out bg-secondary shadow-md`}
         >
+          {/* Language Switcher */}
+          <div className="flex justify-end px-8 my-2">
+            <LanguageSwitcher />
+          </div>
+
           {menuItems.map((item) => (
             <Link href={item.href} key={item.href}>
               <div className="text-primary px-8 py-2 w-full font-semibold border-t border-gray-200">
