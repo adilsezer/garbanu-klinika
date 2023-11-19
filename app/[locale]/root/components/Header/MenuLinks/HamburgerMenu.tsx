@@ -34,8 +34,8 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div className="md:hidden flex items-center" ref={menuRef}>
-      <div className="relative">
+    <div className="md:hidden" ref={menuRef}>
+      <div className="relative flex items-center">
         {/* Hamburger Button */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <div className="relative mr-4 w-8 h-8 cursor-pointer">

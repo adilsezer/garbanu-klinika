@@ -20,7 +20,7 @@ export default function MobileSearchBar({ placeholder }: MobileSearchBarProps) {
     <div className="md:hidden relative">
       {isExpanded && (
         <div className="absolute top-0 left-0 w-screen z-50 bg-secondary">
-          <div className="flex items-center p-2 rounded-full justify-start h-12 px-6 mx-6 border border-gray-400">
+          <div className="flex items-center p-2 rounded-full justify-start h-10 px-6 mx-6 border border-gray-400">
             <Image
               src="/icons/search-icon.svg"
               alt="Search"
@@ -40,7 +40,7 @@ export default function MobileSearchBar({ placeholder }: MobileSearchBarProps) {
       )}
       {!isExpanded && (
         <div
-          className="w-12 ml-4 h-12 flex items-center p-2 rounded-full border border-gray-400 justify-center cursor-pointer"
+          className="w-10 ml-4 h-10 flex items-center p-2 rounded-full border border-gray-400 justify-center cursor-pointer"
           onClick={handleToggleExpand}
         >
           <Image

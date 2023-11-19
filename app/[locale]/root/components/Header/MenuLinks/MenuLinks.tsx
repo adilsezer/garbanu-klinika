@@ -16,7 +16,7 @@ export default function MenuLinks() {
   return (
     <>
       {/* Full navigation menu for larger screens */}
-      <nav className="hidden md:block" aria-label="Main navigation">
+      <nav className="hidden md:block md:mt-8 " aria-label="Main navigation">
         <ul className="container mx-auto flex items-center justify-center space-x-20">
           {links.map((link) => (
             <li key={link.label}>
