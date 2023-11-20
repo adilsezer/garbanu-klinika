@@ -3,7 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import SectionTitle from "@/app/[locale]/components/SectionTitle";
-import ProductTypeCards from "./ProductTypeCard";
+import ProductTypeCards from "./ProductTypeCards";
 import useProductTypes from "@/hooks/useProductTypes"; // Custom hook for fetching product types
 import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
 import LoadingComponent from "@/app/[locale]/components/LoadingComponent";

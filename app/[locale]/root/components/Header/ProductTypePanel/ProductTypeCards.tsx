@@ -7,13 +7,11 @@ interface ProductTypeCardsProps {
   productTypes: ProductType[];
 }
 
-// types/ProductType.ts
 export interface ProductType {
   id: string; // Unique identifier for each product type
   imageUrl: string; // URL of the product type image
   buttonText: string; // Text for the button
   url: string; // URL for the product type page
-  // Add any other properties that are relevant to your ProductType here
 }
 
 const ProductTypeCards: React.FC<ProductTypeCardsProps> = React.memo(
@@ -21,8 +19,8 @@ const ProductTypeCards: React.FC<ProductTypeCardsProps> = React.memo(
     return (
       <div className="flex flex-wrap justify-center gap-4 md:gap-8 my-4 md:my-8">
         {productTypes.map((product) => (
-          <Link key={product.id} href={product.url} passHref>
-            <div className="flex flex-col relative rounded-lg shadow-md overflow-hidden h-40 md:h-80 w-[45%] md:w-[22%] cursor-pointer">
+          <div className="flex flex-col relative rounded-lg shadow-md overflow-hidden h-40 md:h-80 w-[45%] md:w-[22%] cursor-pointer">
+            <Link key={product.id} href={product.url} passHref>
               <Image
                 src={product.imageUrl}
                 alt={product.buttonText}
@@ -36,8 +34,8 @@ const ProductTypeCards: React.FC<ProductTypeCardsProps> = React.memo(
                   {product.buttonText}
                 </span>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     );
