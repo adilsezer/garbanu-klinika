@@ -21,9 +21,9 @@ const ProductTypeCards: React.FC<ProductTypeCardsProps> = ({
     <div className="flex flex-wrap justify-center gap-4 md:gap-8 my-4 md:my-8">
       {productTypes.map((product) => (
         <Link
+          key={product.id}
           href={product.url}
           passHref
-          key={product.id}
           className="flex flex-col relative rounded-lg shadow-md overflow-hidden h-40 md:h-80 w-[45%] md:w-[22%] cursor-pointer"
         >
           <Image
