@@ -1,10 +1,11 @@
-// LoadingComponent.tsx
 import React from "react";
 
 const LoadingComponent: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-64">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+    // Adding margin and padding to the outer div
+    <div className="flex justify-center items-center w-full h-full p-4">
+      {/* Spinner centered in the div */}
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
       {/* Tailwind spinner */}
     </div>
   );

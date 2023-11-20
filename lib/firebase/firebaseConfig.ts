@@ -10,5 +10,8 @@ export const firebaseConfig: FirebaseOptions = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-export const promoBannerDocPath =
-  process.env.NEXT_PUBLIC_FIRESTORE_PROMO_BANNER_DOC_PATH || "";
+export const promotionalBannerPath =
+  process.env.NEXT_PUBLIC_FIRESTORE_PROMOTIONAL_BANNER_PATH || "";
+
+export const productTypesPath =
+  process.env.NEXT_PUBLIC_FIRESTORE_PRODUCT_TYPES_PATH || "";
