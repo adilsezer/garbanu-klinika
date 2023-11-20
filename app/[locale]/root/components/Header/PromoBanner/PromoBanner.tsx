@@ -2,11 +2,9 @@
 import React from "react";
 import { useFirestoreData } from "@hooks/useFirestoreData"; // Adjust the import path accordingly
 import { promoBannerDocPath } from "@lib/firebase/firebaseConfig";
-import { useLocale } from "next-intl";
 
 export default function PromoBanner() {
-  const locale = useLocale();
-  const { data, loading, error } = useFirestoreData(promoBannerDocPath, locale);
+  const { data, loading, error } = useFirestoreData(promoBannerDocPath);
 
   if (!data && !loading) return null;
 
