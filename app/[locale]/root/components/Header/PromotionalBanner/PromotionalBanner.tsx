@@ -21,7 +21,7 @@ const PromotionalBanner: React.FC = () => {
   );
 
   const getTextForLocale = (item: BannerData) => {
-    return currentLocale === "lt" ? item.text_lt : item.text_en;
+    return currentLocale === "en" ? item.text_en : item.text_lt;
   };
 
   if (loading) {
