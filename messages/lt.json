@@ -25,11 +25,10 @@
     "aboutUs": "APIE MUS",
     "contact": "KONTAKTAI"
   },
-  "ProductTypes": {
-    "productTypesTitle": "PRODUKTAI PAGAL TIPA",
-    "shampoo": "ŠAMPŪNAS",
-    "conditioner": "BALZAMAS",
-    "shapingTools": "FORMAVIMO PRIEMONES",
-    "otherProducts": "KITA PRODUKTAI"
+  "ProductTypesPanel": {
+    "productTypesTitle": "PRODUKTAI PAGAL TIPA"
+  },
+  "AllProductsPanel": {
+    "allProductsTitle": "VISI PRODUKTAI"
   }
 }
