@@ -1,37 +1,55 @@
 import React from "react";
+import Image from "next/image";
 
 interface ProductCardProps {
   productName: string;
   productPrice: number;
   imageUrl: string;
+  productType?: string; // Optional prop for product type
 }
 
 const AllProductsCard: React.FC<ProductCardProps> = ({
   productName,
   productPrice,
   imageUrl,
+  productType,
 }) => {
+  // Format price to always show two decimal places
+  const formattedPrice = `€${productPrice.toFixed(2)}`;
+
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
-      <img
-        src={imageUrl}
-        alt={productName}
-        className="w-full object-cover object-center"
-      />
-      <div className="p-4">
-        <h2 className="text-lg font-semibold">{productName}</h2>
-        <p className="text-gray-500">€{productPrice.toFixed(2)}</p>
-        <div className="flex space-x-2 mt-3">
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-3 rounded-full">
-            <svg className="w-6 h-6" /* Add your cart icon SVG here */></svg>
+    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out w-[45%] md:w-[22%]">
+      <div className="relative h-24 md:h-52 w-full">
+        <Image src={imageUrl} alt={productName} fill className="object-cover" />
+      </div>
+      <div className="flex flex-col p-4">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-800">
+          {productName}
+        </h2>
+        {productType && (
+          <h3 className="text-sm md:text-md font-medium text-gray-600">
+            {productType}
+          </h3>
+        )}
+        <p className="text-gray-600 mt-1">{formattedPrice}</p>
+        <div className="flex items-center justify-between mt-2">
+          <button
+            aria-label="Add to cart"
+            className="p-2 text-gray-600 hover:text-gray-800"
+          >
+            C{/* Replace with your cart icon SVG */}
           </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-3 rounded-full">
-            <svg
-              className="w-6 h-6" /* Add your wish list icon SVG here */
-            ></svg>
+          <button
+            aria-label="Add to wishlist"
+            className="p-2 text-gray-600 hover:text-gray-800"
+          >
+            W{/* Replace with your wish list icon SVG */}
           </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-1 px-3 rounded-full">
-            <svg className="w-6 h-6" /* Add your share icon SVG here */></svg>
+          <button
+            aria-label="Share product"
+            className="p-2 text-gray-600 hover:text-gray-800"
+          >
+            S{/* Replace with your share icon SVG */}
           </button>
         </div>
       </div>

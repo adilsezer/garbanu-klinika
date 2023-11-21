@@ -1,5 +1,4 @@
 // hooks/useFirestoreData.ts
-// hooks/useFirestoreData.ts
 import { useState, useEffect } from "react";
 import { collection, query, getDocs, orderBy } from "firebase/firestore";
 import db from "../lib/firebase/firebaseInit"; // Adjust the import path as needed

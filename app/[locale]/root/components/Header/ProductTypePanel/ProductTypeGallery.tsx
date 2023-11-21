@@ -9,8 +9,8 @@ import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
 import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
 
 const ProductTypeGallery: React.FC = () => {
-  const t = useTranslations("ProductTypesPanel");
   const { productTypes, loading, error } = useProductTypes();
+  const t = useTranslations("ProductTypesPanel");
 
   if (loading) return <LoadingComponent />;
   if (error) return <ErrorComponent message={error.message} />;
