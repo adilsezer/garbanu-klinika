@@ -3,82 +3,95 @@
 import { useState, useEffect } from "react";
 import { useFirestoreData } from "./useFirestoreData";
 import { useLocale } from "next-intl";
-import { collection, getDocs } from "firebase/firestore";
-import db from "../lib/firebase/firebaseInit";
+import firebase from "firebase/compat/app";
+import {
+  productsCollection,
+  productTypesCollection,
+} from "@lib/firebase/firebaseConfig";
 
-interface ProductType {
+// Interface for product data as retrieved from Firestore
+interface FirestoreProductData {
   id: string;
-  name_en: string;
-  name_lt: string;
+  attributes: { volume: string };
+  brandId: string;
+  createdAt: firebase.firestore.Timestamp;
+  imageURLs: string[];
+  localization: {
+    en: { detailedDescription: string; name: string; shortDescription: string };
+    lt: { detailedDescription: string; name: string; shortDescription: string };
+  };
+  price: number;
+  stock: number;
+  tags: string[];
+  typeId: string;
+  updatedAt: firebase.firestore.Timestamp;
 }
 
-interface Product {
+// Interface for product type data as retrieved from Firestore
+interface FirestoreProductTypeData {
   id: string;
-  name_en: string;
-  name_lt: string;
+  localization: {
+    en: { name: string };
+    lt: { name: string };
+  };
+}
+
+// Interface for product data as used in the application
+interface ProductDisplayData {
+  id: string;
+  name: string;
   price: number;
   imageUrl: string;
-  typeId: string;
-  productType: string; // Localized product type
-  // include other fields from your Firestore product documents as needed
+  productTypeName: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export function useProductCardCatalog() {
-  const locale = useLocale(); // Hook to determine current locale
   const {
     data: products,
     loading: productsLoading,
     error: productsError,
-  } = useFirestoreData<Product>("products", "createdAt", "desc");
+  } = useFirestoreData<FirestoreProductData>(productsCollection);
+  const {
+    data: productTypes,
+    loading: productTypesLoading,
+    error: productTypesError,
+  } = useFirestoreData<FirestoreProductTypeData>(productTypesCollection);
+  const [productDisplayData, setProductDisplayData] = useState<
+    ProductDisplayData[]
+  >([]);
+  const locale = useLocale();
 
-  const [productTypes, setProductTypes] = useState<Record<
-    string,
-    ProductType
-  > | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  const fetchProductTypes = async () => {
-    try {
-      const productTypesSnapshot = await getDocs(
-        collection(db, "productTypes")
-      );
-      const types = productTypesSnapshot.docs.reduce((acc, doc) => {
-        const typeData = doc.data() as ProductType;
-        acc[doc.id] = typeData;
+  useEffect(() => {
+    if (products && productTypes) {
+      const productTypeNamesMap = productTypes.reduce((acc, type) => {
+        acc[type.id] =
+          locale === "lt"
+            ? type.localization.lt.name
+            : type.localization.en.name;
         return acc;
-      }, {} as Record<string, ProductType>);
-      setProductTypes(types);
-    } catch (err: unknown) {
-      setError(
-        new Error("Failed to fetch product types: " + (err as Error).message)
-      );
+      }, {} as Record<string, string>);
+
+      const mappedProducts = products.map((product) => ({
+        id: product.id,
+        name:
+          locale === "lt"
+            ? product.localization.lt.name
+            : product.localization.en.name,
+        price: product.price,
+        imageUrl: product.imageURLs[0],
+        productTypeName: productTypeNamesMap[product.typeId],
+        createdAt: product.createdAt.toDate(),
+        updatedAt: product.updatedAt.toDate(),
+      }));
+
+      setProductDisplayData(mappedProducts);
     }
-  };
+  }, [products, productTypes, locale]);
 
-  useEffect(() => {
-    fetchProductTypes();
-  }, []);
+  const loading = productsLoading || productTypesLoading;
+  const error = productsError || productTypesError;
 
-  const combinedData = products?.map((product) => ({
-    ...product,
-    name: locale === "lt" ? product.name_lt : product.name_en, // Localized name
-    productType: productTypes
-      ? locale === "lt"
-        ? productTypes[product.typeId as string]?.name_lt
-        : productTypes[product.typeId as string]?.name_en
-      : "",
-  }));
-
-  useEffect(() => {
-    setLoading(productsLoading || productTypes === null);
-  }, [productsLoading, productTypes]);
-
-  useEffect(() => {
-    if (productsError) {
-      setError(productsError);
-    }
-  }, [productsError]);
-
-  return { data: combinedData, loading, error };
+  return { data: productDisplayData, loading, error };
 }

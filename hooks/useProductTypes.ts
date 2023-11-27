@@ -1,22 +1,29 @@
 // hooks/useProductTypes.ts
+import firebase from "firebase/compat/app";
 import { useFirestoreData } from "./useFirestoreData";
 import { useLocale } from "next-intl";
+import { productTypesCollection } from "@lib/firebase/firebaseConfig";
 
 // Define the FirestoreProductType interface here
-interface FirestoreProductType {
+interface FirestoreProductTypeData {
   id: string;
-  name_en: string;
-  name_lt: string;
-  imageUrl: string;
-  // Add any other properties that are relevant to your Firestore documents
+  createdAt: firebase.firestore.Timestamp; // Assuming it's a string, you might want to parse it into a Date object
+  imageURLs: string[];
+  localization: {
+    en: {
+      name: string;
+    };
+    lt: {
+      name: string;
+    };
+  };
+  updatedAt: firebase.firestore.Timestamp; // Same assumption as for createdAt
 }
 
 export default function useProductTypes() {
-  const productTypesPath = process.env
-    .NEXT_PUBLIC_FIRESTORE_PRODUCT_TYPES_PATH as string;
   const locale = useLocale();
-  const { data, loading, error } = useFirestoreData<FirestoreProductType>(
-    productTypesPath,
+  const { data, loading, error } = useFirestoreData<FirestoreProductTypeData>(
+    productTypesCollection,
     "createdAt",
     "asc"
   );
@@ -24,9 +31,12 @@ export default function useProductTypes() {
   const productTypes =
     data?.map((type) => ({
       id: type.id,
-      imageUrl: type.imageUrl,
-      buttonText: locale === "en" ? type.name_en : type.name_lt,
+      imageUrl: type.imageURLs[0], // Assuming at least one image URL is always present
+      buttonText:
+        locale === "en" ? type.localization.en.name : type.localization.lt.name,
       url: `/products/${type.id}`,
+      createdAt: type.createdAt.toDate(), // Converting Firestore Timestamp to Date
+      updatedAt: type.updatedAt.toDate(), // Converting Firestore Timestamp to Date
     })) || [];
 
   return { productTypes, loading, error };

@@ -10,14 +10,14 @@ interface BannerData {
 }
 
 // Adjust the import path for promotionalBannerPath as needed
-import { promotionalBannerPath } from "@lib/firebase/firebaseConfig";
+import { promotionalBannersCollection } from "@lib/firebase/firebaseConfig";
 import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
 import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
 
 const PromotionalBanner: React.FC = () => {
   const currentLocale = useLocale();
   const { data, loading, error } = useFirestoreData<BannerData>(
-    promotionalBannerPath
+    promotionalBannersCollection
   );
 
   const getTextForLocale = (item: BannerData) => {

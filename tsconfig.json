@@ -21,6 +21,7 @@
     ],
     "paths": {
       "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
       "@lib/*": ["./lib/*"],
       "@projectTypes/*": ["./types/*"],
       "@/*": ["./*"]
