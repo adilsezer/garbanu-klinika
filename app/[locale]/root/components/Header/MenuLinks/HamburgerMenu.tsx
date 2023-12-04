@@ -62,7 +62,7 @@ export default function HamburgerMenu() {
                 {/* Add arrow on the right side */}
                 <div className="float-right">
                   <Image
-                    src="/icons/arrow-next.svg"
+                    src="/icons/arrow-right.svg"
                     alt="Arrow"
                     width={25}
                     height={25}

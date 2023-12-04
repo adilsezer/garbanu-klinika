@@ -1,7 +1,6 @@
-// ProductPage.tsx
-
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import ProductCard from "./AllProductsCard";
 import { useProductCardCatalog } from "@/hooks/useProductCardCatalog";
 import SectionTitle from "@/app/[locale]/components/SectionTitle";
@@ -13,6 +12,26 @@ const AllProductsGallery: React.FC = () => {
   const { data: productCardData, loading, error } = useProductCardCatalog();
   const t = useTranslations("AllProductsPanel");
   const productContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollPosition = () => {
+    if (productContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } =
+        productContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollPosition(); // Check on initial mount as well
+    const container = productContainerRef.current;
+    container?.addEventListener("scroll", checkScrollPosition, {
+      passive: true,
+    });
+    return () => container?.removeEventListener("scroll", checkScrollPosition);
+  }, [productCardData]);
 
   const scrollProducts = (scrollOffset: number) => {
     if (productContainerRef.current) {
@@ -27,9 +46,23 @@ const AllProductsGallery: React.FC = () => {
     <div>
       <SectionTitle text={t("allProductsTitle")} />
       <div className="relative mx-4 md:mx-8">
+        {canScrollLeft && (
+          <button
+            onClick={() => scrollProducts(-300)}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-md z-10"
+          >
+            <Image
+              src="/icons/arrow-right.svg"
+              alt="Scroll Left"
+              width={24}
+              height={24}
+            />
+          </button>
+        )}
         <div
           ref={productContainerRef}
-          className="flex overflow-x-auto space-x-4 md:space-x-8 items-stretch"
+          className="flex overflow-x-auto space-x-4 md:space-x-8 items-stretch scroll-smooth scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-200"
+          onScroll={checkScrollPosition}
         >
           {productCardData?.map((product) => (
             <div key={product.id} className="flex-none w-1/2 md:w-1/4">
@@ -42,12 +75,17 @@ const AllProductsGallery: React.FC = () => {
             </div>
           ))}
         </div>
-        {productCardData && productCardData.length > 2 && (
+        {canScrollRight && productCardData && productCardData.length > 2 && (
           <button
             onClick={() => scrollProducts(300)}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-md z-10"
           >
-            Scroll Right
+            <Image
+              src="/icons/arrow-right.svg"
+              alt="Scroll Right"
+              width={24}
+              height={24}
+            />
           </button>
         )}
       </div>
