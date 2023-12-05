@@ -24,15 +24,6 @@ const AllProductsGallery: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    checkScrollPosition(); // Check on initial mount as well
-    const container = productContainerRef.current;
-    container?.addEventListener("scroll", checkScrollPosition, {
-      passive: true,
-    });
-    return () => container?.removeEventListener("scroll", checkScrollPosition);
-  }, [productCardData]);
-
   const scrollProducts = (scrollOffset: number) => {
     if (productContainerRef.current) {
       productContainerRef.current.scrollLeft += scrollOffset;
@@ -45,7 +36,7 @@ const AllProductsGallery: React.FC = () => {
   return (
     <div>
       <SectionTitle text={t("allProductsTitle")} />
-      <div className="relative mx-4 md:mx-8">
+      <div className="relative mx-4 md:mx-14">
         {canScrollLeft && (
           <button
             onClick={() => scrollProducts(-300)}
@@ -61,11 +52,11 @@ const AllProductsGallery: React.FC = () => {
         )}
         <div
           ref={productContainerRef}
-          className="flex overflow-x-auto space-x-4 md:space-x-8 items-stretch scroll-smooth scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-200"
+          className="flex overflow-x-auto space-x-4 md:space-x-8 scroll-smooth scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-200"
           onScroll={checkScrollPosition}
         >
           {productCardData?.map((product) => (
-            <div key={product.id} className="flex-none w-1/2 md:w-1/4">
+            <div key={product.id} className="flex-none w-1/2 md:w-1/5">
               <ProductCard
                 productName={product.name}
                 productPrice={product.price}

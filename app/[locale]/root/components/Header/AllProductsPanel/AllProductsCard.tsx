@@ -18,11 +18,11 @@ const AllProductsCard: React.FC<ProductCardProps> = ({
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out h-full flex flex-col">
-      <div className="relative w-full flex-shrink-0 h-52">
+      <div className="relative w-full flex-shrink-0 h-32 md:h-52">
         <Image src={imageUrl} alt={productName} fill className="object-cover" />
       </div>
       <div className="p-4 flex-grow">
-        <h2 className="text-lg font-semibold text-gray-800 truncate">
+        <h2 className="md:text-lg font-semibold text-gray-800 truncate">
           {productName}
         </h2>
         {productType && (
