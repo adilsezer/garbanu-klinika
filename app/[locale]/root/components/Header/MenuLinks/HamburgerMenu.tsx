@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../TopBar/LanguageSwitcher";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaArrowRight } from "react-icons/fa";
 
 interface MenuItem {
   href: string;
@@ -40,7 +42,7 @@ export default function HamburgerMenu() {
         {/* Hamburger Button */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <div className="relative mr-4 w-8 h-8 cursor-pointer">
-            <Image src="/icons/hamburger-menu.svg" alt="Hamburger" fill />
+            <RxHamburgerMenu size="auto" />
           </div>
         </button>
 
@@ -61,12 +63,7 @@ export default function HamburgerMenu() {
                 {item.label}
                 {/* Add arrow on the right side */}
                 <div className="float-right">
-                  <Image
-                    src="/icons/arrow-right.svg"
-                    alt="Arrow"
-                    width={25}
-                    height={25}
-                  />
+                  <FaArrowRight size="15" />
                 </div>
               </div>
             </Link>

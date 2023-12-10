@@ -35,9 +35,7 @@ const PromotionalBanner: React.FC = () => {
   return (
     <div className="flex justify-center items-center bg-primary text-secondary py-2 px-4 md:px-8">
       {data?.map((item) => (
-        <p key={item.id} className="text-center">
-          {getTextForLocale(item)}
-        </p>
+        <p key={item.id}>{getTextForLocale(item)}</p>
       ))}
     </div>
   );

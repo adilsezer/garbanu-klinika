@@ -24,6 +24,7 @@
       "@utils/*": ["./utils/*"],
       "@lib/*": ["./lib/*"],
       "@projectTypes/*": ["./types/*"],
+      "@components/*": ["./app/[locale]/components/*"],
       "@/*": ["./*"]
     }
   },

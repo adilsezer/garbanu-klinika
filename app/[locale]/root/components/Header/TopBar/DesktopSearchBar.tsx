@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { IoSearch } from "react-icons/io5";
 
 interface DesktopSearchBarProps {
   placeholder: string;
@@ -17,12 +17,7 @@ export default function DesktopSearchBar({
         className="bg-transparent pl-4 pr-10 py-3 w-full rounded-full text-base focus:outline-none"
       />
       <div className="absolute inset-y-0 right-0 mr-3 flex items-center">
-        <Image
-          src="/icons/search-icon.svg"
-          alt="Search"
-          width={20}
-          height={20}
-        />
+        <IoSearch width={20} height={20} />
       </div>
     </div>
   );

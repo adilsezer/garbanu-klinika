@@ -1,55 +1,69 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState, useRef } from "react";
+import { IoSearch, IoClose } from "react-icons/io5";
+import useClickOutside from "@hooks/useClickOutside"; // Assuming the hook is in the same directory
 
 interface MobileSearchBarProps {
   placeholder: string;
+  onSearch: (query: string) => void;
 }
 
-export default function MobileSearchBar({ placeholder }: MobileSearchBarProps) {
+export default function MobileSearchBar({
+  placeholder,
+  onSearch,
+}: MobileSearchBarProps) {
+  const [searchQuery, setSearchQuery] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
+  const searchBarRef = useRef(null);
 
-  const handleToggleExpand = () => {
-    setIsExpanded(true);
-  };
+  useClickOutside(searchBarRef, () => {
+    if (isExpanded) setIsExpanded(false);
+  });
 
-  const handleBlur = () => {
-    setIsExpanded(false);
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      onSearch(searchQuery);
+      setIsExpanded(false);
+    }
   };
 
   return (
-    <div className="md:hidden relative">
+    <div className="relative">
       {isExpanded && (
-        <div className="absolute top-1/2 transform -translate-y-1/2 w-screen z-50 bg-secondary">
-          <div className="flex items-center rounded-full justify-start h-11 px-6 mx-6 border border-gray-400">
-            <Image
-              src="/icons/search-icon.svg"
-              alt="Search"
-              width={20}
-              height={20}
-            />
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm transition duration-300 ease-in-out flex justify-center">
+          <div
+            className="absolute top-1/4 flex items-center space-x-3 p-4 bg-white rounded-lg shadow-xl"
+            ref={searchBarRef}
+          >
             <input
-              name="search"
               type="text"
               placeholder={placeholder}
-              className="bg-transparent pl-2 pr-3 py-2 w-full rounded-full text-base focus:outline-none"
-              onBlur={handleBlur}
+              className="input input-bordered w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition duration-300"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               autoFocus
             />
+            <button
+              onClick={handleSearch}
+              className="p-1 rounded-full text-gray-600 hover:bg-gray-200 transition duration-300"
+            >
+              <IoSearch size={24} />
+            </button>
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="p-1 rounded-full text-gray-600 hover:bg-gray-200 transition duration-300"
+            >
+              <IoClose size={24} />
+            </button>
           </div>
         </div>
       )}
       {!isExpanded && (
-        <div
-          className="w-10 ml-4 h-10 flex items-center rounded-full border border-gray-400 justify-center cursor-pointer"
-          onClick={handleToggleExpand}
+        <button
+          className="w-10 h-10 ml-4 flex items-center justify-center rounded-full border border-gray-400 cursor-pointer transition duration-300 hover:bg-gray-100"
+          onClick={() => setIsExpanded(true)}
         >
-          <Image
-            src="/icons/search-icon.svg"
-            alt="Search"
-            width={20}
-            height={20}
-          />
-        </div>
+          <IoSearch size={24} className="text-gray-600" />
+        </button>
       )}
     </div>
   );

@@ -7,6 +7,7 @@ import SectionTitle from "@/app/[locale]/components/SectionTitle";
 import { useTranslations } from "next-intl";
 import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
 import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const AllProductsGallery: React.FC = () => {
   const { data: productCardData, loading, error } = useProductCardCatalog();
@@ -42,12 +43,7 @@ const AllProductsGallery: React.FC = () => {
             onClick={() => scrollProducts(-300)}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-md z-10"
           >
-            <Image
-              src="/icons/arrow-right.svg"
-              alt="Scroll Left"
-              width={24}
-              height={24}
-            />
+            <FaArrowLeft width={24} height={24} />
           </button>
         )}
         <div
@@ -71,12 +67,7 @@ const AllProductsGallery: React.FC = () => {
             onClick={() => scrollProducts(300)}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-md z-10"
           >
-            <Image
-              src="/icons/arrow-right.svg"
-              alt="Scroll Right"
-              width={24}
-              height={24}
-            />
+            <FaArrowRight width={24} height={24} />
           </button>
         )}
       </div>

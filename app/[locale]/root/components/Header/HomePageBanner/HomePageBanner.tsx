@@ -2,23 +2,9 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import BannerButtons from "./BannerButtons"; // Import the new component
 
 export default function HomePageBanner() {
   const t = useTranslations("HomePageBannerButtons");
-
-  const buttons = [
-    {
-      id: "shop",
-      text: t("shop"),
-      size: "large" as "small" | "medium" | "large",
-    },
-    {
-      id: "schedule",
-      text: t("scheduleAnAppointment"),
-      size: "large" as "small" | "medium" | "large",
-    },
-  ];
 
   return (
     <div className="relative w-full h-72 md:h-[550px]">
@@ -30,8 +16,12 @@ export default function HomePageBanner() {
         className="w-full h-auto object-cover object-[80%_center]"
         priority
       />
-
-      <BannerButtons buttons={buttons} />
+      <button className="btn btn-primary hover:bg-primary-focus hover:border-primary-focus absolute bottom-4 md:top-1/3 md:transform -translate-y-1/2 md:left-20 px-20">
+        {t("shop")}
+      </button>
+      <button className="btn btn-secondary absolute bottom-4 md:top-1/2 md:transform -translate-y-1/2 md:left-20 px-20">
+        {t("scheduleAnAppointment")}
+      </button>
     </div>
   );
 }
