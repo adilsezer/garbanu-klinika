@@ -1,11 +1,11 @@
 "use client";
 import SearchBar from "./SearchBar";
 import Logo from "../../../../components/Logo";
-import UserIcon from "./UserIcon";
-import HeartIcon from "./HeartIcon";
-import CartIcon from "./CartIcon";
 import LanguageSwitcher from "./LanguageSwitcher";
 import HamburgerMenu from "../MenuLinks/HamburgerMenu";
+import IconLink from "@components/IconLink";
+import { IoCartOutline } from "react-icons/io5";
+import { FaRegUser, FaRegHeart } from "react-icons/fa";
 
 export default function TopBar() {
   return (
@@ -19,9 +19,9 @@ export default function TopBar() {
             <Logo />
             <div className="md:flex md:items-center md:space-x-4">
               <LanguageSwitcher />
-              <UserIcon />
-              <HeartIcon />
-              <CartIcon />
+              <IconLink href="/cart" icon={<FaRegUser size="auto" />} />
+              <IconLink href="/cart" icon={<FaRegHeart size="auto" />} />
+              <IconLink href="/cart" icon={<IoCartOutline size="auto" />} />
             </div>
           </div>
 
