@@ -4,16 +4,15 @@ interface ErrorComponentProps {
   message: string;
 }
 
-const ErrorComponent: React.FC<ErrorComponentProps> = ({ message }) => {
+export default function ErrorComponent({ message }: ErrorComponentProps) {
   return (
-    // Outer div takes full width and height of its container, with padding and margin
-    <div className="flex justify-center items-center w-full h-full p-4">
-      <div className="text-center">
-        <p className="text-lg font-semibold text-red-600">Error</p>
-        <p className="text-md text-gray-600">{message}</p>
+    // Outer div takes full width and height of its container, with responsive padding
+    <div className="flex justify-center items-center text-center w-full h-full p-2 md:p-4">
+      {/* Responsive text sizes for different screen widths */}
+      <div>
+        <p className="text-md sm:text-lg font-semibold text-red-600">Error</p>
+        <p className="text-sm sm:text-md text-gray-600">{message}</p>
       </div>
     </div>
   );
-};
-
-export default ErrorComponent;
+}

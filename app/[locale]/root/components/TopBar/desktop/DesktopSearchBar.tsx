@@ -16,7 +16,7 @@ export default function DesktopSearchBar({
           placeholder={placeholder}
           className="input input-bordered w-full rounded-full focus:outline-none"
         />
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer ">
+        <div className="absolute inset-y-0 right-2 flex items-center pr-3 cursor-pointer ">
           <IoSearch size={20} />
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function LanguageSwitcher() {
           onClick={() => switchLocale(loc)}
           className={`btn ${
             locale === loc ? "bg-quaternary" : "bg-secondary"
-          } btn-sm md:btn-sm hover:bg-primary-focus drop-shadow-none`}
+          } btn-sm md:btn-sm hover:bg-primary-focus shadow-none`}
           aria-label={`Switch language to ${localeNames[loc]}`}
         >
           {localeNames[loc]}

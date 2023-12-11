@@ -1,4 +1,3 @@
-// components/IconLink.tsx
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
@@ -9,10 +8,8 @@ interface IconLinkProps {
 
 export default function IconLink({ href, icon }: IconLinkProps) {
   return (
-    <Link href={href}>
-      <div className="relative w-4 h-4 md:w-8 md:h-8 cursor-pointer">
-        {icon}
-      </div>
-    </Link>
+    <div className="flex justify-center items-center w-4 h-4 md:w-8 md:h-8 cursor-pointer">
+      <Link href={href}>{icon}</Link>
+    </div>
   );
 }

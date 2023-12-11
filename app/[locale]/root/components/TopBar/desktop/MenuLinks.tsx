@@ -15,9 +15,9 @@ export default function MenuLinks() {
 
   return (
     <>
-      <nav className="navbar hidden md:flex mt-2" aria-label="Main navigation">
+      <nav className="navbar hidden md:flex p-0" aria-label="Main navigation">
         <div className="flex justify-center w-full">
-          <ul className="menu menu-horizontal p-0">
+          <ul className="menu menu-horizontal">
             {links.map((link) => (
               <li key={link.label}>
                 <Link

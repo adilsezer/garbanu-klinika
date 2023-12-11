@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import useClickOutside from "@/hooks/useClickOutside"; // Import the hook
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import LanguageSwitcher from "../../TopBar/LanguageSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 type MenuItem = {
