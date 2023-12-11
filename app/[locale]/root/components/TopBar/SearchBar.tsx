@@ -15,7 +15,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <MobileSearchBar placeholder={t("search")} onSearch={handleSearch} />
+      <MobileSearchBar searchLabel={t("search")} onSearch={handleSearch} />
       <DesktopSearchBar placeholder={t("search")} />
     </>
   );

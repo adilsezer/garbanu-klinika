@@ -3,12 +3,12 @@ import { IoSearch, IoClose } from "react-icons/io5";
 import useClickOutside from "@hooks/useClickOutside";
 
 interface MobileSearchBarProps {
-  placeholder: string;
+  searchLabel: string;
   onSearch: (query: string) => void;
 }
 
 export default function MobileSearchBar({
-  placeholder,
+  searchLabel,
   onSearch,
 }: MobileSearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -36,7 +36,7 @@ export default function MobileSearchBar({
       </button>
 
       {isExpanded && (
-        <div className="modal modal-top modal-open mt-10">
+        <div className="modal modal-top modal-open">
           <div className="modal-box relative mx-auto p-5" ref={searchBarRef}>
             <button
               onClick={() => setIsExpanded(false)}
@@ -46,7 +46,7 @@ export default function MobileSearchBar({
             </button>
             <input
               type="text"
-              placeholder={placeholder}
+              placeholder={searchLabel}
               className="input input-bordered border-primary-focus w-full max-w-md focus:ring-2 focus:ring-primary-focus focus:outline-none mt-6"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -55,7 +55,7 @@ export default function MobileSearchBar({
             <div className="modal-action">
               {/* closes the modal */}
               <button className="btn bg-primary-focus" onClick={handleSearch}>
-                Search
+                {searchLabel}
               </button>
             </div>
           </div>
