@@ -2,11 +2,11 @@
 "use client";
 import React from "react";
 import { useTranslations } from "next-intl";
-import SectionTitle from "@/app/[locale]/components/SectionTitle";
+import SectionTitle from "@components/layout/SectionTitle";
 import ProductTypeCard from "./ProductTypeCard"; // Updated import
 import useProductTypes from "@/hooks/useProductTypes";
-import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
-import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
+import ErrorComponent from "@components/common/ErrorComponent";
+import LoadingComponent from "@components/common/LoadingComponent";
 
 const ProductTypeGallery: React.FC = () => {
   const { productTypes, loading, error } = useProductTypes();

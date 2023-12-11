@@ -3,10 +3,10 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import ProductCard from "./AllProductsCard";
 import { useProductCardCatalog } from "@/hooks/useProductCardCatalog";
-import SectionTitle from "@/app/[locale]/components/SectionTitle";
+import SectionTitle from "@components/layout/SectionTitle";
 import { useTranslations } from "next-intl";
-import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
-import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
+import ErrorComponent from "@components/common/ErrorComponent";
+import LoadingComponent from "@components/common/LoadingComponent";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const AllProductsGallery: React.FC = () => {

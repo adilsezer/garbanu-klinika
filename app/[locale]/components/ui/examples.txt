@@ -1,0 +1,10 @@
+/components/ui
+UI components are more specific than common components and are typically used to build the unique parts of your interface. They are often specific to your application's context.
+
+ProductCard.tsx: A card component displaying a product, used in product lists.
+UserProfile.tsx: A component to display user profile information.
+Accordion.tsx: For collapsible/expandable content sections.
+Tabs.tsx: Tabbed interface components for sectioning content.
+Carousel.tsx: A carousel or slider component, maybe for image galleries.
+RatingStar.tsx: A component for displaying and possibly selecting star ratings.
+Timeline.tsx: A component for displaying events or steps in a timeline format.

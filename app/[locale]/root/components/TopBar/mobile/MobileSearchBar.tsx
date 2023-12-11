@@ -27,7 +27,7 @@ export default function MobileSearchBar({
   };
 
   return (
-    <div className="relative">
+    <div className="relative md:hidden">
       {isExpanded && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm transition duration-300 ease-in-out flex justify-center">
           <div
@@ -37,20 +37,20 @@ export default function MobileSearchBar({
             <input
               type="text"
               placeholder={placeholder}
-              className="input input-bordered w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition duration-300"
+              className="input w-full max-w-md focus:ring-2 focus:ring-primary-focus focus:outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               autoFocus
             />
             <button
               onClick={handleSearch}
-              className="p-1 rounded-full text-gray-600 hover:bg-gray-200 transition duration-300"
+              className="p-1 rounded-full text-primary"
             >
               <IoSearch size={24} />
             </button>
             <button
               onClick={() => setIsExpanded(false)}
-              className="p-1 rounded-full text-gray-600 hover:bg-gray-200 transition duration-300"
+              className="p-1 rounded-full text-primary"
             >
               <IoClose size={24} />
             </button>

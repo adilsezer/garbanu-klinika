@@ -11,8 +11,8 @@ interface BannerData {
 
 // Adjust the import path for promotionalBannerPath as needed
 import { promotionalBannersCollection } from "@lib/firebase/firebaseConfig";
-import LoadingComponent from "@/app/[locale]/components/LoadingComponent";
-import ErrorComponent from "@/app/[locale]/components/ErrorComponent";
+import LoadingComponent from "@components/common/LoadingComponent";
+import ErrorComponent from "@components/common/ErrorComponent";
 
 const PromotionalBanner: React.FC = () => {
   const currentLocale = useLocale();

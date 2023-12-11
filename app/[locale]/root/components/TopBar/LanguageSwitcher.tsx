@@ -16,15 +16,14 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 rounded-lg">
+    <div className="flex items-center gap-2 md:mx-6">
       {locales.map((loc) => (
         <button
           key={loc}
           onClick={() => switchLocale(loc)}
-          className={`
-            px-3 py-2 font-semibold text-sm transition-colors duration-300
-            ${locale === loc ? "bg-quaternary text-primary" : "text-primary"}
-            rounded-full focus:outline-none hover:bg-quaternary hover:text-primary md:text-base`}
+          className={`btn ${
+            locale === loc ? "bg-quaternary" : "bg-secondary"
+          } btn-sm md:btn-sm hover:bg-primary-focus drop-shadow-none`}
           aria-label={`Switch language to ${localeNames[loc]}`}
         >
           {localeNames[loc]}
