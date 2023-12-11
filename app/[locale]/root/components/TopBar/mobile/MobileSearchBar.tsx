@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { IoSearch, IoClose } from "react-icons/io5";
-import useClickOutside from "@hooks/useClickOutside"; // Assuming the hook is in the same directory
+import useClickOutside from "@hooks/useClickOutside";
 
 interface MobileSearchBarProps {
   placeholder: string;
@@ -28,42 +28,38 @@ export default function MobileSearchBar({
 
   return (
     <div className="relative md:hidden">
+      <button
+        onClick={() => setIsExpanded(true)}
+        className="btn btn-square btn-ghost"
+      >
+        <IoSearch size="24" />
+      </button>
+
       {isExpanded && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm transition duration-300 ease-in-out flex justify-center">
-          <div
-            className="absolute top-1/4 flex items-center space-x-3 p-4 bg-white rounded-lg shadow-xl"
-            ref={searchBarRef}
-          >
+        <div className="modal modal-top modal-open mt-10">
+          <div className="modal-box relative mx-auto p-5" ref={searchBarRef}>
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="btn btn-sm btn-circle absolute right-2 top-2"
+            >
+              <IoClose size="24" />
+            </button>
             <input
               type="text"
               placeholder={placeholder}
-              className="input w-full max-w-md focus:ring-2 focus:ring-primary-focus focus:outline-none"
+              className="input input-bordered border-primary-focus w-full max-w-md focus:ring-2 focus:ring-primary-focus focus:outline-none mt-6"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               autoFocus
             />
-            <button
-              onClick={handleSearch}
-              className="p-1 rounded-full text-primary"
-            >
-              <IoSearch size={24} />
-            </button>
-            <button
-              onClick={() => setIsExpanded(false)}
-              className="p-1 rounded-full text-primary"
-            >
-              <IoClose size={24} />
-            </button>
+            <div className="modal-action">
+              {/* closes the modal */}
+              <button className="btn bg-primary-focus" onClick={handleSearch}>
+                Search
+              </button>
+            </div>
           </div>
         </div>
-      )}
-      {!isExpanded && (
-        <button
-          className="w-10 h-10 ml-4 flex items-center justify-center rounded-full border border-gray-400 cursor-pointer transition duration-300 hover:bg-gray-100"
-          onClick={() => setIsExpanded(true)}
-        >
-          <IoSearch size={24} className="text-gray-600" />
-        </button>
       )}
     </div>
   );
