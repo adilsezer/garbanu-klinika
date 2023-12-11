@@ -4,10 +4,7 @@ import { useState, useEffect } from "react";
 import { useFirestoreData } from "./useFirestoreData";
 import { useLocale } from "next-intl";
 import firebase from "firebase/compat/app";
-import {
-  productsCollection,
-  productTypesCollection,
-} from "@lib/firebase/firebaseConfig";
+import { FIRESTORE_COLLECTIONS } from "@lib/firebase/firebaseConfig";
 
 // Interface for product data as retrieved from Firestore
 interface FirestoreProductData {
@@ -52,12 +49,16 @@ export function useProductCardCatalog() {
     data: products,
     loading: productsLoading,
     error: productsError,
-  } = useFirestoreData<FirestoreProductData>(productsCollection);
+  } = useFirestoreData<FirestoreProductData>(
+    FIRESTORE_COLLECTIONS.products
+  );
   const {
     data: productTypes,
     loading: productTypesLoading,
     error: productTypesError,
-  } = useFirestoreData<FirestoreProductTypeData>(productTypesCollection);
+  } = useFirestoreData<FirestoreProductTypeData>(
+    FIRESTORE_COLLECTIONS.productTypes
+  );
   const [productDisplayData, setProductDisplayData] = useState<
     ProductDisplayData[]
   >([]);

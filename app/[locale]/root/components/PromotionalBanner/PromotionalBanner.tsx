@@ -2,6 +2,9 @@
 import React from "react";
 import { useLocale } from "next-intl";
 import { useFirestoreData } from "@hooks/useFirestoreData"; // Adjust the import path accordingly
+import { FIRESTORE_COLLECTIONS } from "@lib/firebase/firebaseConfig"; // Adjust the import path accordingly
+import LoadingComponent from "@components/common/LoadingComponent";
+import ErrorComponent from "@components/common/ErrorComponent";
 
 interface BannerData {
   id: string;
@@ -9,15 +12,10 @@ interface BannerData {
   text_lt: string;
 }
 
-// Adjust the import path for promotionalBannerPath as needed
-import { promotionalBannersCollection } from "@lib/firebase/firebaseConfig";
-import LoadingComponent from "@components/common/LoadingComponent";
-import ErrorComponent from "@components/common/ErrorComponent";
-
 const PromotionalBanner: React.FC = () => {
   const currentLocale = useLocale();
   const { data, loading, error } = useFirestoreData<BannerData>(
-    promotionalBannersCollection
+    FIRESTORE_COLLECTIONS.promotionalBanners
   );
 
   const getTextForLocale = (item: BannerData) => {

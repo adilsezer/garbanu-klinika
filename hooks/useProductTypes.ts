@@ -2,7 +2,7 @@
 import firebase from "firebase/compat/app";
 import { useFirestoreData } from "./useFirestoreData";
 import { useLocale } from "next-intl";
-import { productTypesCollection } from "@lib/firebase/firebaseConfig";
+import { FIRESTORE_COLLECTIONS } from "@lib/firebase/firebaseConfig";
 
 // Define the FirestoreProductType interface here
 interface FirestoreProductTypeData {
@@ -23,7 +23,7 @@ interface FirestoreProductTypeData {
 export default function useProductTypes() {
   const locale = useLocale();
   const { data, loading, error } = useFirestoreData<FirestoreProductTypeData>(
-    productTypesCollection,
+    FIRESTORE_COLLECTIONS.productTypes,
     "createdAt",
     "asc"
   );
