@@ -10,13 +10,14 @@ export default function SearchBar() {
   const handleSearch = (query: string) => {
     // Define your search logic here
     console.log("Searching for:", query);
+    alert(`Searching for: ${query}`);
     // You can redirect to a search page or set state to display results
   };
 
   return (
     <>
       <MobileSearchBar searchLabel={t("search")} onSearch={handleSearch} />
-      <DesktopSearchBar placeholder={t("search")} />
+      <DesktopSearchBar placeholder={t("search")} onSearch={handleSearch} />
     </>
   );
 }

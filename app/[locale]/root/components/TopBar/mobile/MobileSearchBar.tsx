@@ -26,6 +26,12 @@ export default function MobileSearchBar({
     }
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="relative md:hidden">
       <button
@@ -50,6 +56,7 @@ export default function MobileSearchBar({
               className="input input-bordered border-primary-focus w-full max-w-md focus:ring-2 focus:ring-primary-focus focus:outline-none mt-6"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyUp={handleKeyPress} // Handling Enter key press
               autoFocus
             />
             <div className="modal-action">
