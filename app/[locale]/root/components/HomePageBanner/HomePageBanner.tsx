@@ -16,10 +16,10 @@ export default function HomePageBanner() {
         className="w-full h-auto object-cover object-[80%_center]"
         priority
       />
-      <button className="btn btn-primary hover:bg-primary-focus hover:border-primary-focus absolute bottom-4 md:top-1/3 md:transform -translate-y-1/2 md:left-20 px-20">
+      <button className="btn btn-secondary hover:bg-tertiary absolute top-1/3 left-4 md:left-20 w-40 md:w-60 px-8">
         {t("shop")}
       </button>
-      <button className="btn btn-secondary absolute bottom-4 md:top-1/2 md:transform -translate-y-1/2 md:left-20 px-20">
+      <button className="btn btn-secondary hover:bg-tertiary absolute top-1/2 left-4 md:left-20 w-40 md:w-60 px-8 mt-4">
         {t("scheduleAnAppointment")}
       </button>
     </div>

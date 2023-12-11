@@ -6,7 +6,7 @@ import TopBarIcons from "./TopBarIcons";
 
 export default function TopBar() {
   return (
-    <div className="sticky top-0 bg-secondary z-50 py-1 md:py-4">
+    <div className="sticky top-0 bg-secondary z-50 my-1 md:mt-4">
       <div className="flex items-center justify-between">
         {/* Each component takes up 1/3 of the space */}
         <div className="flex-1 flex justify-start mx-2 md:mx-6">
