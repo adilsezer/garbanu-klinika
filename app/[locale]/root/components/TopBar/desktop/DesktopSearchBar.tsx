@@ -25,7 +25,7 @@ export default function DesktopSearchBar({
   };
 
   return (
-    <div className="hidden md:flex w-full max-w-xs lg:max-w-[250px] relative">
+    <div className="hidden md:flex w-full md:max-w-[250px] relative">
       <div className="form-control w-full">
         <input
           type="text"

@@ -33,11 +33,8 @@ export default function MobileSearchBar({
   };
 
   return (
-    <div className="relative md:hidden">
-      <button
-        onClick={() => setIsExpanded(true)}
-        className="btn btn-square btn-ghost"
-      >
+    <div className="md:hidden">
+      <button onClick={() => setIsExpanded(true)} className="btn btn-ghost">
         <IoSearch size="24" />
       </button>
 

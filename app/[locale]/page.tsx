@@ -5,6 +5,7 @@ import AddProductComponent from "./root/components/TestComponent/AddProductCompo
 import HomePageBanner from "./root/components/HomePageBanner/HomePageBanner";
 import PromotionalBanner from "./root/components/PromotionalBanner/PromotionalBanner";
 import TopBar from "./root/components/TopBar/TopBar";
+import ErrorComponent from "@components/common/ErrorComponent";
 
 export default function Home() {
   return (

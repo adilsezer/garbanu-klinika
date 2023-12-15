@@ -34,10 +34,10 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div className="md:hidden relative">
+    <div className="md:hidden">
       <button
         onClick={() => setIsMenuOpen((o) => !o)}
-        className="btn btn-square btn-ghost"
+        className="btn btn-ghost"
       >
         <FaBars size="24" />
       </button>
@@ -47,15 +47,14 @@ export default function HamburgerMenu() {
           <div className="modal-box relative" ref={modalRef}>
             <button
               onClick={closeMenu}
-              className="btn btn-sm btn-circle absolute right-2 top-2"
+              className="btn btn-sm btn-circle absolute top-0 right-0 m-2"
             >
               <FaTimes size="24" />
             </button>
 
-            <div className="flex justify-end pt-8">
+            <div className="mt-4">
               <LanguageSwitcher />
             </div>
-
             <div className="menu p-4 overflow-y-auto w-full h-full">
               {menuItems.map(({ href, label }, index) => (
                 <div
@@ -66,7 +65,7 @@ export default function HamburgerMenu() {
                 >
                   <Link
                     href={href}
-                    className="block py-3 px-5 text-lg text-center hover:bg-gray-100"
+                    className="block py-3 px-5 text-lg text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {label}

@@ -6,12 +6,10 @@ interface ErrorComponentProps {
 
 export default function ErrorComponent({ message }: ErrorComponentProps) {
   return (
-    // Outer div takes full width and height of its container, with responsive padding
-    <div className="flex justify-center items-center text-center w-full h-full p-2 md:p-4">
-      {/* Responsive text sizes for different screen widths */}
-      <div>
-        <p className="text-md sm:text-lg font-semibold text-red-600">Error</p>
-        <p className="text-sm sm:text-md text-gray-600">{message}</p>
+    <div className="card card-compact flex flex-col justify-center items-center">
+      <div className="card-body">
+        <p className="text-lg font-semibold text-error">Error</p>
+        <p className="text-base text-base-content">{message}</p>
       </div>
     </div>
   );

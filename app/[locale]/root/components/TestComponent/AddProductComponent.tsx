@@ -8,7 +8,9 @@ const AddProductComponent = () => {
     attributes: { volume: "300ml" },
     brandId: "brand-natural-waves",
     createdAt: Timestamp.fromDate(new Date()),
-    imageURLs: ["https://example.com/image1.jpg"],
+    imageURLs: [
+      "https://firebasestorage.googleapis.com/v0/b/garbanu-klinika-e5174.appspot.com/o/product-type-images%2Fshampoo.jpg?alt=media&token=0a17e316-2b68-493e-a744-48fabe18a14a",
+    ],
     localization: {
       en: {
         detailedDescription: "A gentle shampoo for curly hair.",
@@ -28,8 +30,15 @@ const AddProductComponent = () => {
     updatedAt: Timestamp.fromDate(new Date()),
   };
 
+  function generateRandomId(prefix: string): string {
+    const randomPart =
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+    return `${prefix}-${randomPart}`;
+  }
+
   const handleAddProduct = async () => {
-    const productId = "prod-organic-curly-shampoo2"; // Custom document ID
+    const productId = generateRandomId("prod-organic-curly-shampoo");
     await addProduct(productId, dummyProductData)
       .then(() => console.log("Product added successfully"))
       .catch((error) => console.error("Error adding product:", error));

@@ -1,36 +1,36 @@
 import React from "react";
 import Image from "next/image";
 
-interface ProductCardProps {
-  productName: string;
-  productPrice: number;
+interface AllProductsCardProps {
+  name: string;
+  price: number;
   imageUrl: string;
-  productType?: string;
+  productTypeName?: string;
 }
 
-const AllProductsCard: React.FC<ProductCardProps> = ({
-  productName,
-  productPrice,
+const AllProductsCard: React.FC<AllProductsCardProps> = ({
+  name,
+  price,
   imageUrl,
-  productType,
+  productTypeName,
 }) => {
-  const formattedPrice = `€${productPrice.toFixed(2)}`;
-
   return (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out h-full flex flex-col">
-      <div className="relative w-full flex-shrink-0 h-32 md:h-52">
-        <Image src={imageUrl} alt={productName} fill className="object-cover" />
+    <div className="card bg-white w-full h-60 flex flex-col">
+      <div className="relative w-full h-1/2">
+        <Image
+          src={imageUrl}
+          alt={name}
+          fill
+          className="object-cover rounded-t-lg"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        />
       </div>
-      <div className="p-4 flex-grow">
-        <h2 className="md:text-lg font-semibold text-gray-800 truncate">
-          {productName}
-        </h2>
-        {productType && (
-          <h3 className="text-sm font-medium text-gray-600 truncate">
-            {productType}
-          </h3>
-        )}
-        <p className="text-gray-600 mt-1">{formattedPrice}</p>
+      <div className="card-body z-10 flex items-center justify-center p-4">
+        <div>
+          <h2 className="card-title">{name}</h2>
+          {productTypeName && <p>{productTypeName}</p>}
+          <p>{`€${price.toFixed(2)}`}</p>
+        </div>
       </div>
     </div>
   );

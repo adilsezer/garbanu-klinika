@@ -3,7 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import SectionTitle from "@components/layout/SectionTitle";
-import ProductTypeCard from "./ProductTypeCard"; // Updated import
+import ProductTypeCard from "./ProductTypeCard";
 import useProductTypes from "@/hooks/useProductTypes";
 import ErrorComponent from "@components/common/ErrorComponent";
 import LoadingComponent from "@components/common/LoadingComponent";
@@ -18,7 +18,7 @@ const ProductTypeGallery: React.FC = () => {
   return (
     <div>
       <SectionTitle text={t("productTypesTitle")} />
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8 my-4 md:my-8">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-8">
         {productTypes.map((product) => (
           <ProductTypeCard key={product.id} product={product} />
         ))}

@@ -7,8 +7,8 @@ export default function DesktopTopBarIcons() {
   return (
     <div className="hidden md:flex justify-center md:space-x-4">
       <LanguageSwitcher />
-      <IconLink href="/cart" icon={<FaRegUser size="25" />} />
-      <IconLink href="/cart" icon={<FaRegHeart size="25" />} />
+      <IconLink href="/profile" icon={<FaRegUser size="25" />} />
+      <IconLink href="/favorites" icon={<FaRegHeart size="25" />} />
       <IconLink href="/cart" icon={<IoCartOutline size="30" />} />
     </div>
   );
