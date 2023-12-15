@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
  */
 const useResponsiveItems = (
   breakpoint = 768,
-  itemsLarge = 4,
+  itemsLarge = 5,
   itemsSmall = 2
 ) => {
   const [itemsPerView, setItemsPerView] = useState(

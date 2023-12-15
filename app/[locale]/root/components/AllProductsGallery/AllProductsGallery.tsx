@@ -18,7 +18,8 @@ const AllProductsGallery: React.FC = () => {
 
   const handleScroll = (direction: "left" | "right") => {
     if (!carouselRef.current || !data) return;
-    const itemsToScroll = 4;
+
+    const itemsToScroll = itemsPerView;
     const offset = direction === "left" ? -itemsToScroll : itemsToScroll;
 
     const newIndex = Math.min(
@@ -41,25 +42,25 @@ const AllProductsGallery: React.FC = () => {
     <div>
       <SectionTitle text={t("allProductsTitle")} />
       <div className="relative w-full">
-        <div className="flex items-center justify-evenly">
+        <div className="flex items-center justify-center">
           <button
             className="btn btn-primary btn-circle absolute left-14 z-20"
             onClick={() => handleScroll("left")}
           >
             <FaArrowLeft />
           </button>
-          <div ref={carouselRef} className="flex overflow-hidden mx-8 gap-4">
+          <div
+            ref={carouselRef}
+            className="flex overflow-hidden mx-4 md:mx-8 gap-2 md:gap-4"
+          >
             {data?.map((product) => (
-              <div
-                key={product.id}
-                className="flex-none w-[calc(50%-1rem)] md:w-[calc(23%-1rem)]"
-              >
+              <div key={product.id} className="flex-none w-[49%] md:w-[17%]">
                 <ProductCard {...product} />
               </div>
             ))}
           </div>
           <button
-            className="btn btn-circle btn-primary absolute right-14 z-20"
+            className="btn btn-circle btn-primary absolute right-4 md:right-14 z-20"
             onClick={() => handleScroll("right")}
           >
             <FaArrowRight />
