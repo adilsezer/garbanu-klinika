@@ -25,10 +25,13 @@
     "aboutUs": "APIE MUS",
     "contact": "KONTAKTAI"
   },
-  "ProductTypesPanel": {
+  "ProductsByTypeGallery": {
     "productTypesTitle": "PRODUKTAI PAGAL TIPA"
   },
-  "AllProductsPanel": {
+  "AllProductsGallery": {
     "allProductsTitle": "VISI PRODUKTAI"
+  },
+  "ProductsByBrandGallery": {
+    "productBrandsTitle": "PRODUKTAI PAGAL PREKĖS ŽENKLĄ"
   }
 }

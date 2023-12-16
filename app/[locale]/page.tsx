@@ -1,11 +1,11 @@
 import React from "react";
-import ProductTypeGallery from "./root/components/ProductTypeGallery/ProductTypeGallery";
+import ProductsByTypeGallery from "./root/components/ProductsByTypeGallery/ProductsByTypeGallery";
 import AllProductsGallery from "./root/components/AllProductsGallery/AllProductsGallery";
 import AddProductComponent from "./root/components/TestComponent/AddProductComponent";
 import HomePageBanner from "./root/components/HomePageBanner/HomePageBanner";
 import PromotionalBanner from "./root/components/PromotionalBanner/PromotionalBanner";
 import TopBar from "./root/components/TopBar/TopBar";
-import ErrorComponent from "@components/common/ErrorComponent";
+import ProductsByBrandGallery from "./root/components/ProductsByBrandGallery/ProductsByBrandGallery";
 
 export default function Home() {
   return (
@@ -13,8 +13,9 @@ export default function Home() {
       <PromotionalBanner />
       <TopBar />
       <HomePageBanner />
-      <ProductTypeGallery />
+      <ProductsByTypeGallery />
       <AllProductsGallery />
+      <ProductsByBrandGallery />
       <AddProductComponent />
     </main>
   );

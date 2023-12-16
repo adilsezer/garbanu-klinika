@@ -10,7 +10,9 @@ export interface ProductType {
   url: string;
 }
 
-const ProductTypeCard: React.FC<{ product: ProductType }> = ({ product }) => {
+const ProductsByTypeCard: React.FC<{ product: ProductType }> = ({
+  product,
+}) => {
   return (
     <Link
       href={product.url}
@@ -37,4 +39,4 @@ const ProductTypeCard: React.FC<{ product: ProductType }> = ({ product }) => {
   );
 };
 
-export default ProductTypeCard;
+export default ProductsByTypeCard;

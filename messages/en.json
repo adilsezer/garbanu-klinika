@@ -25,10 +25,13 @@
     "aboutUs": "ABOUT US",
     "contact": "CONTACT"
   },
-  "ProductTypesPanel": {
+  "ProductsByTypeGallery": {
     "productTypesTitle": "PRODUCT TYPES"
   },
-  "AllProductsPanel": {
+  "AllProductsGallery": {
     "allProductsTitle": "ALL PRODUCTS"
+  },
+  "ProductsByBrandGallery": {
+    "productBrandsTitle": "PRODUCT BRANDS"
   }
 }

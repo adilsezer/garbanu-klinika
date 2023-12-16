@@ -3,14 +3,14 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import SectionTitle from "@components/layout/SectionTitle";
-import ProductTypeCard from "./ProductTypeCard";
+import ProductsByTypeCard from "./ProductsByTypeCard";
 import useProductTypes from "@/hooks/useProductTypes";
 import ErrorComponent from "@components/common/ErrorComponent";
 import LoadingComponent from "@components/common/LoadingComponent";
 
-const ProductTypeGallery: React.FC = () => {
+const ProductsByTypeGallery: React.FC = () => {
   const { productTypes, loading, error } = useProductTypes();
-  const t = useTranslations("ProductTypesPanel");
+  const t = useTranslations("ProductsByTypeGallery");
 
   if (loading) return <LoadingComponent />;
   if (error) return <ErrorComponent message={error.message} />;
@@ -20,11 +20,11 @@ const ProductTypeGallery: React.FC = () => {
       <SectionTitle text={t("productTypesTitle")} />
       <div className="flex flex-wrap justify-center gap-2 md:gap-8">
         {productTypes.map((product) => (
-          <ProductTypeCard key={product.id} product={product} />
+          <ProductsByTypeCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
 };
 
-export default ProductTypeGallery;
+export default ProductsByTypeGallery;
