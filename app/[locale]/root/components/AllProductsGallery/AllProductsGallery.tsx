@@ -50,7 +50,7 @@ const AllProductsGallery: React.FC = () => {
             className="flex overflow-hidden mx-4 md:mx-10 gap-2 md:gap-4"
           >
             {data?.map((product) => (
-              <div key={product.id} className="flex-none w-[49%] md:w-[17%]">
+              <div key={product.id} className="flex-none w-[48%] md:w-[17%]">
                 <ProductCard {...product} />
               </div>
             ))}

@@ -17,8 +17,8 @@ const AllProductsCard: React.FC<AllProductsCardProps> = ({
   productTypeName,
 }) => {
   return (
-    <div className="card bg-secondary-dark w-full h-60 md:h-80">
-      <div className="relative w-full h-[45%]">
+    <div className="card bg-secondary-dark w-full h-72 md:h-80">
+      <div className="relative w-full h-[55%]">
         <Image
           src={imageUrl}
           alt={name}
@@ -32,17 +32,17 @@ const AllProductsCard: React.FC<AllProductsCardProps> = ({
       </h2>
       <div className="card-body justify-center text-center items-center p-1">
         {productTypeName}
-        <div className="badge badge-primary">€{price.toFixed(2)}</div>
       </div>
-      <div className="card-actions justify-center p-2">
-        <button className="btn btn-sm btn-circle btn-outline">
-          <FiEye size="18" />
+      <div className="card-actions border-gray-400 border-2 rounded-lg items-center justify-center p-0 md:p-1">
+        <div className="badge badge-primary md:mx-4">€{price.toFixed(2)}</div>
+        <button className="btn btn-sm btn-ghost p-1">
+          <FiEye size="20" />
         </button>
-        <button className="btn btn-sm btn-circle btn-outline">
-          <FiHeart size="18" />
+        <button className="btn btn-sm btn-ghost p-1">
+          <FiHeart size="20" />
         </button>
-        <button className="btn btn-sm btn-circle btn-outline">
-          <FiShoppingCart size="18" />
+        <button className="btn btn-sm btn-ghost p-1">
+          <FiShoppingCart size="20" />
         </button>
       </div>
     </div>
