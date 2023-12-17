@@ -4,36 +4,38 @@ import React from "react";
 import OurServicesCard from "./OurServicesCard";
 import SectionTitle from "@components/layout/SectionTitle";
 import { useTranslations } from "next-intl";
+import useFirestoreCollection from "@hooks/useFirestoreCollection";
+import { FIRESTORE_COLLECTIONS } from "@lib/firebase/firebaseConfig";
+import LoadingComponent from "@components/common/LoadingComponent";
+import ErrorComponent from "@components/common/ErrorComponent";
 
-// Define the type for your service data
-type Service = {
-  id: number;
-  title: string;
-  description: string;
-};
-
-const servicesData: Service[] = [
-  { id: 1, title: "GARBANŲ TRANSFORMACIJA", description: "skaitļi daugiau" },
-  { id: 2, title: "GARBANOTŲ PLAUKŲ KIRPIMAS", description: "skaitļi daugiau" },
-  // Add more services as needed...
-];
-
-const ServicesList: React.FC = () => {
+const OurServicesGallery: React.FC = () => {
+  const {
+    services: productServices,
+    loading,
+    error,
+  } = useFirestoreCollection(FIRESTORE_COLLECTIONS.services);
   const t = useTranslations("OurServicesGallery");
+
+  if (loading) return <LoadingComponent />;
+  if (error) return <ErrorComponent message={error.message} />;
+
   return (
     <div>
       <SectionTitle className="text-center" text={t("ourServicesTitle")} />
       <div className="flex flex-wrap justify-center gap-4">
-        {servicesData.map((service) => (
-          <OurServicesCard
-            key={service.id}
-            title={service.title}
-            description={service.description}
-          />
-        ))}
+        {Array.isArray(productServices) &&
+          productServices.map((service) => (
+            <OurServicesCard
+              key={service.id}
+              title={service.name} // Adjust this as per your actual data structure
+              labelText={t("ourServicesReadMore")} // Adjust this as well
+              url={`/services/${service.id}`} // Adjust this as well
+            />
+          ))}
       </div>
     </div>
   );
 };
 
-export default ServicesList;
+export default OurServicesGallery;

@@ -39,7 +39,8 @@ export default function useFirestoreCollection(
       url: `/${collectionKey}/${item.id}`,
       createdAt: item.createdAt.toDate(),
       updatedAt: item.updatedAt.toDate(),
-      name: item.name,
+      name:
+        locale === "en" ? item.localization.en.name : item.localization.lt.name,
     })) || [];
 
   return { [collectionKey]: collectionData, loading, error };

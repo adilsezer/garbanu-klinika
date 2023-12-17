@@ -3,8 +3,8 @@ import ProductsByTypeGallery from "./root/components/ProductsByTypeGallery/Produ
 import AllProductsGallery from "./root/components/AllProductsGallery/AllProductsGallery";
 import AddProductComponent from "./root/components/TestComponent/AddProductComponent";
 import HomePageBanner from "./root/components/HomePageBanner/HomePageBanner";
-import PromotionalBanner from "./root/components/PromotionalBanner/PromotionalBanner";
-import TopBar from "./root/components/TopBar/TopBar";
+import PromotionalBanner from "./components/layout/PromotionalBanner/PromotionalBanner";
+import TopBar from "./components/layout/TopBar/TopBar";
 import ProductsByBrandGallery from "./root/components/ProductsByBrandGallery/ProductsByBrandGallery";
 import CurlyProfileCarousel from "./root/components/CurlyProfileCarousel/CurlyProfileCarousel";
 import OurServicesGallery from "./root/components/OurServices/OurServicesGallery";

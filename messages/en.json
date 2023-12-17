@@ -35,6 +35,7 @@
     "productBrandsTitle": "PRODUCT BRANDS"
   },
   "OurServicesGallery": {
-    "ourServicesTitle": "OUR SERVICES"
+    "ourServicesTitle": "OUR SERVICES",
+    "ourServicesReadMore": "read more"
   }
 }

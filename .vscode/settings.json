@@ -16,12 +16,14 @@
     "KONTAKTAI",
     "KREPŠELIS",
     "MĖGSTAMIAUSI",
+    "MŪSŲ",
     "nconfig",
     "PAGAL",
     "Paieška",
     "PARDUOTUVĖ",
     "PASLAUGOS",
     "PLAUKŲ",
+    "PREKĖS",
     "PRIEMONĖS",
     "PROCEDUROS",
     "PRODUKTAI",
@@ -29,11 +31,13 @@
     "REGISTRACIJA",
     "ŠAMPŪNAI",
     "skaitļi",
+    "skaityti",
     "TIPA",
     "TRANSFORMACIJA",
     "unoptimized",
     "UŽSIRAŠYMAI",
     "VISI",
-    "VIZITUI"
+    "VIZITUI",
+    "ŽENKLĄ"
   ]
 }
