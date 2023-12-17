@@ -6,7 +6,6 @@ import Link from "next/link";
 export interface ProductBrand {
   id: string;
   imageUrl: string;
-  buttonText: string;
   url: string;
   name: string;
 }
@@ -19,7 +18,7 @@ const ProductsByBrandCard: React.FC<{ product: ProductBrand }> = ({
       <Link href={product.url} passHref className="card relative w-full h-full">
         <Image
           src={product.imageUrl}
-          alt={product.buttonText}
+          alt={product.name}
           fill
           className="rounded-xl"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"

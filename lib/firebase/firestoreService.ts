@@ -1,39 +1,32 @@
 import db from "./firebaseInit";
-import firebase from "firebase/compat/app";
 import { doc, setDoc } from "firebase/firestore";
 
-interface Product {
-  attributes: {
-    volume: string;
-  };
-  brandId: string;
-  createdAt: firebase.firestore.Timestamp;
-  imageURLs: string[];
-  localization: {
-    en: {
-      detailedDescription: string;
-      name: string;
-      shortDescription: string;
-    };
-    lt: {
-      detailedDescription: string;
-      name: string;
-      shortDescription: string;
-    };
-  };
-  price: number;
-  stock: number;
-  tags: string[];
-  typeId: string;
-  updatedAt: firebase.firestore.Timestamp;
+interface FirestoreDocument {
+  id: string; // Each document should have an 'id' field
+  [key: string]: any; // Flexible to accommodate different document structures
 }
 
-export const addProduct = async (productId: string, product: Product) => {
-  try {
-    const docRef = doc(db, "products", productId);
-    await setDoc(docRef, product);
-    console.log("Document written with ID: ", productId);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
+/**
+ * Add multiple documents to a specified collection in Firestore.
+ *
+ * @param {string} collectionName - The name of the collection.
+ * @param {FirestoreDocument[]} documentsArray - The array of documents to be added.
+ */
+export const addDocumentsToCollection = async (
+  collectionName: string,
+  documentsArray: FirestoreDocument[]
+) => {
+  const addPromises = documentsArray.map(async (documentData) => {
+    const { id, ...data } = documentData; // Destructure the id and the rest of the data
+    try {
+      const docRef = doc(db, collectionName, id);
+      await setDoc(docRef, data);
+      console.log("Document written with ID: ", id);
+    } catch (e) {
+      console.error("Error adding document:", id, e);
+    }
+  });
+
+  // Wait for all add operations to complete
+  await Promise.all(addPromises);
 };

@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import { addProduct } from "@lib/firebase/firestoreService"; // import the addProduct function
+import { addDocumentsToCollection } from "@lib/firebase/firestoreService"; // import the addProduct function
 import { Timestamp } from "firebase/firestore";
 
 const AddProductComponent = () => {
   const dummyProductData = {
+    id: generateRandomId("product"),
     attributes: { volume: "300ml" },
     brandId: "brand-natural-waves",
     createdAt: Timestamp.fromDate(new Date()),
@@ -38,8 +39,7 @@ const AddProductComponent = () => {
   }
 
   const handleAddProduct = async () => {
-    const productId = generateRandomId("prod-organic-curly-shampoo");
-    await addProduct(productId, dummyProductData)
+    await addDocumentsToCollection("products", [dummyProductData])
       .then(() => console.log("Product added successfully"))
       .catch((error) => console.error("Error adding product:", error));
   };

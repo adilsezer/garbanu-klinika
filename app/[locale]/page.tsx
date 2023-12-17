@@ -8,6 +8,7 @@ import TopBar from "./components/layout/TopBar/TopBar";
 import ProductsByBrandGallery from "./root/components/ProductsByBrandGallery/ProductsByBrandGallery";
 import CurlyProfileCarousel from "./root/components/CurlyProfileCarousel/CurlyProfileCarousel";
 import OurServicesGallery from "./root/components/OurServices/OurServicesGallery";
+import AddServices from "./root/components/TestComponent/AddServices";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <CurlyProfileCarousel />
       <OurServicesGallery />
       <AddProductComponent />
+      <AddServices />
     </main>
   );
 }

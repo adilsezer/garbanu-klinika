@@ -18,6 +18,9 @@ interface FirestoreCollectionData {
   };
   updatedAt: firebase.firestore.Timestamp;
   name: string;
+  website: string;
+  duration: number;
+  price: number;
 }
 
 export default function useFirestoreCollection(
@@ -34,13 +37,16 @@ export default function useFirestoreCollection(
     data?.map((item) => ({
       id: item.id,
       imageUrl: item.imageURLs[0],
-      buttonText:
-        locale === "en" ? item.localization.en.name : item.localization.lt.name,
       url: `/${collectionKey}/${item.id}`,
       createdAt: item.createdAt.toDate(),
       updatedAt: item.updatedAt.toDate(),
       name:
-        locale === "en" ? item.localization.en.name : item.localization.lt.name,
+        locale === "en"
+          ? item.localization.en.name || item.name
+          : item.localization.lt.name || item.name,
+      website: item.website,
+      duration: item.duration,
+      price: item.price,
     })) || [];
 
   return { [collectionKey]: collectionData, loading, error };

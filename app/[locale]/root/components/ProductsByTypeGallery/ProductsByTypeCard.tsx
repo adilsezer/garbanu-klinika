@@ -6,7 +6,7 @@ import Link from "next/link";
 export interface ProductType {
   id: string;
   imageUrl: string;
-  buttonText: string;
+  name: string;
   url: string;
 }
 
@@ -23,7 +23,7 @@ const ProductsByTypeCard: React.FC<{ product: ProductType }> = ({
         <div className="absolute inset-0">
           <Image
             src={product.imageUrl}
-            alt={product.buttonText}
+            alt={product.name}
             fill
             className="object-cover rounded-lg"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -32,7 +32,7 @@ const ProductsByTypeCard: React.FC<{ product: ProductType }> = ({
       </div>
       <div className="card-actions justify-end m-8 z-10">
         <button className="btn btn-secondary w-full shadow-2xl hover:bg-primary-focus">
-          {product.buttonText}
+          {product.name}
         </button>
       </div>
     </Link>

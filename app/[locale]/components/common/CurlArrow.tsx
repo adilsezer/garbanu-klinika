@@ -1,28 +1,26 @@
-// components/CurlArrow.tsx
 import Image from "next/image";
 import React from "react";
 
-// Define the properties you might want to pass to the CurlArrow component
 type CurlArrowProps = {
-  width?: number;
-  height?: number;
+  sizeClass?: string; // Use Tailwind CSS classes for size
   alt?: string;
 };
 
 const CurlArrow: React.FC<CurlArrowProps> = ({
-  width = 24,
-  height = 24,
+  sizeClass = "w-6 h-6", // Default size, Tailwind classes for width and height
   alt = "Curl Arrow",
 }) => {
   return (
-    <div className="flex justify-center mt-4">
-      <Image
-        src="/icons/black-curl-arrow.svg" // The path to your SVG file
-        alt={alt}
-        width={width}
-        height={height}
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-      />
+    <div className={"flex justify-center mt-2"}>
+      <div className={`relative ${sizeClass}`}>
+        <Image
+          src="/icons/black-curl-arrow.svg"
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="h-auto"
+        />
+      </div>
     </div>
   );
 };

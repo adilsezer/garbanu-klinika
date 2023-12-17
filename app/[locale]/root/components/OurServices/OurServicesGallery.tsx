@@ -26,12 +26,7 @@ const OurServicesGallery: React.FC = () => {
       <div className="flex flex-wrap justify-center gap-4">
         {Array.isArray(productServices) &&
           productServices.map((service) => (
-            <OurServicesCard
-              key={service.id}
-              title={service.name} // Adjust this as per your actual data structure
-              labelText={t("ourServicesReadMore")} // Adjust this as well
-              url={`/services/${service.id}`} // Adjust this as well
-            />
+            <OurServicesCard key={service.id} service={service} />
           ))}
       </div>
     </div>
