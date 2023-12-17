@@ -19,4 +19,4 @@ export const FIRESTORE_COLLECTIONS = {
   reviews: "reviews",
   services: "services",
   users: "users",
-};
+} as const;

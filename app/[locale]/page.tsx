@@ -6,6 +6,8 @@ import HomePageBanner from "./root/components/HomePageBanner/HomePageBanner";
 import PromotionalBanner from "./root/components/PromotionalBanner/PromotionalBanner";
 import TopBar from "./root/components/TopBar/TopBar";
 import ProductsByBrandGallery from "./root/components/ProductsByBrandGallery/ProductsByBrandGallery";
+import CurlyProfileCarousel from "./root/components/CurlyProfileCarousel/CurlyProfileCarousel";
+import OurServicesGallery from "./root/components/OurServices/OurServicesGallery";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <ProductsByTypeGallery />
       <AllProductsGallery />
       <ProductsByBrandGallery />
+      <CurlyProfileCarousel />
+      <OurServicesGallery />
       <AddProductComponent />
     </main>
   );

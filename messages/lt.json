@@ -33,5 +33,8 @@
   },
   "ProductsByBrandGallery": {
     "productBrandsTitle": "PRODUKTAI PAGAL PREKĖS ŽENKLĄ"
+  },
+  "OurServicesGallery": {
+    "ourServicesTitle": "MŪSŲ PASLAUGOS"
   }
 }

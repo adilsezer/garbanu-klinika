@@ -33,5 +33,8 @@
   },
   "ProductsByBrandGallery": {
     "productBrandsTitle": "PRODUCT BRANDS"
+  },
+  "OurServicesGallery": {
+    "ourServicesTitle": "OUR SERVICES"
   }
 }
