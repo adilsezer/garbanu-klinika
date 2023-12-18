@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import ProductCard from "./AllProductsCard";
 import { useProductCardCatalog } from "@/hooks/useProductCardCatalog";
-import SectionTitle from "@components/layout/SectionTitle";
+import SectionTitle from "@components/layout/Titles/SectionTitle";
 import { useTranslations } from "next-intl";
 import ErrorComponent from "@components/common/ErrorComponent";
 import LoadingComponent from "@components/common/LoadingComponent";

@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { useTranslations } from "next-intl";
-import SectionTitle from "@components/layout/SectionTitle";
+import SectionTitle from "@components/layout/Titles/SectionTitle";
 import useFirestoreCollection from "@hooks/useFirestoreCollection"; // Corrected import
 import ErrorComponent from "@components/common/ErrorComponent";
 import LoadingComponent from "@components/common/LoadingComponent";

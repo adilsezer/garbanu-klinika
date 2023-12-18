@@ -2,7 +2,7 @@
 
 import React from "react";
 import OurServicesCard from "./OurServicesCard";
-import SectionTitle from "@components/layout/SectionTitle";
+import SectionTitle from "@components/layout/Titles/SectionTitle";
 import { useTranslations } from "next-intl";
 import useFirestoreCollection from "@hooks/useFirestoreCollection";
 import { FIRESTORE_COLLECTIONS } from "@lib/firebase/firebaseConfig";

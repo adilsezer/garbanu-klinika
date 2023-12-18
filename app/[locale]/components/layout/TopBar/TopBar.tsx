@@ -1,6 +1,6 @@
 "use client";
 import SearchBar from "./SearchBar";
-import Logo from "../Logo";
+import Logo from "../Logo/Logo";
 import HamburgerMenu from "./mobile/HamburgerMenu";
 import DesktopTopBarIcons from "./desktop/DesktopTopBarIcons";
 import MenuLinks from "./desktop/MenuLinks";

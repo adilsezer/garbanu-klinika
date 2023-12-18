@@ -10,6 +10,7 @@ import CurlyProfileCarousel from "./root/components/CurlyProfileCarousel/CurlyPr
 import OurServicesGallery from "./root/components/OurServices/OurServicesGallery";
 import AddServices from "./root/components/TestComponent/AddServices";
 import AboutUs from "./root/components/AboutUs/AboutUs";
+import Footer from "./components/layout/Footer/Footer";
 
 export default function Home() {
   return (
@@ -23,8 +24,9 @@ export default function Home() {
       <CurlyProfileCarousel />
       <OurServicesGallery />
       <AboutUs />
-      <AddProductComponent />
-      <AddServices />
+      <Footer />
+      {/* <AddProductComponent />
+      <AddServices /> */}
     </main>
   );
 }

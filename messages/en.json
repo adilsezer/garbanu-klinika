@@ -40,8 +40,15 @@
   },
   "AboutUs": {
     "aboutUsTitle": "ABOUT US",
-    "aboutUsText": "The Curl Clinic, a place dedicated to cutting and teaching how to care for naturally curly hair, was established in 2022. Rūta, after two years of working as a curly hair stylist and hairdresser in England, returned home and decided to share her knowledge in Lithuania.",
+    "aboutUsText": "Garbanų Klinika, a place dedicated to cutting and teaching how to care for naturally curly hair, was established in 2022. Rūta, after two years of working as a curly hair stylist and hairdresser in England, returned home and decided to share her knowledge in Lithuania.",
     "aboutUsReadMoreButton": "READ MORE",
     "aboutUsContactLabel": "CONTACT US"
+  },
+  "FooterMenu": {
+    "deliveryAndReturns": "DELIVERY AND RETURNS",
+    "contacts": "CONTACTS",
+    "rulesAndConditions": "RULES AND CONDITIONS",
+    "privacyPolicy": "PRIVACY POLICY",
+    "copyRight": "© 2024 GARBANŲ KLINIKA. ALL RIGHTS RESERVED."
   }
 }
