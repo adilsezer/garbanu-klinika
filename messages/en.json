@@ -36,6 +36,12 @@
   },
   "OurServicesGallery": {
     "ourServicesTitle": "OUR SERVICES",
-    "ourServicesReadMore": "read more"
+    "ourServicesReadMoreButton": "read more"
+  },
+  "AboutUs": {
+    "aboutUsTitle": "ABOUT US",
+    "aboutUsText": "The Curl Clinic, a place dedicated to cutting and teaching how to care for naturally curly hair, was established in 2022. Rūta, after two years of working as a curly hair stylist and hairdresser in England, returned home and decided to share her knowledge in Lithuania.",
+    "aboutUsReadMoreButton": "READ MORE",
+    "aboutUsContactLabel": "CONTACT US"
   }
 }

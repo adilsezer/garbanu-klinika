@@ -9,6 +9,7 @@ import ProductsByBrandGallery from "./root/components/ProductsByBrandGallery/Pro
 import CurlyProfileCarousel from "./root/components/CurlyProfileCarousel/CurlyProfileCarousel";
 import OurServicesGallery from "./root/components/OurServices/OurServicesGallery";
 import AddServices from "./root/components/TestComponent/AddServices";
+import AboutUs from "./root/components/AboutUs/AboutUs";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ProductsByBrandGallery />
       <CurlyProfileCarousel />
       <OurServicesGallery />
+      <AboutUs />
       <AddProductComponent />
       <AddServices />
     </main>

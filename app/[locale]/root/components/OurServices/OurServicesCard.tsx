@@ -23,7 +23,7 @@ const OurServicesCard: React.FC<{ service: ServiceType }> = ({ service }) => {
           <p className="text-sm md:text-lg">{service.name}</p>
         </div>
       </div>
-      <p className="text-center mt-2">{t("ourServicesReadMore")}</p>
+      <p className="text-center mt-2">{t("ourServicesReadMoreButton")}</p>
       <CurlArrow />
     </Link>
   );

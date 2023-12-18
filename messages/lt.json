@@ -36,6 +36,12 @@
   },
   "OurServicesGallery": {
     "ourServicesTitle": "MŪSŲ PASLAUGOS",
-    "ourServicesReadMore": "skaityti daugiau"
+    "ourServicesReadMoreButton": "skaityti daugiau"
+  },
+  "AboutUs": {
+    "aboutUsTitle": "APIE MUS",
+    "aboutUsText": "Garbanų klinika - vieta, kurioje kerpame ir mokomės rūpintis natūraliai garbanotais plaukais, buvo įkurta 2022m., kai Rūta, po dviejų metų garbanotų plaukų stilistės ir kirpėjos praktikos Anglijoje, sugrįžo namo ir nusprendė savo žiniomis dalintis čia, Lietuvoje.",
+    "aboutUsReadMoreButton": "SKAITYTI DAUGIAU",
+    "aboutUsContactLabel": "KONTAKTAI"
   }
 }
