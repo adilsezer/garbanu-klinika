@@ -2,10 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [main, development]
-  pull_request:
-    # The branches below should include the branches for which you want to run analysis
-    branches: [main, development]
+    branches: [development]
 
 jobs:
   analyze:
