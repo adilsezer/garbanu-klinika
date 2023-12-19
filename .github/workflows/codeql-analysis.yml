@@ -1,0 +1,28 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+    # The branches below should include the branches for which you want to run analysis
+    branches: [main, development]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript"] # CodeQL uses the same language for both JavaScript and TypeScript
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
