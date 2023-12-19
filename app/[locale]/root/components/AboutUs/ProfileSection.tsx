@@ -17,6 +17,7 @@ const ProfileSection: React.FC = () => {
           alt="Curly Hair Woman"
           fill
           className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
       <div className="w-full md:w-1/2 flex flex-col mx-4 md:mx-12">

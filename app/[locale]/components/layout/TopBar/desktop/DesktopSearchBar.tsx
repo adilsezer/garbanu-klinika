@@ -28,6 +28,7 @@ export default function DesktopSearchBar({
     <div className="hidden md:flex w-full md:max-w-[250px] relative">
       <div className="form-control w-full">
         <input
+          name="search"
           type="text"
           placeholder={placeholder}
           className="input input-bordered w-full rounded-full focus:outline-none"
