@@ -7,4 +7,4 @@ InputField.tsx: A standard input field, perhaps with integrated validation.
 Alert.tsx: For displaying alerts or notifications.
 IconButton.tsx: A button with an icon, reused in various places.
 Form.tsx: A generic form component, possibly using Formik or a similar library.
-Loader.tsx: A loading spinner used to indicate loading state.
+Loader.tsx: A loading spinner used to indicate loading state
