@@ -22,14 +22,15 @@ const profiles: Profile[] = [
 
 export default function CurlyProfileCarousel() {
   return (
-    <div className="carousel w-full h-60 md:h-[28rem] mt-12">
+    <div className="carousel w-full h-60 md:h-[40rem] mt-12">
       {profiles.map((profile, index) => (
         <div key={index} className="carousel-item w-1/3 h-full relative">
           <Image
             src={profile.src}
             alt={profile.alt}
             fill
-            className="object-cover"
+            quality={75}
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         </div>
