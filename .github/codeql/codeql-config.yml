@@ -1,3 +1,0 @@
-name: "TypeScript analysis"
-queries:
-  - uses: github/codeql-javascript@v2
