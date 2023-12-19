@@ -1,5 +1,5 @@
 The layout folder contains components that deal with the layout of your application. These components define how certain sections of your application are structured and are often used in multiple pages.
 Example files:
 Header.js: The top navigation bar of your site.
-Footer.js: The footer component, possibly containing links and copyright information.
-Sidebar.js: A sidebar component, which could be used for navigation or displaying additional information.
+Footer.js: The footer component, possibly containing links and copyright information
+Sidebar.js: A sidebar component, which could be used for navigation or displaying additional information
