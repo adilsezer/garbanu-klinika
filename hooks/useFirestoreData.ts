@@ -1,33 +1,30 @@
 // hooks/useFirestoreData.ts
-"use client";
 import { useState, useEffect } from "react";
-import db from "../lib/firebase/firebaseInit";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
+import db from "../lib/firebase/firebaseInit"; // Adjust the import path as needed
 
-type FirestoreBannerData = {
-  [key: string]: string;
-  en: string;
-  lt: string;
-};
-
-export function useFirestoreData(docPath: string, lang: string) {
-  const [data, setData] = useState<string | null>(null);
+export function useFirestoreData<T = any>(
+  collectionPath: string,
+  orderByField?: string,
+  orderDirection: "asc" | "desc" = "asc"
+) {
+  const [data, setData] = useState<T[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!docPath || !lang) {
-        setError(new Error("Invalid path or language"));
-        return;
-      }
       try {
-        const docRef = doc(db, docPath);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const bannerData = docSnap.data() as FirestoreBannerData;
-          setData(bannerData[lang]);
-        }
+        const colRef = collection(db, collectionPath);
+        const q = orderByField
+          ? query(colRef, orderBy(orderByField, orderDirection))
+          : query(colRef);
+        const querySnapshot = await getDocs(q);
+        const documents = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as T[];
+        setData(documents);
       } catch (err: unknown) {
         setError(new Error("Failed to fetch data: " + (err as Error).message));
       } finally {
@@ -36,7 +33,7 @@ export function useFirestoreData(docPath: string, lang: string) {
     };
 
     fetchData();
-  }, [docPath, lang]);
+  }, [collectionPath, orderByField, orderDirection]);
 
   return { data, loading, error };
 }

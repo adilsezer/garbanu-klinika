@@ -1,0 +1,10 @@
+/components/common
+This folder is for components that are used globally across your application. They are often the building blocks of your user interface.
+
+Button.tsx: A customizable button component used throughout the app.
+Modal.tsx: A generic modal or dialog component.
+InputField.tsx: A standard input field, perhaps with integrated validation.
+Alert.tsx: For displaying alerts or notifications.
+IconButton.tsx: A button with an icon, reused in various places.
+Form.tsx: A generic form component, possibly using Formik or a similar library.
+Loader.tsx: A loading spinner used to indicate loading state.

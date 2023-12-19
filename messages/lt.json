@@ -12,6 +12,43 @@
   },
   "HomePageBannerButtons": {
     "shop": "PARDUOTUVĖ",
-    "scheduleAnAppointment": "UŽSIRAŠYMAI VIZITUI"
+    "scheduleAnAppointment": "UŽSIRAŠYMAI"
+  },
+  "HamburgerMenu": {
+    "profile": "PROFILIS",
+    "favorites": "MĖGSTAMIAUSI",
+    "cart": "KREPŠELIS",
+    "store": "PARDUOTUVĖ",
+    "curlTest": "GARBANŲ TESTAS",
+    "services": "PASLAUGOS",
+    "registration": "REGISTRACIJA",
+    "aboutUs": "APIE MUS",
+    "contact": "KONTAKTAI"
+  },
+  "ProductsByTypeGallery": {
+    "productTypesTitle": "PRODUKTAI PAGAL TIPA"
+  },
+  "AllProductsGallery": {
+    "allProductsTitle": "VISI PRODUKTAI"
+  },
+  "ProductsByBrandGallery": {
+    "productBrandsTitle": "PRODUKTAI PAGAL PREKĖS ŽENKLĄ"
+  },
+  "OurServicesGallery": {
+    "ourServicesTitle": "MŪSŲ PASLAUGOS",
+    "ourServicesReadMoreButton": "skaityti daugiau"
+  },
+  "AboutUs": {
+    "aboutUsTitle": "APIE MUS",
+    "aboutUsText": "Garbanų Klinika - vieta, kurioje kerpame ir mokomės rūpintis natūraliai garbanotais plaukais, buvo įkurta 2022m., kai Rūta, po dviejų metų garbanotų plaukų stilistės ir kirpėjos praktikos Anglijoje, sugrįžo namo ir nusprendė savo žiniomis dalintis čia, Lietuvoje.",
+    "aboutUsReadMoreButton": "SKAITYTI DAUGIAU",
+    "aboutUsContactLabel": "KONTAKTAI"
+  },
+  "FooterMenu": {
+    "deliveryAndReturns": "PRISTATYMAS IR GRĄŽINIMAS",
+    "contacts": "KONTAKTAI",
+    "rulesAndConditions": "TAISYKLĖS IR SĄLYGOS",
+    "privacyPolicy": "PRIVATUMO POLITIKA",
+    "copyRight": "© 2024 GARBANŲ KLINIKA. VISOS TEISĖS SAUGOMOS."
   }
 }

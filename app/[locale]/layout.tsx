@@ -1,7 +1,7 @@
 // layout.tsx file to define the layout for all pages in the app
 
 // Importing necessary libraries and configurations
-import "./globals.css";
+import "@styles/globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
@@ -15,7 +15,6 @@ const roboto = Roboto({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  preload: true,
 });
 
 export const metadata: Metadata = {

@@ -12,6 +12,43 @@
   },
   "HomePageBannerButtons": {
     "shop": "SHOP",
-    "scheduleAnAppointment": "SCHEDULE AN APPOINTMENT"
+    "scheduleAnAppointment": "APPOINTMENT"
+  },
+  "HamburgerMenu": {
+    "profile": "PROFILE",
+    "favorites": "FAVORITES",
+    "cart": "CART",
+    "store": "STORE",
+    "curlTest": "CURL TEST",
+    "services": "SERVICES",
+    "registration": "REGISTRATION",
+    "aboutUs": "ABOUT US",
+    "contact": "CONTACT"
+  },
+  "ProductsByTypeGallery": {
+    "productTypesTitle": "PRODUCT TYPES"
+  },
+  "AllProductsGallery": {
+    "allProductsTitle": "ALL PRODUCTS"
+  },
+  "ProductsByBrandGallery": {
+    "productBrandsTitle": "PRODUCT BRANDS"
+  },
+  "OurServicesGallery": {
+    "ourServicesTitle": "OUR SERVICES",
+    "ourServicesReadMoreButton": "read more"
+  },
+  "AboutUs": {
+    "aboutUsTitle": "ABOUT US",
+    "aboutUsText": "Garbanų Klinika, a place dedicated to cutting and teaching how to care for naturally curly hair, was established in 2022. Rūta, after two years of working as a curly hair stylist and hairdresser in England, returned home and decided to share her knowledge in Lithuania.",
+    "aboutUsReadMoreButton": "READ MORE",
+    "aboutUsContactLabel": "CONTACT US"
+  },
+  "FooterMenu": {
+    "deliveryAndReturns": "DELIVERY AND RETURNS",
+    "contacts": "CONTACTS",
+    "rulesAndConditions": "RULES AND CONDITIONS",
+    "privacyPolicy": "PRIVACY POLICY",
+    "copyRight": "© 2024 GARBANŲ KLINIKA. ALL RIGHTS RESERVED."
   }
 }

@@ -9,7 +9,6 @@ export async function loadMessages(locale: string): Promise<Messages> {
     return messagesModule.default as Messages;
   } catch (error: any) {
     console.error(error instanceof Error ? error.message : error);
-    notFound();
     return {};
   }
 }

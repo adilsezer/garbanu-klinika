@@ -10,5 +10,13 @@ export const firebaseConfig: FirebaseOptions = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-export const promoBannerDocPath =
-  process.env.NEXT_PUBLIC_FIRESTORE_PROMO_BANNER_DOC_PATH || "";
+export const FIRESTORE_COLLECTIONS = {
+  brands: "brands",
+  orders: "orders",
+  productTypes: "productTypes",
+  products: "products",
+  promotionalBanners: "promotionalBanners",
+  reviews: "reviews",
+  services: "services",
+  users: "users",
+} as const;

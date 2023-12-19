@@ -21,8 +21,11 @@
     ],
     "paths": {
       "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
       "@lib/*": ["./lib/*"],
       "@projectTypes/*": ["./types/*"],
+      "@styles/*": ["./styles/*"],
+      "@components/*": ["./app/[locale]/components/*"],
       "@/*": ["./*"]
     }
   },
