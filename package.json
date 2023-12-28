@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "cypress:open": "cypress open"
+    "lint": "next lint"
   },
   "license": "MIT",
   "dependencies": {
@@ -26,7 +25,6 @@
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
-    "cypress": "^13.4.0",
     "daisyui": "^4.4.19",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
